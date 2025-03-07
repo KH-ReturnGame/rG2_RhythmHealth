@@ -16,14 +16,10 @@ public class NoteVerdict : MonoBehaviour
     private List<GameObject> notesInRange = new List<GameObject>();
     private Dictionary<GameObject, float> longNoteHoldTimes = new Dictionary<GameObject, float>();
 
-    private int doubleNoteInputCount = 0;
-    private float lastDoubleNoteTime = -1f;
-    private float doubleNoteTimeWindow = 0.15f; // 더블 노트 입력 허용 시간
-    private int currentNoteIndex = -1;
-
-    // 롱노트 상태 관리 변수
     private bool isInLong = false;
     private GameObject currentLongNote = null;
+    private bool isKeyPressed = false; // 키가 눌려 있는지 여부
+    private int currentNoteIndex = -1;
 
     void Start()
     {
@@ -32,26 +28,32 @@ public class NoteVerdict : MonoBehaviour
 
     void Update()
     {
-        // 노트 입력 처리
+        // 노트 입력 처리 (일반 노트)
         if (Input.anyKeyDown && notesInRange.Count > 0)
         {
             JudgeNote();
         }
 
-        // 롱노트 시간 누적
-        if (isInLong && Input.anyKey)
+        // 롱노트 처리 및 키 상태 추적
+        if (isInLong)
         {
-            if (longNoteHoldTimes.ContainsKey(currentLongNote))
+            if (Input.anyKey)
             {
-                longNoteHoldTimes[currentLongNote] += Time.deltaTime;
-                Debug.Log($"Long Note Hold Time: {longNoteHoldTimes[currentLongNote]}");
+                isKeyPressed = true;
+                if (longNoteHoldTimes.ContainsKey(currentLongNote))
+                {
+                    longNoteHoldTimes[currentLongNote] += Time.deltaTime;
+                    Debug.Log($"Long Note Hold Time: {longNoteHoldTimes[currentLongNote]}");
+                }
             }
-        }
-
-        // 키를 떼면 롱노트 판정
-        if (isInLong && Input.anyKeyUp)
-        {
-            JudgeLongNote();
+            else
+            {
+                if (isKeyPressed) // 키가 떼어진 순간
+                {
+                    JudgeLongNote();
+                }
+                isKeyPressed = false;
+            }
         }
 
         if (life <= 0)
@@ -81,67 +83,9 @@ public class NoteVerdict : MonoBehaviour
             }
         }
 
-        // 노트 타입에 따른 판정
-        if (closestNote.CompareTag("note"))
+        // 롱노트 시작
+        if (closestNote.CompareTag("longnote"))
         {
-            // 일반 노트 판정
-            if (minDistance <= judgeCollider.bounds.size.x * 0.25f)
-            {
-                Debug.Log("Excellent!");
-                Score += 20;
-                Accuracy += 100 / realLoadGame.gameData.actions.Count;
-                Combo++;
-            }
-            else if (minDistance <= judgeCollider.bounds.size.x * 0.5f)
-            {
-                Debug.Log("Great!");
-                Score += 15;
-                Accuracy += 50 / realLoadGame.gameData.actions.Count;
-                Combo++;
-            }
-            else
-            {
-                Debug.Log("Miss!");
-                Score += 5;
-                Combo = 0;
-                life -= 5f * realLoadGame.gameData.settings.damageRate;
-            }
-            notesInRange.Remove(closestNote);
-            Destroy(closestNote);
-        }
-        else if (closestNote.CompareTag("doublenote"))
-        {
-            // 더블 노트 판정
-            float currentTime = Time.time;
-
-            if (doubleNoteInputCount == 0)
-            {
-                lastDoubleNoteTime = currentTime;
-                doubleNoteInputCount++;
-                Debug.Log("Double Note: First input detected");
-                return;
-            }
-            else if (currentTime - lastDoubleNoteTime <= doubleNoteTimeWindow)
-            {
-                Debug.Log("Excellent! (Double Note)");
-                Score += 25;
-                Accuracy += 100 / realLoadGame.gameData.actions.Count;
-                Combo++;
-                doubleNoteInputCount = 0;
-                notesInRange.Remove(closestNote);
-                Destroy(closestNote);
-            }
-            else
-            {
-                Debug.Log("Miss! (Double Note timing out)");
-                Combo = 0;
-                life -= 5f * realLoadGame.gameData.settings.damageRate;
-                doubleNoteInputCount = 0;
-            }
-        }
-        else if (closestNote.CompareTag("longnote"))
-        {
-            // 롱노트 시작
             isInLong = true;
             currentLongNote = closestNote;
             if (!longNoteHoldTimes.ContainsKey(currentLongNote))
@@ -149,30 +93,15 @@ public class NoteVerdict : MonoBehaviour
                 longNoteHoldTimes[currentLongNote] = 0f;
             }
         }
-        else if (closestNote.CompareTag("multinote"))
-        {
-            // 멀티 노트 판정
-            int multiIndex = notesInRange.IndexOf(closestNote);
-            if (multiIndex >= 0 && multiIndex < realLoadGame.gameData.actions.Count)
-            {
-                var action = realLoadGame.gameData.actions[multiIndex];
-                if (action.Multi > 0)
-                {
-                    action.Multi -= 1;
-                    Debug.Log($"Multi Note: 남은 횟수 - {action.Multi}");
-                    UpdateMultiNoteText(closestNote, action.Multi);
-                }
-            }
-        }
+        // 기타 노트 처리 (일반 노트, 더블 노트 등 생략)
     }
 
-    // 롱노트 판정 메서드
     private void JudgeLongNote()
     {
         if (currentLongNote != null && notesInRange.Contains(currentLongNote))
         {
             float holdTime = longNoteHoldTimes.ContainsKey(currentLongNote) ? longNoteHoldTimes[currentLongNote] : 0f;
-            float requiredTime = realLoadGame.gameData.actions[currentNoteIndex].LongTime;
+            float requiredTime = realLoadGame.gameData.actions[currentNoteIndex].LongTime * 60 / realLoadGame.gameData.actions[currentNoteIndex].beatsPerMinute;
             float holdPercentage = Mathf.Clamp01(holdTime / requiredTime);
 
             if (holdPercentage >= 0.9f)
@@ -191,6 +120,7 @@ public class NoteVerdict : MonoBehaviour
             }
             else
             {
+                Debug.Log(holdPercentage);
                 Debug.Log("Miss! (Long Note failed)");
                 Score += 5;
                 Combo = 0;
@@ -204,22 +134,9 @@ public class NoteVerdict : MonoBehaviour
         isInLong = false;
     }
 
-    private void UpdateMultiNoteText(GameObject multiNote, int remainingHits)
-    {
-        TextMeshPro tmp = multiNote.GetComponentInChildren<TextMeshPro>();
-        if (tmp != null)
-        {
-            tmp.text = remainingHits.ToString();
-        }
-        else
-        {
-            Debug.LogWarning("멀티노트의 자식 오브젝트에 TextMeshPro 컴포넌트가 없습니다.");
-        }
-    }
-
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("note") || other.CompareTag("longnote") || other.CompareTag("doublenote") || other.CompareTag("multinote"))
+        if (other.CompareTag("longnote"))
         {
             notesInRange.Add(other.gameObject);
         }
@@ -227,44 +144,7 @@ public class NoteVerdict : MonoBehaviour
 
     void OnTriggerExit2D(Collider2D other)
     {
-        if (other.CompareTag("note") || other.CompareTag("doublenote"))
-        {
-            if (notesInRange.Contains(other.gameObject))
-            {
-                Debug.Log("Miss! (Note missed)");
-                Combo = 0;
-                life -= 5f * realLoadGame.gameData.settings.damageRate;
-                notesInRange.Remove(other.gameObject);
-                Destroy(other.gameObject);
-            }
-        }
-        else if (other.CompareTag("multinote"))
-        {
-            if (notesInRange.Contains(other.gameObject))
-            {
-                int multiIndex = notesInRange.IndexOf(other.gameObject);
-                if (multiIndex >= 0 && multiIndex < realLoadGame.gameData.actions.Count)
-                {
-                    if (realLoadGame.gameData.actions[multiIndex].Multi <= 0)
-                    {
-                        Debug.Log("Excellent! (Multi Note)");
-                        Score += 20;
-                        Accuracy += 100 / realLoadGame.gameData.actions.Count;
-                        Combo++;
-                    }
-                    else
-                    {
-                        Debug.Log("Miss! (Multi Note failed)");
-                        Score += 5;
-                        Combo = 0;
-                        life -= 5f * realLoadGame.gameData.settings.damageRate;
-                    }
-                    notesInRange.Remove(other.gameObject);
-                    Destroy(other.gameObject);
-                }
-            }
-        }
-        else if (other.CompareTag("longnoteout"))
+        if (other.CompareTag("longnoteout"))
         {
             if (isInLong && currentLongNote != null && notesInRange.Contains(currentLongNote))
             {
