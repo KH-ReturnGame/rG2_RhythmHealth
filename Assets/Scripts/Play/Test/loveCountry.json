@@ -17,9 +17,9 @@
 	},
 	"actions":
 	[
-		{ "NoteType": "Short", "Gym": 2, "beatsPerMinute": 100, "WaitBeat": 1, "LongTime":0},
-		{ "NoteType": "Short", "Gym": 2, "beatsPerMinute": 100, "WaitBeat": 1, "LongTime":0},
-		{ "NoteType": "Long", "Gym": 2, "beatsPerMinute": 100, "WaitBeat": 5, "LongTime":5}
-
+		{ "NoteType": "Multi", "Gym": 2, "beatsPerMinute": 100, "WaitBeat": 500, "LongTime":0, "Multi":5},
+		{ "NoteType": "Short", "Gym": 2, "beatsPerMinute": 100, "WaitBeat": 1, "LongTime":0, "Multi":0},
+		{ "NoteType": "Short", "Gym": 2, "beatsPerMinute": 100, "WaitBeat": 1, "LongTime":0, "Multi":0},
+		{ "NoteType": "Long", "Gym": 2, "beatsPerMinute": 100, "WaitBeat": 5, "LongTime":5, "Multi":0}
 	]
 }

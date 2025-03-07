@@ -10,6 +10,7 @@ TagManager:
   - longnote
   - doublenote
   - longnoteout
+  - multinote
   layers:
   - Default
   - TransparentFX

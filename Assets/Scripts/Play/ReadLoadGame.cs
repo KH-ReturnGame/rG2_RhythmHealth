@@ -36,6 +36,7 @@ public class NoteAction
     public float beatsPerMinute;
     public float WaitBeat;
     public float LongTime;
+    public int Multi;
 }
 
 public class ReadLoadGame : MonoBehaviour
@@ -101,6 +102,10 @@ public class ReadLoadGame : MonoBehaviour
             else if(WorkType == "Double")
             {
                 noteSpawn.DoubleNote();
+            }
+            else if(WorkType == "Multi")
+            {
+                noteSpawn.MultiNote();
             }
             yield return new WaitForSeconds(gameData.actions[WorkIndex].WaitBeat * 60 / BPM);
             WorkIndex++;

@@ -1233,6 +1233,7 @@ MonoBehaviour:
   longNoteMidPrefab: {fileID: 2122251460313470168, guid: 39b1830668f102f4dac84359e7354763, type: 3}
   longNoteEndPrefab: {fileID: 3128595604640719294, guid: 1b3e94d7a448eff489240c4f89fd30bd, type: 3}
   Double: {fileID: 3027471405472939796, guid: d7127006b3c8c994680c0dfb207fffab, type: 3}
+  Multi: {fileID: 3177745941865738628, guid: ffd350d68bb621444974b2299d50c28b, type: 3}
   pivot: {fileID: 1716920567}
 --- !u!61 &785514239
 BoxCollider2D:

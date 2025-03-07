@@ -8,6 +8,7 @@ public class NoteSpawn : MonoBehaviour
     public GameObject longNoteMidPrefab;    // long_note_2
     public GameObject longNoteEndPrefab;    // long_note_1
     public GameObject Double;
+    public GameObject Multi;
     public Transform pivot;
 
     public void ShortNote()
@@ -33,6 +34,11 @@ public class NoteSpawn : MonoBehaviour
     public void DoubleNote()
     {
         Instantiate(Double, pivot.position, Quaternion.identity);
+    }
+
+    public void MultiNote()
+    {
+        Instantiate(Multi, pivot.position, Quaternion.identity);
     }
 
     void OnTriggerExit2D(Collider2D other)
