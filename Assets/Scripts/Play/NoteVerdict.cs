@@ -34,15 +34,18 @@ public class NoteVerdict : MonoBehaviour
             JudgeNote();
         }
 
-        // 롱노트 hold 시간 누적
-        foreach (var note in notesInRange)
+        if (Input.anyKey && notesInRange.Count > 0)
         {
-            if (note.CompareTag("longnote"))
+            // 롱노트 hold 시간 누적
+            foreach (var note in notesInRange)
             {
-                if (longNoteHoldTimes.ContainsKey(note))
+                if (note.CompareTag("longnote"))
                 {
-                    longNoteHoldTimes[note] += Time.deltaTime;
-                    Debug.Log($"Long Note Hold Time: {longNoteHoldTimes[note]}");
+                    if (longNoteHoldTimes.ContainsKey(note))
+                    {
+                        longNoteHoldTimes[note] += Time.deltaTime;
+                        Debug.Log($"Long Note Hold Time: {longNoteHoldTimes[note]}");
+                    }
                 }
             }
         }
