@@ -3,18 +3,21 @@ using UnityEngine;
 
 public class Note : MonoBehaviour
 {
-    public float BPM;
-    public float speedMultiplier = 1.0f; // 뭐...배속은 나중에 만들고...
+    ReadLoadGame read;
+    public float BPM_note;
+    public float speedMultiplier;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        BPM = 100;
+        read = GameObject.Find("판정").GetComponent<ReadLoadGame>();
+        BPM_note = read.gameData.settings.bpm;
+        speedMultiplier = read.gameData.settings.speed;
     }
 
     // Update is called once per frame
     void Update()
     {
-        float speed = (BPM / 60f) * speedMultiplier; // BPM을 초당 이동 거리로 변환
+        float speed = (BPM_note / 60f) * speedMultiplier; // BPM을 초당 이동 거리로 변환
         transform.position += Vector3.right * speed * Time.deltaTime;
     }
 }

@@ -26,6 +26,7 @@ public class GameSettings
     public string songFile;
     public float bpm;
     public float damageRate;
+    public float speed;
 }
 
 [System.Serializable]

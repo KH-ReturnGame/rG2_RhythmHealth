@@ -173,7 +173,8 @@ public class NoteVerdict : MonoBehaviour
         {
             float holdTime = longNoteHoldTimes.ContainsKey(currentLongNote) ? longNoteHoldTimes[currentLongNote] : 0f;
             float requiredTime = realLoadGame.gameData.actions[currentNoteIndex].LongTime * (60 / realLoadGame.gameData.actions[currentNoteIndex].beatsPerMinute);
-            float holdPercentage = Mathf.Clamp01(holdTime / requiredTime);
+            float speedRate = realLoadGame.gameData.settings.speed;
+            float holdPercentage = Mathf.Clamp01(holdTime / (requiredTime / speedRate));
 
             if (holdPercentage >= 0.9f)
             {
