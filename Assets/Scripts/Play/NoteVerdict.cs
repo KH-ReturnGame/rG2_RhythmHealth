@@ -23,6 +23,7 @@ public class NoteVerdict : MonoBehaviour
     private bool isInLong = false;
     private GameObject currentLongNote = null;
     private bool isKeyPressed = false; // 키가 눌려 있는지 여부
+    private bool hadJudgedLong = false;
     
     private int currentNoteIndex = -1;
 
@@ -48,7 +49,7 @@ public class NoteVerdict : MonoBehaviour
                 if (longNoteHoldTimes.ContainsKey(currentLongNote))
                 {
                     longNoteHoldTimes[currentLongNote] += Time.deltaTime;
-                    Debug.Log($"Long Note Hold Time: {longNoteHoldTimes[currentLongNote]}");
+                    //Debug.Log($"Long Note Hold Time: {longNoteHoldTimes[currentLongNote]}");
                 }
             }
             else
@@ -158,6 +159,7 @@ public class NoteVerdict : MonoBehaviour
         else if (closestNote.CompareTag("longnote"))
         {
             isInLong = true;
+            hadJudgedLong = false;
             currentLongNote = closestNote;
             if (!longNoteHoldTimes.ContainsKey(currentLongNote))
             {
@@ -219,6 +221,7 @@ public class NoteVerdict : MonoBehaviour
             life -= 5f * realLoadGame.gameData.settings.damageRate;
         }
         isInLong = false;
+        hadJudgedLong = true;
     }
 
     // TextMeshPro 텍스트를 업데이트하는 메서드
@@ -245,6 +248,7 @@ public class NoteVerdict : MonoBehaviour
             if (other.CompareTag("longnote"))
             {
                 longNoteHoldTimes[other.gameObject] = 0f;
+                hadJudgedLong = false;
             }
             currentNoteIndex += 1;
         }
@@ -287,7 +291,14 @@ public class NoteVerdict : MonoBehaviour
         }
         else if (other.CompareTag("longnoteout"))
         {
-            JudgeLongNote();
+            if(hadJudgedLong == false)
+            {
+                JudgeLongNote();
+            }
+            else
+            {
+                hadJudgedLong = true;
+            }
         }
     }
 
