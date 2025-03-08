@@ -108,7 +108,7 @@ public class ReadLoadGame : MonoBehaviour
             {
                 noteSpawn.MultiNote();
             }
-            yield return new WaitForSeconds(gameData.actions[WorkIndex].WaitBeat * 60 / BPM);
+            yield return new WaitForSeconds(gameData.actions[WorkIndex].WaitBeat * 60 / (BPM * gameData.settings.speed));
             WorkIndex++;
 
             StartCoroutine(WorkRythm());
