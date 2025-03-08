@@ -16,8 +16,9 @@ public class NoteSpawn : MonoBehaviour
         Instantiate(Short, pivot.position, Quaternion.identity);
     }
     public void LongNote(float longTime, float bpm)
-    {
-        float totalLength = longTime * (60f / bpm); // 롱노트 길이 계산
+    {   
+        // 롱노트 길이 계산 도대체 왜 시이발 2.8이 차이나는가?????????????????
+        float totalLength = longTime * 2.8f * (60f / bpm); 
 
         // 시작 부분 (long_note_0)
         GameObject startNote = Instantiate(longNoteStartPrefab, pivot.position, Quaternion.identity);

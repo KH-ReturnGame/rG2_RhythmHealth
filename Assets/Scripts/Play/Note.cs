@@ -17,7 +17,7 @@ public class Note : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float speed = (BPM_note / 60f) * speedMultiplier; // BPM을 초당 이동 거리로 변환
+        float speed = (BPM_note / 60f) * speedMultiplier / 0.6f; // BPM을 초당 이동 거리로 변환
         transform.position += Vector3.right * speed * Time.deltaTime;
     }
 }

@@ -217,11 +217,6 @@ public class NoteVerdict : MonoBehaviour
             Score += 5;
             Combo = 0;
             life -= 5f * realLoadGame.gameData.settings.damageRate;
-            
-            longNoteHoldTimes.Remove(currentLongNote);
-            notesInRange.Remove(currentLongNote);
-            Destroy(currentLongNote);
-            currentLongNote = null;
         }
         isInLong = false;
     }
@@ -292,10 +287,7 @@ public class NoteVerdict : MonoBehaviour
         }
         else if (other.CompareTag("longnoteout"))
         {
-            if (notesInRange.Contains(other.gameObject))
-            {
-                JudgeLongNote();
-            }
+            JudgeLongNote();
         }
     }
 
