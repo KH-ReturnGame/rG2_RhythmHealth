@@ -75,7 +75,6 @@ public class NoteVerdict : MonoBehaviour
         // 가장 가까운 노트 찾기
         GameObject closestNote = notesInRange[0];
         float minDistance = Mathf.Abs(closestNote.transform.position.x - transform.position.x);
-        currentNoteIndex = 0;
 
         for (int i = 1; i < notesInRange.Count; i++)
         {
@@ -84,7 +83,6 @@ public class NoteVerdict : MonoBehaviour
             {
                 closestNote = notesInRange[i];
                 minDistance = distance;
-                currentNoteIndex = i;
             }
         }
 
@@ -149,12 +147,12 @@ public class NoteVerdict : MonoBehaviour
         else if (closestNote.CompareTag("multinote"))
         {
             // 멀티 노트 판정
-            if (realLoadGame.gameData.actions[notesInRange.IndexOf(closestNote)].Multi > 0)
+            if (realLoadGame.gameData.actions[currentNoteIndex].Multi > 0)
             {
-                realLoadGame.gameData.actions[notesInRange.IndexOf(closestNote)].Multi -= 1; // 남은 횟수 감소
-                Debug.Log($"Multi Note: 남은 횟수 - {realLoadGame.gameData.actions[notesInRange.IndexOf(closestNote)].Multi}");
+                realLoadGame.gameData.actions[currentNoteIndex].Multi -= 1; // 남은 횟수 감소
+                Debug.Log($"Multi Note: 남은 횟수 - {realLoadGame.gameData.actions[currentNoteIndex].Multi}");
                 // TextMeshPro 텍스트 업데이트
-                UpdateMultiNoteText(closestNote, realLoadGame.gameData.actions[notesInRange.IndexOf(closestNote)].Multi);
+                UpdateMultiNoteText(closestNote, realLoadGame.gameData.actions[currentNoteIndex].Multi);
             }
         }
         else if (closestNote.CompareTag("longnote"))
@@ -252,6 +250,7 @@ public class NoteVerdict : MonoBehaviour
             {
                 longNoteHoldTimes[other.gameObject] = 0f;
             }
+            currentNoteIndex += 1;
         }
     }
 
@@ -272,26 +271,22 @@ public class NoteVerdict : MonoBehaviour
         {
             if (notesInRange.Contains(other.gameObject))
             {
-                int multiIndex = notesInRange.IndexOf(other.gameObject);
-                if (multiIndex >= 0 && multiIndex < realLoadGame.gameData.actions.Count)
+                if (realLoadGame.gameData.actions[currentNoteIndex].Multi <= 0)
                 {
-                    if (realLoadGame.gameData.actions[multiIndex].Multi <= 0)
-                    {
-                        Debug.Log("Excellent! (Multi Note)");
-                        Score += 20; // 멀티노트 성공 시 점수 추가
-                        Accuracy += 100 / realLoadGame.gameData.actions.Count;
-                        Combo++; // 성공 시 콤보 증가
-                    }
-                    else
-                    {
-                        Debug.Log("Miss! (Multi Note failed)");
-                        Score += 5;
-                        Combo = 0; // 실패 시 콤보 초기화
-                        life -= 5f * realLoadGame.gameData.settings.damageRate;
-                    }
-                    notesInRange.Remove(other.gameObject);
-                    Destroy(other.gameObject);
+                    Debug.Log("Excellent! (Multi Note)");
+                    Score += 20; // 멀티노트 성공 시 점수 추가
+                    Accuracy += 100 / realLoadGame.gameData.actions.Count;
+                    Combo++; // 성공 시 콤보 증가
                 }
+                else
+                {
+                    Debug.Log("Miss! (Multi Note failed)");
+                    Score += 5;
+                    Combo = 0; // 실패 시 콤보 초기화
+                    life -= 5f * realLoadGame.gameData.settings.damageRate;
+                }
+                notesInRange.Remove(other.gameObject);
+                Destroy(other.gameObject);
             }
         }
         else if (other.CompareTag("longnoteout"))
