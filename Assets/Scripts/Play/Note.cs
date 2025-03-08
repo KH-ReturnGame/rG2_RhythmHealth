@@ -9,7 +9,7 @@ public class Note : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        read = GameObject.Find("판정").GetComponent<ReadLoadGame>();
+        read = GameObject.Find("판?").GetComponent<ReadLoadGame>();
         BPM_note = read.gameData.settings.bpm;
         speedMultiplier = read.gameData.settings.speed;
     }
