@@ -18,6 +18,7 @@
 	},
 	"actions":
 	[
+		{ "NoteType": "Wait", "Gym": 0, "beatsPerMinute": 100, "WaitBeat": 10, "LongTime":0, "Multi":0},
 		{ "NoteType": "Long", "Gym": 2, "beatsPerMinute": 100, "WaitBeat": 5, "LongTime":3, "Multi":0},
 		{ "NoteType": "Short", "Gym": 2, "beatsPerMinute": 100, "WaitBeat": 5, "LongTime":0, "Multi":0},
 		{ "NoteType": "Long", "Gym": 2, "beatsPerMinute": 100, "WaitBeat": 6, "LongTime":5, "Multi":0},

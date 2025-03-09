@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
+using UnityEngine.Networking;
 
 [System.Serializable]
 public class GameData
@@ -52,14 +53,13 @@ public class ReadLoadGame : MonoBehaviour
     int WorkIndex = 0;
     string songPath;  
     public float offset;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+
     void Start()
     {
         offset = PlayerPrefs.GetInt("PlayerOffset");
         audioSource = GetComponent<AudioSource>();
         SetUp();
         StartCoroutine(PlayMusicWithOffset());
-        StartCoroutine(WorkRythm());
     }
 
     void SetUp()
@@ -71,50 +71,53 @@ public class ReadLoadGame : MonoBehaviour
 
     IEnumerator PlayMusicWithOffset()
     {
-        using (WWW www = new WWW("file://" + songPath))
+        string url = "file://" + songPath;
+        using (UnityWebRequest www = UnityWebRequestMultimedia.GetAudioClip(url, AudioType.UNKNOWN))
         {
-            yield return www;
-            audioSource.clip = www.GetAudioClip(false, false);
-            
-            // 오프셋 적용
-            yield return new WaitForSeconds(offset / 1000f);
-            audioSource.Play();
+            yield return www.SendWebRequest();
+
+            if (www.result == UnityWebRequest.Result.ConnectionError || www.result == UnityWebRequest.Result.ProtocolError)
+            {
+                Debug.LogError("오디오 로드 오류: " + www.error);
+            }
+            else
+            {
+                AudioClip clip = DownloadHandlerAudioClip.GetContent(www);
+                audioSource.clip = clip;
+
+                // 오프셋 적용
+                yield return new WaitForSeconds(offset / 1000f);
+                audioSource.Play();
+                StartCoroutine(WorkRythm());
+            }
         }
     }
 
     IEnumerator WorkRythm()
     {
-        if(WorkIndex > gameData.actions.Count - 1)
+        while (WorkIndex < gameData.actions.Count)
         {
-            StartCoroutine(End());
-            yield return null;
-        }
-        else
-        {   
             WorkType = gameData.actions[WorkIndex].NoteType;
-            if(WorkType == "Short")
+            if (WorkType == "Short")
             {
                 noteSpawn.ShortNote();
             }
-            else if(WorkType == "Long")
+            else if (WorkType == "Long")
             {
                 noteSpawn.LongNote(gameData.actions[WorkIndex].LongTime, BPM);
             }
-            else if(WorkType == "Double")
+            else if (WorkType == "Double")
             {
                 noteSpawn.DoubleNote();
             }
-            else if(WorkType == "Multi")
+            else if (WorkType == "Multi")
             {
                 noteSpawn.MultiNote();
             }
             yield return new WaitForSeconds(gameData.actions[WorkIndex].WaitBeat * 60 / (BPM * gameData.settings.speed));
             WorkIndex++;
-
-            StartCoroutine(WorkRythm());
-
-            yield return null;
         }
+        StartCoroutine(End());
     }
 
     IEnumerator End()
