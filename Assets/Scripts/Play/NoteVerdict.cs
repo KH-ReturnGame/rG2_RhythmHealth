@@ -27,6 +27,8 @@ public class NoteVerdict : MonoBehaviour
     
     private int currentNoteIndex = -1;
 
+    public GameObject Printer;
+
     void Start()
     {
         judgeCollider = GetComponent<BoxCollider2D>();
@@ -66,6 +68,12 @@ public class NoteVerdict : MonoBehaviour
         {
             StopAllCoroutines();
             StartCoroutine(Die());
+        }
+
+        // 결과 출력
+        if(currentNoteIndex + 1 == realLoadGame.gameData.actions.Count)
+        {
+            Printer.SetActive(true);
         }
     }
 
@@ -305,6 +313,7 @@ public class NoteVerdict : MonoBehaviour
     IEnumerator Die()
     {
         life++;
+        Printer.SetActive(true);
         yield return null;
     }
 }

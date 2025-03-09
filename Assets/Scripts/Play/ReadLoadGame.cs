@@ -71,26 +71,29 @@ public class ReadLoadGame : MonoBehaviour
 
     IEnumerator PlayMusicWithOffset()
     {
-        string url = "file://" + songPath;
-        using (UnityWebRequest www = UnityWebRequestMultimedia.GetAudioClip(url, AudioType.UNKNOWN))
-        {
-            yield return www.SendWebRequest();
+        // string url = "file://" + songPath;
+        // using (UnityWebRequest www = UnityWebRequestMultimedia.GetAudioClip(url, AudioType.UNKNOWN))
+        // {
+        //     yield return www.SendWebRequest();
 
-            if (www.result == UnityWebRequest.Result.ConnectionError || www.result == UnityWebRequest.Result.ProtocolError)
-            {
-                Debug.LogError("오디오 로드 오류: " + www.error);
-            }
-            else
-            {
-                AudioClip clip = DownloadHandlerAudioClip.GetContent(www);
-                audioSource.clip = clip;
+        //     if (www.result == UnityWebRequest.Result.ConnectionError || www.result == UnityWebRequest.Result.ProtocolError)
+        //     {
+        //         Debug.LogError("오디오 로드 오류: " + www.error);
+        //     }
+        //     else
+        //     {
+        //         AudioClip clip = DownloadHandlerAudioClip.GetContent(www);
+        //         audioSource.clip = clip;
 
-                // 오프셋 적용
-                yield return new WaitForSeconds(offset / 1000f);
-                audioSource.Play();
-                StartCoroutine(WorkRythm());
-            }
-        }
+        //         // 오프셋 적용
+        //         yield return new WaitForSeconds(offset / 1000f);
+        //         audioSource.Play();
+        //         StartCoroutine(WorkRythm());
+        //     }
+        // }
+        
+        yield return new WaitForSeconds(offset / 1000f);
+        StartCoroutine(WorkRythm());
     }
 
     IEnumerator WorkRythm()
