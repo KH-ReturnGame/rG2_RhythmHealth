@@ -64,6 +64,7 @@ public class NoteVerdict : MonoBehaviour
             }
         }
 
+        // 사망
         if (life <= 0)
         {
             StopAllCoroutines();
