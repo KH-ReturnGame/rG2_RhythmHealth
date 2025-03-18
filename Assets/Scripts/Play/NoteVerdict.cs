@@ -74,7 +74,7 @@ public class NoteVerdict : MonoBehaviour
         // 결과 출력
         if(currentNoteIndex + 1 == realLoadGame.gameData.actions.Count)
         {
-            Printer.SetActive(true);
+            StartCoroutine(Result());
         }
     }
 
@@ -314,6 +314,14 @@ public class NoteVerdict : MonoBehaviour
     IEnumerator Die()
     {
         life++;
+        yield return WaitForSeconds(1.5f);
+        Printer.SetActive(true);
+        yield return null;
+    }
+
+    IEnumerator Result()
+    {
+        yield return WaitForSeconds(1f);
         Printer.SetActive(true);
         yield return null;
     }
