@@ -314,14 +314,14 @@ public class NoteVerdict : MonoBehaviour
     IEnumerator Die()
     {
         life++;
-        yield return WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(1.5f);
         Printer.SetActive(true);
         yield return null;
     }
 
     IEnumerator Result()
     {
-        yield return WaitForSeconds(1f);
+        yield return new WaitForSeconds(1f);
         Printer.SetActive(true);
         yield return null;
     }
