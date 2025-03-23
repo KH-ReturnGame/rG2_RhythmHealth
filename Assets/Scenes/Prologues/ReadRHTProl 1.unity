@@ -2334,7 +2334,7 @@ GameObject:
   - component: {fileID: 1499449355}
   - component: {fileID: 1499449354}
   - component: {fileID: 1499449353}
-  - component: {fileID: 1499449352}
+  - component: {fileID: 1499449356}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -2342,18 +2342,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1499449352
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1499449351}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 081f6d8239fa9824d8384583f9b562b2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!95 &1499449353
 Animator:
   serializedVersion: 7
@@ -2446,6 +2434,26 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1499449356
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1499449351}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fc9e67f4c6e8f240aecdbcf7c907209, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Sprites_note_: []
+  Sprites_longnote_: []
+  Sprites_doublenote_: []
+  Sprites_multinote_: []
+  Sprites_note: []
+  Sprites_longnote: []
+  Sprites_doublenote: []
+  Sprites_multinote: []
 --- !u!1 &1525662086
 GameObject:
   m_ObjectHideFlags: 0
