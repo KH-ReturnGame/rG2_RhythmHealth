@@ -4,23 +4,32 @@ using UnityEngine;
 
 public class ChangeSprite : MonoBehaviour
 {
-    public Sprite[] Sprites_note_;
-    public Sprite[] Sprites_longnote_;
-    public Sprite[] Sprites_doublenote_;
-    public Sprite[] Sprites_multinote_;
-    public Sprite[] Sprites_note;
-    public Sprite[] Sprites_longnote;
-    public Sprite[] Sprites_doublenote;
-    public Sprite[] Sprites_multinote;
+    public NoteVerdict noteVerdict;
+    SpriteRenderer spriteRenderer;
+    public Sprite[] note_ready;
+    public Sprite[] longnote_ready;
+    public Sprite[] doublenote_ready;
+    public Sprite[] multinote_ready;
+    public Sprite[] note;
+    public Sprite[] longnote;
+    public Sprite[] doublenote;
+    public Sprite[] multinote;
+    public Sprite[] note_fail;
+    public Sprite[] longnote_fail;
+    public Sprite[] doublenote_fail;
+    public Sprite[] multinote_fail;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if(noteVerdict.isInLong)
+        {
+            spriteRenderer.sprite = note[noteVerdict.realLoadGame.gameData.actions[noteVerdict.currentNoteIndex].Gym -1];
+        }
     }
 }

@@ -20,12 +20,12 @@ public class NoteVerdict : MonoBehaviour
     private float lastDoubleNoteTime = -1f;
     private float doubleNoteTimeWindow = 0.15f; // 더블 노트 입력 허용 시간
 
-    private bool isInLong = false;
+    public bool isInLong = false;
     private GameObject currentLongNote = null;
     private bool isKeyPressed = false; // 키가 눌려 있는지 여부
     private bool hadJudgedLong = false;
     
-    private int currentNoteIndex = -1;
+    public int currentNoteIndex = -1;
 
     public GameObject Printer;
 

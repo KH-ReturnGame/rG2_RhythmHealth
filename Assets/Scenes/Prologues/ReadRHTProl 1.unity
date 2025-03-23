@@ -2446,14 +2446,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fc9e67f4c6e8f240aecdbcf7c907209, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Sprites_note_: []
-  Sprites_longnote_: []
-  Sprites_doublenote_: []
-  Sprites_multinote_: []
-  Sprites_note: []
-  Sprites_longnote: []
-  Sprites_doublenote: []
-  Sprites_multinote: []
+  noteVerdict: {fileID: 1825230942}
+  note_ready:
+  - {fileID: -855298285791758126, guid: 82d176c33b59b854990a89ef0c009b21, type: 3}
+  - {fileID: -855298285791758126, guid: 30ecfedd7ed0e8847877c54aade3f321, type: 3}
+  longnote_ready: []
+  doublenote_ready: []
+  multinote_ready: []
+  note:
+  - {fileID: 241758831, guid: 82d176c33b59b854990a89ef0c009b21, type: 3}
+  - {fileID: -175248703, guid: 30ecfedd7ed0e8847877c54aade3f321, type: 3}
+  longnote: []
+  doublenote: []
+  multinote: []
+  note_fail:
+  - {fileID: -1794465345, guid: 82d176c33b59b854990a89ef0c009b21, type: 3}
+  - {fileID: 8957324059118975939, guid: 99752395f763e6d4faf25e8d8416c51b, type: 3}
+  longnote_fail: []
+  doublenote_fail: []
+  multinote_fail: []
 --- !u!1 &1525662086
 GameObject:
   m_ObjectHideFlags: 0
