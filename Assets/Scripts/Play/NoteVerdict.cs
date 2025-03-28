@@ -26,6 +26,7 @@ public class NoteVerdict : MonoBehaviour
     private bool hadJudgedLong = false;
     
     public int currentNoteIndex = -1;
+    public bool isSuccess; 
 
     public GameObject Printer;
 
@@ -106,6 +107,7 @@ public class NoteVerdict : MonoBehaviour
                 Score += 20;
                 Accuracy += 100 / realLoadGame.gameData.actions.Count;
                 Combo++;
+                isSuccess = true;
             }
             else if (minDistance <= judgeCollider.bounds.size.x * 0.5f)
             {
@@ -113,6 +115,7 @@ public class NoteVerdict : MonoBehaviour
                 Score += 15;
                 Accuracy += 50 / realLoadGame.gameData.actions.Count;
                 Combo++;
+                isSuccess = true;
             }
             else
             {
@@ -120,6 +123,7 @@ public class NoteVerdict : MonoBehaviour
                 Score += 5;
                 Combo = 0;
                 life -= 5f * realLoadGame.gameData.settings.damageRate;
+                isSuccess = false;
             }
             notesInRange.Remove(closestNote);
             Destroy(closestNote);
@@ -142,6 +146,7 @@ public class NoteVerdict : MonoBehaviour
                 Score += 25;
                 Accuracy += 100 / realLoadGame.gameData.actions.Count;
                 Combo++;
+                isSuccess = true;
                 doubleNoteInputCount = 0;
                 notesInRange.Remove(closestNote);
                 Destroy(closestNote);
@@ -151,6 +156,7 @@ public class NoteVerdict : MonoBehaviour
                 Debug.Log("Miss! (Double Note timing out)");
                 Combo = 0;
                 life -= 5f * realLoadGame.gameData.settings.damageRate;
+                isSuccess = false;
                 doubleNoteInputCount = 0;
             }
         }
@@ -196,6 +202,7 @@ public class NoteVerdict : MonoBehaviour
                 Score += 20;
                 Accuracy += 100 / realLoadGame.gameData.actions.Count;
                 Combo++;
+                isSuccess = true;
             }
             else if (holdPercentage >= 0.5f)
             {
@@ -206,6 +213,7 @@ public class NoteVerdict : MonoBehaviour
                 Score += 15;
                 Accuracy += 50 / realLoadGame.gameData.actions.Count;
                 Combo++;
+                isSuccess = true;
             }
             else
             {
@@ -216,6 +224,7 @@ public class NoteVerdict : MonoBehaviour
                 Score += 5;
                 Combo = 0;
                 life -= 5f * realLoadGame.gameData.settings.damageRate;
+                isSuccess = false;
             }
             longNoteHoldTimes.Remove(currentLongNote);
             notesInRange.Remove(currentLongNote);
@@ -228,6 +237,7 @@ public class NoteVerdict : MonoBehaviour
             Score += 5;
             Combo = 0;
             life -= 5f * realLoadGame.gameData.settings.damageRate;
+            isSuccess = false;
         }
         isInLong = false;
         hadJudgedLong = true;
@@ -274,6 +284,7 @@ public class NoteVerdict : MonoBehaviour
                 life -= 5f * realLoadGame.gameData.settings.damageRate;
                 notesInRange.Remove(other.gameObject);
                 Destroy(other.gameObject);
+                isSuccess = false;
             }
         }
         else if (other.CompareTag("multinote"))
@@ -286,6 +297,7 @@ public class NoteVerdict : MonoBehaviour
                     Score += 20; // 멀티노트 성공 시 점수 추가
                     Accuracy += 100 / realLoadGame.gameData.actions.Count;
                     Combo++; // 성공 시 콤보 증가
+                    isSuccess = true;
                 }
                 else
                 {
@@ -293,6 +305,7 @@ public class NoteVerdict : MonoBehaviour
                     Score += 5;
                     Combo = 0; // 실패 시 콤보 초기화
                     life -= 5f * realLoadGame.gameData.settings.damageRate;
+                    isSuccess = false;
                 }
                 notesInRange.Remove(other.gameObject);
                 Destroy(other.gameObject);
