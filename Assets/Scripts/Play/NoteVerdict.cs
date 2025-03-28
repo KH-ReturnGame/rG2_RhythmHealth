@@ -13,7 +13,7 @@ public class NoteVerdict : MonoBehaviour
     public float Accuracy { get; private set; }
     public float life = 100f;
 
-    private List<GameObject> notesInRange = new List<GameObject>();
+    public List<GameObject> notesInRange = new List<GameObject>();
     private Dictionary<GameObject, float> longNoteHoldTimes = new Dictionary<GameObject, float>();
 
     private int doubleNoteInputCount = 0;
@@ -21,7 +21,7 @@ public class NoteVerdict : MonoBehaviour
     private float doubleNoteTimeWindow = 0.15f; // 더블 노트 입력 허용 시간
 
     public bool isInLong = false;
-    private GameObject currentLongNote = null;
+    public GameObject currentLongNote = null;
     private bool isKeyPressed = false; // 키가 눌려 있는지 여부
     private bool hadJudgedLong = false;
     
