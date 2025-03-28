@@ -2450,21 +2450,36 @@ MonoBehaviour:
   note_ready:
   - {fileID: -855298285791758126, guid: 82d176c33b59b854990a89ef0c009b21, type: 3}
   - {fileID: -855298285791758126, guid: 30ecfedd7ed0e8847877c54aade3f321, type: 3}
-  longnote_ready: []
-  doublenote_ready: []
-  multinote_ready: []
   note:
   - {fileID: 241758831, guid: 82d176c33b59b854990a89ef0c009b21, type: 3}
   - {fileID: -175248703, guid: 30ecfedd7ed0e8847877c54aade3f321, type: 3}
-  longnote: []
-  doublenote: []
-  multinote: []
   note_fail:
   - {fileID: -1794465345, guid: 82d176c33b59b854990a89ef0c009b21, type: 3}
   - {fileID: 8957324059118975939, guid: 99752395f763e6d4faf25e8d8416c51b, type: 3}
-  longnote_fail: []
-  doublenote_fail: []
-  multinote_fail: []
+  longnote_ready:
+  - {fileID: -855298285791758126, guid: 57a5c3093c7db204093d635363ed8ff6, type: 3}
+  longnote:
+  - {fileID: 1981968534, guid: 57a5c3093c7db204093d635363ed8ff6, type: 3}
+  longnote_fail:
+  - {fileID: 6937817954938267909, guid: 3c79aaf64ae1ab849bbbda9514e3691e, type: 3}
+  doublenote_ready:
+  - {fileID: -6470460504253458178, guid: 9a6a8d4c3aaf0da48a358275d6d57bb4, type: 3}
+  doublenote:
+  - {fileID: -1809891423, guid: 9a6a8d4c3aaf0da48a358275d6d57bb4, type: 3}
+  doublenote_fail:
+  - {fileID: -855298285791758126, guid: ec9e3666ebb39f94897856b19cd9c657, type: 3}
+  multinote_ready:
+  - {fileID: -855298285791758126, guid: 523f9c825677c694c9719273ff132d3f, type: 3}
+  multinote_one:
+  - {fileID: 104482666, guid: 523f9c825677c694c9719273ff132d3f, type: 3}
+  multinote_two:
+  - {fileID: -1222266813, guid: 523f9c825677c694c9719273ff132d3f, type: 3}
+  multinote_three:
+  - {fileID: -268749039, guid: 523f9c825677c694c9719273ff132d3f, type: 3}
+  multinote_four:
+  - {fileID: 1660010144, guid: 523f9c825677c694c9719273ff132d3f, type: 3}
+  multinote_fail:
+  - {fileID: 6937817954938267909, guid: b1f43c19383efe74791f782d6185acb8, type: 3}
 --- !u!1 &1525662086
 GameObject:
   m_ObjectHideFlags: 0
@@ -3139,7 +3154,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   realLoadGame: {fileID: 1592125607}
+  changeSprite: {fileID: 1499449356}
   life: 100
+  notesInRange: []
+  isInLong: 0
+  currentLongNote: {fileID: 0}
+  currentNoteIndex: -1
+  multiNoteCount: 0
   Printer: {fileID: 243457645}
 --- !u!61 &1825230943
 BoxCollider2D:

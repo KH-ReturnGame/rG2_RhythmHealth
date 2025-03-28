@@ -5,29 +5,35 @@ using TMPro;
 
 public class NoteVerdict : MonoBehaviour
 {
+    // 읽어와라
     private BoxCollider2D judgeCollider;
     public ReadLoadGame realLoadGame;
+    public ChangeSprite changeSprite;
 
     public int Combo { get; private set; }
     public float Score { get; private set; }
     public float Accuracy { get; private set; }
     public float life = 100f;
 
+    // 기본 노트 구조
     public List<GameObject> notesInRange = new List<GameObject>();
     private Dictionary<GameObject, float> longNoteHoldTimes = new Dictionary<GameObject, float>();
-
+    
+    // 더블 노트 관련 변수
     private int doubleNoteInputCount = 0;
     private float lastDoubleNoteTime = -1f;
     private float doubleNoteTimeWindow = 0.15f; // 더블 노트 입력 허용 시간
-
+    
+    // 롱노트 관련 변수
     public bool isInLong = false;
     public GameObject currentLongNote = null;
     private bool isKeyPressed = false; // 키가 눌려 있는지 여부
     private bool hadJudgedLong = false;
     
+    // changeSprite 관련 변수
     public int currentNoteIndex = -1;
-    public bool isSuccess; 
-
+    public bool? isSuccess = null;
+    public int multiNoteCount = 1;
     public GameObject Printer;
 
     void Start()
@@ -251,6 +257,8 @@ public class NoteVerdict : MonoBehaviour
         if (tmp != null)
         {
             tmp.text = remainingHits.ToString(); // 남은 횟수를 텍스트로 표시
+            changeSprite.ChangeSpriteMultiNote();
+            multiNoteCount++;
         }
         else
         {
