@@ -1804,6 +1804,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   noteVerdict: {fileID: 1825230942}
+  Combo_Particle: {fileID: 100002, guid: cafecd3fc3b761c45bb1553f35cf5c96, type: 3}
 --- !u!1 &999644315
 GameObject:
   m_ObjectHideFlags: 0

@@ -7,7 +7,9 @@ using TMPro;
 public class Combo_UI : MonoBehaviour
 {
     int temp;
+    bool GameStart = false;
     public NoteVerdict noteVerdict;
+    public GameObject Combo_Particle;
     TextMeshProUGUI Combo_text;
     Vector3 originalScale;  // 원래 크기 저장
     void Awake()
@@ -25,6 +27,12 @@ public class Combo_UI : MonoBehaviour
             temp = noteVerdict.Combo;
             Debug.Log(noteVerdict.Combo);
             StartCoroutine(ComboUp());
+            GameStart = true;
+        }
+        if(GameStart & noteVerdict.Combo == 0)
+        {
+            temp = 0;
+            StartCoroutine(ComboDown());
         }
     }
 
@@ -35,8 +43,18 @@ public class Combo_UI : MonoBehaviour
         yield return StartCoroutine(ScaleTextEffect());
     }
 
+    IEnumerator ComboDown()
+    {
+        Combo_text.text = temp.ToString();
+
+        yield return null;
+    }
+
     IEnumerator ScaleTextEffect()
     {
+        // 파티클 생성
+        Instantiate(Combo_Particle, new Vector3(0, -5, 0), Quaternion.identity);
+
         // 텍스트 크기 크게 시작
         Combo_text.transform.localScale = originalScale * 1.5f;  
         
