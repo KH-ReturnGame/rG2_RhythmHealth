@@ -38,6 +38,11 @@ public class ChangeSprite : MonoBehaviour
             ChangeSpriteNote();
             _is_Success = null;
         }
+
+        if(noteVerdict.isInLong)
+        {
+            spriteRenderer.sprite = longnote[noteVerdict.realLoadGame.gameData.actions[noteVerdict.currentNoteIndex].Gym -1];
+        }
     }
 
     void ChangeSpriteNote()
@@ -71,15 +76,13 @@ public class ChangeSprite : MonoBehaviour
                 spriteRenderer.sprite = multinote_fail[noteVerdict.realLoadGame.gameData.actions[noteVerdict.currentNoteIndex].Gym -1];
             }
         }
-
-        if(noteVerdict.isInLong)
+        else if(noteVerdict.realLoadGame.gameData.actions[noteVerdict.currentNoteIndex].NoteType == "Long")
         {
-            spriteRenderer.sprite = longnote[noteVerdict.realLoadGame.gameData.actions[noteVerdict.currentNoteIndex].Gym -1];
             if(_is_Success == true)
             {
                 spriteRenderer.sprite = longnote_ready[noteVerdict.realLoadGame.gameData.actions[noteVerdict.currentNoteIndex].Gym -1];
             }
-            else if(_is_Success == false)
+            if(_is_Success == false)
             {
                 spriteRenderer.sprite = longnote_fail[noteVerdict.realLoadGame.gameData.actions[noteVerdict.currentNoteIndex].Gym -1];
             }
@@ -90,7 +93,7 @@ public class ChangeSprite : MonoBehaviour
     {
         if(noteVerdict.multiNoteCount > 4)
         {
-            noteVerdict.multiNoteCount = noteVerdict.multiNoteCount % 4;
+            noteVerdict.multiNoteCount = 1;
         }
 
         switch (noteVerdict.multiNoteCount)
@@ -110,6 +113,6 @@ public class ChangeSprite : MonoBehaviour
             default:
                 break;
         }
-        noteVerdict.multiNoteCount = 1;
+        noteVerdict.multiNoteCount++;
     }
 }

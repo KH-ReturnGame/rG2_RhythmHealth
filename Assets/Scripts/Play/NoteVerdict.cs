@@ -172,8 +172,10 @@ public class NoteVerdict : MonoBehaviour
             if (realLoadGame.gameData.actions[currentNoteIndex].Multi > 0)
             {
                 realLoadGame.gameData.actions[currentNoteIndex].Multi -= 1; // 남은 횟수 감소
+                changeSprite.ChangeSpriteMultiNote();
                 Debug.Log($"Multi Note: 남은 횟수 - {realLoadGame.gameData.actions[currentNoteIndex].Multi}");
                 // TextMeshPro 텍스트 업데이트
+                Combo++;
                 UpdateMultiNoteText(closestNote, realLoadGame.gameData.actions[currentNoteIndex].Multi);
             }
         }
@@ -257,8 +259,6 @@ public class NoteVerdict : MonoBehaviour
         if (tmp != null)
         {
             tmp.text = remainingHits.ToString(); // 남은 횟수를 텍스트로 표시
-            changeSprite.ChangeSpriteMultiNote();
-            multiNoteCount++;
         }
         else
         {
