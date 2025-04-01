@@ -1,5 +1,6 @@
 using UnityEngine;
-
+using System.IO;
+using System.Collections.Generic;
 public class SaveInfo : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -40,18 +41,44 @@ public class SaveInfo : MonoBehaviour
     }
     public void Save_Difficulty(string artistname)
     {
-
+        int
     }
     public void Save_BPM(string artistname)
     {
-
+        int BPM = 0;
     }
     public void Save_DamageRate(string artistname)
     {
-
+        int
     }
     public void Save_speed(string artistname)
     {
-
+        int
     }
+
+    public void Save_NotesType(string artistname)
+    {
+        int
+    }
+    public void Save_Gym(string artistname)
+    {
+        int
+    }
+    public void Save_bpm(string artistname)
+    {
+        int
+    }
+    public void Save_Wait(string artistname)
+    {
+        int
+    }
+    public void Save_Long(string artistname)
+    {
+        int
+    }
+    public void Save_Multi(string artistname)
+    {
+        int
+    }
+    
 }
