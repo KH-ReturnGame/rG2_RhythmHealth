@@ -537,6 +537,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3392652359194593424, guid: 396a8208324e4774ba3cbb1f401890b5, type: 3}
+      propertyPath: jsonFile
+      value: 
+      objectReference: {fileID: 4900000, guid: e3f057758b77b8d4b893b8d01c97240f, type: 3}
+    - target: {fileID: 3392652359194593424, guid: 396a8208324e4774ba3cbb1f401890b5, type: 3}
       propertyPath: StartPT_UI
       value: 
       objectReference: {fileID: 708113468}
@@ -1498,6 +1502,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3392652359194593424, guid: 396a8208324e4774ba3cbb1f401890b5, type: 3}
+      propertyPath: jsonFile
+      value: 
+      objectReference: {fileID: 4900000, guid: e3f057758b77b8d4b893b8d01c97240f, type: 3}
+    - target: {fileID: 3392652359194593424, guid: 396a8208324e4774ba3cbb1f401890b5, type: 3}
       propertyPath: StartPT_UI
       value: 
       objectReference: {fileID: 708113468}
@@ -1797,6 +1805,10 @@ PrefabInstance:
       propertyPath: CanStart
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3392652359194593424, guid: 396a8208324e4774ba3cbb1f401890b5, type: 3}
+      propertyPath: jsonFile
+      value: 
+      objectReference: {fileID: 4900000, guid: e3f057758b77b8d4b893b8d01c97240f, type: 3}
     - target: {fileID: 3392652359194593424, guid: 396a8208324e4774ba3cbb1f401890b5, type: 3}
       propertyPath: StartPT_UI
       value: 
@@ -3154,6 +3166,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3392652359194593424, guid: 396a8208324e4774ba3cbb1f401890b5, type: 3}
+      propertyPath: jsonFile
+      value: 
+      objectReference: {fileID: 4900000, guid: e3f057758b77b8d4b893b8d01c97240f, type: 3}
+    - target: {fileID: 3392652359194593424, guid: 396a8208324e4774ba3cbb1f401890b5, type: 3}
       propertyPath: StartPT_UI
       value: 
       objectReference: {fileID: 708113468}
@@ -3222,6 +3238,10 @@ PrefabInstance:
       propertyPath: CanStart
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3392652359194593424, guid: 396a8208324e4774ba3cbb1f401890b5, type: 3}
+      propertyPath: jsonFile
+      value: 
+      objectReference: {fileID: 4900000, guid: e3f057758b77b8d4b893b8d01c97240f, type: 3}
     - target: {fileID: 3392652359194593424, guid: 396a8208324e4774ba3cbb1f401890b5, type: 3}
       propertyPath: StartPT_UI
       value: 
@@ -4089,6 +4109,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3392652359194593424, guid: 396a8208324e4774ba3cbb1f401890b5, type: 3}
+      propertyPath: jsonFile
+      value: 
+      objectReference: {fileID: 4900000, guid: e3f057758b77b8d4b893b8d01c97240f, type: 3}
+    - target: {fileID: 3392652359194593424, guid: 396a8208324e4774ba3cbb1f401890b5, type: 3}
       propertyPath: StartPT_UI
       value: 
       objectReference: {fileID: 708113468}
@@ -4581,6 +4605,10 @@ PrefabInstance:
       propertyPath: CanStart
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3392652359194593424, guid: 396a8208324e4774ba3cbb1f401890b5, type: 3}
+      propertyPath: jsonFile
+      value: 
+      objectReference: {fileID: 4900000, guid: e3f057758b77b8d4b893b8d01c97240f, type: 3}
     - target: {fileID: 3392652359194593424, guid: 396a8208324e4774ba3cbb1f401890b5, type: 3}
       propertyPath: StartPT_UI
       value: 
@@ -7332,6 +7360,10 @@ PrefabInstance:
       propertyPath: CanStart
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3392652359194593424, guid: 396a8208324e4774ba3cbb1f401890b5, type: 3}
+      propertyPath: jsonFile
+      value: 
+      objectReference: {fileID: 4900000, guid: e3f057758b77b8d4b893b8d01c97240f, type: 3}
     - target: {fileID: 3392652359194593424, guid: 396a8208324e4774ba3cbb1f401890b5, type: 3}
       propertyPath: StartPT_UI
       value: 
