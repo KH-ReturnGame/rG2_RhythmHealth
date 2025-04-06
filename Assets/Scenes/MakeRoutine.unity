@@ -6507,6 +6507,18 @@ PrefabInstance:
     m_TransformParent: {fileID: 769248438}
     m_Modifications:
     - target: {fileID: 385063718298131893, guid: 5ab718a2198f9884aa92b0301e844f49, type: 3}
+      propertyPath: BPM_ID
+      value: 
+      objectReference: {fileID: 1197741371}
+    - target: {fileID: 385063718298131893, guid: 5ab718a2198f9884aa92b0301e844f49, type: 3}
+      propertyPath: content
+      value: 
+      objectReference: {fileID: 8307671349106497921}
+    - target: {fileID: 385063718298131893, guid: 5ab718a2198f9884aa92b0301e844f49, type: 3}
+      propertyPath: beatPrefab
+      value: 
+      objectReference: {fileID: 3300554991011793500, guid: fccd2388a6e59b844b1e586e49619562, type: 3}
+    - target: {fileID: 385063718298131893, guid: 5ab718a2198f9884aa92b0301e844f49, type: 3}
       propertyPath: inputField_ID
       value: 
       objectReference: {fileID: 814770686}
@@ -6642,6 +6654,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1bf4b7f658c3a14ebee201ac26a923a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &8307671349106497921 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4028023435995542880, guid: 5ab718a2198f9884aa92b0301e844f49, type: 3}
+  m_PrefabInstance: {fileID: 8307671349106497919}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

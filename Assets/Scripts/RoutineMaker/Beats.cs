@@ -5,6 +5,8 @@ public class Beats : MonoBehaviour
 {
     public int HowLong = 0; // How long the beat lasts
     public InputField inputField_ID;
+    public InputField BPM_ID;
+    public GameObject beatPrefab;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -26,6 +28,15 @@ public class Beats : MonoBehaviour
 
     public void FrameRoutine()
     {
-        //HowLong
+        if(BPM_ID.text != null && inputField_ID.text != null)
+        {
+            float frameCount = HowLong * int.Parse(BPM_ID.text) / 60f;
+            Transform content = GetComponent<ScrollRect>().content;
+            for(int i = 0; i < frameCount; i++)
+            {
+                GameObject beat = Instantiate(beatPrefab, content);
+                beat.name = "Beat_" + i;
+            }
+        }
     } 
 }
