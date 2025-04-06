@@ -28,11 +28,19 @@ public class Beats : MonoBehaviour
 
     public void FrameRoutine()
     {
-        if(BPM_ID.text != null && inputField_ID.text != null)
+        if (!string.IsNullOrEmpty(BPM_ID.text) && !string.IsNullOrEmpty(inputField_ID.text))
         {
             float frameCount = HowLong * int.Parse(BPM_ID.text) / 60f;
             Transform content = GetComponent<ScrollRect>().content;
-            for(int i = 0; i < frameCount; i++)
+    
+            // 기존 자식 오브젝트 제거
+            foreach (Transform child in content)
+            {
+                Destroy(child.gameObject);
+            }
+    
+            // 새 비트 오브젝트 생성
+            for (int i = 0; i < frameCount; i++)
             {
                 GameObject beat = Instantiate(beatPrefab, content);
                 beat.name = "Beat_" + i;
