@@ -2908,7 +2908,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 413807546}
   m_HandleRect: {fileID: 413807545}
   m_Direction: 2
-  m_Value: -0.00000017193001
+  m_Value: 1
   m_Size: 0.60335195
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -4171,7 +4171,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 710.0001}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1247705817
@@ -4226,6 +4226,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfde35f63b59dc241b530f624dc50a9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1256713380 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4028023435995542880, guid: 5ab718a2198f9884aa92b0301e844f49, type: 3}
+  m_PrefabInstance: {fileID: 8307671349106497919}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1261925976
 GameObject:
   m_ObjectHideFlags: 0
@@ -6513,7 +6518,7 @@ PrefabInstance:
     - target: {fileID: 385063718298131893, guid: 5ab718a2198f9884aa92b0301e844f49, type: 3}
       propertyPath: content
       value: 
-      objectReference: {fileID: 8307671349106497921}
+      objectReference: {fileID: 1256713380}
     - target: {fileID: 385063718298131893, guid: 5ab718a2198f9884aa92b0301e844f49, type: 3}
       propertyPath: beatPrefab
       value: 
@@ -6620,7 +6625,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2793617404252426133, guid: 5ab718a2198f9884aa92b0301e844f49, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.0000054731595
+      value: 0.00047912294
       objectReference: {fileID: 0}
     - target: {fileID: 4594526243929467793, guid: 5ab718a2198f9884aa92b0301e844f49, type: 3}
       propertyPath: m_AnchorMax.x
@@ -6654,11 +6659,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1bf4b7f658c3a14ebee201ac26a923a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &8307671349106497921 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4028023435995542880, guid: 5ab718a2198f9884aa92b0301e844f49, type: 3}
-  m_PrefabInstance: {fileID: 8307671349106497919}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
