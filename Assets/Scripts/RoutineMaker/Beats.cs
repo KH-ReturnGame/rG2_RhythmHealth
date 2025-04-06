@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,6 +8,8 @@ public class Beats : MonoBehaviour
     public InputField inputField_ID;
     public InputField BPM_ID;
     public GameObject beatPrefab;
+    
+    private List<GameObject> beatList = new List<GameObject>();
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -22,7 +25,7 @@ public class Beats : MonoBehaviour
         }
         catch
         {
-            Debug.LogWarning("Invalid input for HowLong. Please enter a number.");
+            //Debug.LogWarning("Invalid input for HowLong. Please enter a number.");
         }
     }
 
@@ -32,18 +35,20 @@ public class Beats : MonoBehaviour
         {
             float frameCount = HowLong * int.Parse(BPM_ID.text) / 60f;
             Transform content = GetComponent<ScrollRect>().content;
-    
+
             // 기존 자식 오브젝트 제거
-            foreach (Transform child in content)
+            foreach (GameObject beat in beatList)
             {
-                Destroy(child.gameObject);
+                Destroy(beat);
             }
-    
+            beatList.Clear();
+
             // 새 비트 오브젝트 생성
             for (int i = 0; i < frameCount; i++)
             {
                 GameObject beat = Instantiate(beatPrefab, content);
                 beat.name = "Beat_" + i;
+                beatList.Add(beat);
             }
         }
     } 

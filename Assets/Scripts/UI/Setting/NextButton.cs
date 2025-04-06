@@ -9,7 +9,6 @@ public class NextButton : MonoBehaviour
     [SerializeField] private int _SettingIdx;
     int _ScreenWidth, _ScreenHeight;
     bool _FullScreenOn;
-    float _VibrateRate;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,7 +16,6 @@ public class NextButton : MonoBehaviour
         _ScreenWidth = 1920;
         _ScreenHeight = 1080;
         _FullScreenOn = true;
-        _VibrateRate = 1;   
         Screen.SetResolution(_ScreenWidth, _ScreenHeight, _FullScreenOn);
     }
 
