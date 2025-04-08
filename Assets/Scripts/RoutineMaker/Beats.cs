@@ -48,6 +48,8 @@ public class Beats : MonoBehaviour
             {
                 GameObject beat = Instantiate(beatPrefab, content);
                 beat.name = "Beat_" + i;
+                BeatInfo beatinfo = beat.GetComponent<BeatInfo>();
+                beatinfo.Beat_index = i;
                 beatList.Add(beat);
             }
         }
