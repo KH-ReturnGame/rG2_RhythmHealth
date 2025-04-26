@@ -44,27 +44,27 @@ public class SaveInfo : MonoBehaviour
 
     public void Save_Artist(string temp)
     {
-        temp = artist;
+        artist = temp;
     }
     public void Save_ArtistLinks(string temp)
     {
-        temp = artistLinks;
+        artistLinks = temp;
     }
     public void Save_Songname(string temp)
     {
-        temp = song;
+        song = temp;
     }
     public void Save_Author(string temp)
     {
-        temp = author;
+        author = temp;
     }
     public void Save_LevelDesc(string temp)
     {
-        temp = levelDesc;
+        levelDesc = temp;
     }
     public void Save_levelTags(string temp)
     {
-        temp = levelTags;
+        levelTags = temp;
     }
     public void Save_Difficulty(string temp)
     {
