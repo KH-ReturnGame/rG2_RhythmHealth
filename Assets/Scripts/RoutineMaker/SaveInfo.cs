@@ -85,6 +85,13 @@ public class SaveInfo : MonoBehaviour
         speed = temp_speed;
     }
 
+//##########################################################################################################
+
+    public void Save_bpm(string temp)
+    {
+        float temp_bpm = float.Parse(temp);
+        BPM = temp_bpm;
+    }
     public void Save_NotesType(string temp)
     {
         noteType = temp;
@@ -94,26 +101,21 @@ public class SaveInfo : MonoBehaviour
         int temp_gym = int.Parse(temp);
         Gym = temp_gym;
     }
-    public void Save_bpm(string temp)
-    {
-        float temp_bpm = float.Parse(temp);
-        BPM = temp_bpm;
-    }
-    public void Save_Wait(string temp)
-    {
-        float temp_wait = float.Parse(temp);
-        wait = temp_wait;
-    }
-    public void Save_Long(string temp)
-    {
-        float temp_long = float.Parse(temp);
-        longNote = temp_long;
-    }    
     public void Save_Multi(string temp)
     {
         int temp_multi = int.Parse(temp);
         multiNote = temp_multi;
     }
+    public void Save_Long(string temp)
+    {
+        float temp_long = float.Parse(temp);
+        longNote = temp_long;
+    }
+    public void Save_Wait(string temp)
+    {
+        float temp_wait = float.Parse(temp);
+        wait = temp_wait;
+    }  
 
     public void Complete_note()
     {
@@ -127,7 +129,7 @@ public class SaveInfo : MonoBehaviour
         }
     }
 
-    public void Write_File() //찐 마지막 파일 쓰기 메소드
+    public void Write_File() //찐_최종 마지막 파일 쓰기 메소드
     {
         // 저장할 파일 경로 지정
         string filePath = Path.Combine(Application.persistentDataPath, "SaveInfo.txt");
