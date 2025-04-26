@@ -55,8 +55,8 @@ public class Beats : MonoBehaviour
         }
     }
 
-    public void Complete_note()
+    public void Complete_note(int index)
     {
-        
+        beatList[index].GetComponent<BeatInfo>().End_note();
     }
 }

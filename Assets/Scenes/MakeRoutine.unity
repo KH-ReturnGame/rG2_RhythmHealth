@@ -4010,9 +4010,9 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 430343266}
+  - {fileID: 1159410141}
   - {fileID: 1261925977}
   - {fileID: 2020021342}
-  - {fileID: 1159410141}
   - {fileID: 814770685}
   - {fileID: 1777545533}
   m_Father: {fileID: 0}
@@ -5375,6 +5375,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfde35f63b59dc241b530f624dc50a9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selected_index: 0
 --- !u!1 &1247705815
 GameObject:
   m_ObjectHideFlags: 0
@@ -5479,6 +5480,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfde35f63b59dc241b530f624dc50a9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selected_index: 0
 --- !u!1 &1256713380 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4028023435995542880, guid: 5ab718a2198f9884aa92b0301e844f49, type: 3}

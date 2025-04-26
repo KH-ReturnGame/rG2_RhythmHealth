@@ -32,12 +32,13 @@ public class BeatInfo : MonoBehaviour
         
     }
 
-    void OnPointerClick(PointerEventData eventData)     
+    public void OnPointerClick(PointerEventData eventData)     
     {         
         if (eventData.button.Equals(PointerEventData.InputButton.Right))
         {             
             SetNoteType();
             Debug.Log("Right-click detected on " + gameObject.name);
+            saveInfo.selected_index = Beat_index;
         }
         else if (eventData.button.Equals(PointerEventData.InputButton.Left))
         {             

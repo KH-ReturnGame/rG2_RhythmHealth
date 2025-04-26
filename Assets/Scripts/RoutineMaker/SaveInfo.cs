@@ -27,6 +27,7 @@ public class SaveInfo : MonoBehaviour
     private int multiNote;
 
     Beats beats;
+    public int selected_index;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -116,7 +117,14 @@ public class SaveInfo : MonoBehaviour
 
     public void Complete_note()
     {
-        beats.Complete_note();
+        if(selected_index != null)
+        {
+            beats.Complete_note(selected_index);
+        }
+        else
+        {
+            // Debug.LogWarning("노트 골라지지 않음"); // 노트가 선택되지 않았을 때 경고 메시지 출력
+        }
     }
 
     public void Write_File() //찐 마지막 파일 쓰기 메소드
