@@ -53,5 +53,10 @@ public class Beats : MonoBehaviour
                 beatList.Add(beat);
             }
         }
-    } 
+    }
+
+    public void Complete_note()
+    {
+        
+    }
 }

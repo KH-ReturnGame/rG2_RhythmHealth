@@ -25,10 +25,12 @@ public class SaveInfo : MonoBehaviour
     private float wait;
     private float longNote;
     private int multiNote;
+
+    Beats beats;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        beats = GameObject.Find("Beats").GetComponent<Beats>();
     }
 
     // Update is called once per frame
@@ -114,10 +116,10 @@ public class SaveInfo : MonoBehaviour
 
     public void Complete_note()
     {
-        
+        beats.Complete_note();
     }
 
-    public void Write_File()
+    public void Write_File() //찐 마지막 파일 쓰기 메소드
     {
         // 저장할 파일 경로 지정
         string filePath = Path.Combine(Application.persistentDataPath, "SaveInfo.txt");
@@ -149,6 +151,5 @@ public class SaveInfo : MonoBehaviour
             Debug.LogError("파일 저장 실패: " + e.Message);
         }
     }
-
     
 }
