@@ -143,35 +143,43 @@ public class SaveInfo : MonoBehaviour
         }
         else
         {
-            // // 저장할 파일 경로 지정
-            // string filePath = Path.Combine(Application.persistentDataPath, "SaveInfo.txt");
+            // 저장할 파일 경로 지정
+            string filePath = Path.Combine(Application.persistentDataPath, "SaveInfo.txt");
 
-            // // 저장할 데이터를 문자열로 구성 (각 항목을 개행 문자로 구분)
-            // string data = "Artist: " + artist + "\n" +
-            //               "Artist Permission: " + artistPermission + "\n" +
-            //               "Artist Links: " + artistLinks + "\n" +
-            //               "Song: " + song + "\n" +
-            //               "Author: " + author + "\n" +
-            //               "Preview Image: " + previewImage + "\n" +
-            //               "Preview Icon: " + previewIcon + "\n" +
-            //               "Level Description: " + levelDesc + "\n" +
-            //               "Level Tags: " + levelTags + "\n" +
-            //               "Difficulty: " + difficulty + "\n" +
-            //               "Song File: " + songFile + "\n" +
-            //               "BPM: " + bpm + "\n" +
-            //               "Damage Rate: " + damageRate + "\n" +
-            //               "Speed: " + speed + "\n";
+            // 저장할 데이터를 문자열로 구성 (각 항목을 개행 문자로 구분)
+            string data = "{" + "\n" +
+                          "settings:" + "\n" +
+                          "{" + "\n" +
+                          "artist: " + artist + "\n" +
+                          "artistPermission: " + artistPermission + "\n" +
+                          "artistLinks: " + artistLinks + "\n" +
+                          "song: " + song + "\n" +
+                          "author: " + author + "\n" +
+                          "previewImage: " + previewImage + "\n" +
+                          "previewIcon: " + previewIcon + "\n" +
+                          "levelDesc: " + levelDesc + "\n" +
+                          "levelTags: " + levelTags + "\n" +
+                          "difficulty: " + difficulty + "\n" +
+                          "songFile: " + songFile + "\n" +
+                          "bpm: " + bpm + "\n" +
+                          "damageRate: " + damageRate + "\n" +
+                          "speed: " + speed + "\n" +
+                          "}," + "\n" +
+                          "actions:" + "\n" +
+                          "[" + "\n" +
+                          "]" + "\n" +
+                          "}" + "\n";
 
-            // try 
-            // {
-            //     // 파일에 데이터를 기록합니다.
-            //     File.WriteAllText(filePath, data);
-            //     Debug.Log("파일 저장 완료: " + filePath);
-            // }
-            // catch(System.Exception e)
-            // {
-            //     Debug.LogError("파일 저장 실패: " + e.Message);
-            // }
+            try 
+            {
+                // 파일에 데이터를 기록합니다.
+                File.WriteAllText(filePath, data);
+                Debug.Log("파일 저장 완료: " + filePath);
+            }
+            catch(System.Exception e)
+            {
+                Debug.LogError("파일 저장 실패: " + e.Message);
+            }
         }
     }
     
