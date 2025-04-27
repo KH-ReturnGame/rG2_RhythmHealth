@@ -1,34 +1,73 @@
-using UnityEngine;
-using UnityEngine.UI;
+using System;
 using System.IO;
 using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+
+[Serializable]
+public class Settings {
+    public string artist;
+    public string artistPermission;
+    public string artistLinks;
+    public string song;
+    public string author;
+    public string previewImage;
+    public string previewIcon;
+    public string levelDesc;
+    public string levelTags;
+    public int difficulty;
+    public string songFile;
+    public float bpm;
+    public float damageRate;
+    public float speed;
+}
+
+[Serializable]
+public class ActionData {
+    public string NoteType;
+    public int Gym;
+    public float beatsPerMinute;
+    public int WaitBeat;
+    public float LongTime;
+    public int Multi;
+}
+
+[Serializable]
+public class SaveData {
+    public Settings settings;
+    public List<ActionData> actions;
+}
+
 public class SaveInfo : MonoBehaviour
 {
-    private string artist;
-    private string artistPermission;
-    private string artistLinks;
-    private string song;
-    private string author;
-    private string previewImage;
-    private string previewIcon;
-    private string levelDesc;
-    private string levelTags;
-    private int difficulty;
-    private string songFile;
-    private float bpm;
-    private float damageRate;
-    private float speed;
-
-    // private string noteType;
-    // private int Gym;
-    // private float BPM;
-    // private float wait;
-    // private float longNote;
-    // private int multiNote;
-
-    Beats beats;
+    public string artist;
+    public string artistPermission;
+    public string artistLinks;
+    public string song;
+    public string author;
+    public string previewImage;
+    public string previewIcon;
+    public string levelDesc;
+    public string levelTags;
+    public int difficulty;
+    public string songFile;
+    public float bpm;
+    public float damageRate;
+    public float speed;
+    //###################################################################################
+    public string NoteType;
+    public int Gym;
+    public float beatsPerMinute;
+    public int WaitBeat;
+    public float LongTime;
+    public int Multi;
+    //###################################################################################
+    // public Settings settings;
+    // public List<ActionData> actions;
+    //###################################################################################
+    public Beats beats;
     public int selected_index;
-    Warn warn;
+    public Warn warn;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -131,6 +170,7 @@ public class SaveInfo : MonoBehaviour
         }
     }
 
+    [ContextMenu("To Json Data")]
     public void Write_File() //찐_최종 마지막 파일 쓰기 메소드
     {
         if(selected_index == null)
@@ -143,44 +183,45 @@ public class SaveInfo : MonoBehaviour
         }
         else
         {
-            // 저장할 파일 경로 지정
-            string filePath = Path.Combine(Application.persistentDataPath, "SaveInfo.txt");
-
-            // 저장할 데이터를 문자열로 구성 (각 항목을 개행 문자로 구분)
-            string data = "{" + "\n" +
-                          "settings:" + "\n" +
-                          "{" + "\n" +
-                          "artist: " + artist + "\n" +
-                          "artistPermission: " + artistPermission + "\n" +
-                          "artistLinks: " + artistLinks + "\n" +
-                          "song: " + song + "\n" +
-                          "author: " + author + "\n" +
-                          "previewImage: " + previewImage + "\n" +
-                          "previewIcon: " + previewIcon + "\n" +
-                          "levelDesc: " + levelDesc + "\n" +
-                          "levelTags: " + levelTags + "\n" +
-                          "difficulty: " + difficulty + "\n" +
-                          "songFile: " + songFile + "\n" +
-                          "bpm: " + bpm + "\n" +
-                          "damageRate: " + damageRate + "\n" +
-                          "speed: " + speed + "\n" +
-                          "}," + "\n" +
-                          "actions:" + "\n" +
-                          "[" + "\n" +
-                          "]" + "\n" +
-                          "}" + "\n";
-
-            try 
-            {
-                // 파일에 데이터를 기록합니다.
-                File.WriteAllText(filePath, data);
-                Debug.Log("파일 저장 완료: " + filePath);
+            var data = new SaveData();
+            data.settings = new Settings {
+                artist = artist,
+                artistPermission = artistPermission,
+                artistLinks = artistLinks,
+                song = song,
+                author = author,
+                previewImage = previewImage,
+                previewIcon = previewIcon,
+                levelDesc = levelDesc,
+                levelTags = levelTags,
+                difficulty = difficulty,
+                songFile = songFile,
+                bpm = bpm,
+                damageRate = damageRate,
+                speed = speed
+            };
+            data.actions = new List<ActionData>();
+    
+            foreach (var beatObj in beats.beatList) {
+                var info = beatObj.GetComponent<BeatInfo>();
+                if (info == null || !info.isBeat) continue;
+    
+                var action = new ActionData {
+                    NoteType = info.NoteType,
+                    Gym = info.Gym,
+                    beatsPerMinute = bpm,
+                    WaitBeat = info.WaitBeat,
+                    LongTime = info.LongTime,
+                    Multi = info.Multi
+                };
+                data.actions.Add(action);
             }
-            catch(System.Exception e)
-            {
-                Debug.LogError("파일 저장 실패: " + e.Message);
-            }
+    
+            // JSON 변환 및 저장
+            string json = JsonUtility.ToJson(data, true);
+            string path = Path.Combine(Application.persistentDataPath, song + ".json");
+            File.WriteAllText(path, json);
+            Debug.Log("JSON 저장 완료: " + path);
         }
     }
-    
 }

@@ -5,22 +5,22 @@ using TMPro;
 
 public class BeatInfo : MonoBehaviour
 {
-    bool isBeat = false;
+    public bool isBeat = false;
     public int Beat_index;
 
-    string NoteType;
-    int Gym;
-    int WaitBeat;
-    float LongTime;
-    int Multi;
+    public string NoteType;
+    public int Gym;
+    public int WaitBeat;
+    public float LongTime;
+    public int Multi;
 
     public TMP_Dropdown NoteType_ID;
     public InputField Gym_ID;
     public InputField LongTime_ID;
     public InputField Multi_ID;
-    private string[] NoteTypeList = { "Short", "Long", "Double", "Multi" };
+    public string[] NoteTypeList = { "Short", "Long", "Double", "Multi" };
 
-    SaveInfo saveInfo;
+    public SaveInfo saveInfo;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {

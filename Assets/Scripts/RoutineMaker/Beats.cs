@@ -9,7 +9,7 @@ public class Beats : MonoBehaviour
     public InputField BPM_ID;
     public GameObject beatPrefab;
     
-    private List<GameObject> beatList = new List<GameObject>();
+    public List<GameObject> beatList = new List<GameObject>();
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
