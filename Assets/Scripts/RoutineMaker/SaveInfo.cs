@@ -62,9 +62,6 @@ public class SaveInfo : MonoBehaviour
     public float LongTime;
     public int Multi;
     //###################################################################################
-    // public Settings settings;
-    // public List<ActionData> actions;
-    //###################################################################################
     public Beats beats;
     public int selected_index;
     public Warn warn;
@@ -125,38 +122,6 @@ public class SaveInfo : MonoBehaviour
         float temp_speed = float.Parse(temp.text);
         speed = temp_speed;
     }
-
-//##########################################################################################################
-
-    // public void Save_bpm(string temp)
-    // {
-    //     float temp_bpm = float.Parse(temp);
-    //     BPM = temp_bpm;
-    // }
-    // public void Save_NotesType(string temp)
-    // {
-    //     noteType = temp;
-    // }
-    // public void Save_Gym(string temp)
-    // {
-    //     int temp_gym = int.Parse(temp);
-    //     Gym = temp_gym;
-    // }
-    // public void Save_Multi(string temp)
-    // {
-    //     int temp_multi = int.Parse(temp);
-    //     multiNote = temp_multi;
-    // }
-    // public void Save_Long(string temp)
-    // {
-    //     float temp_long = float.Parse(temp);
-    //     longNote = temp_long;
-    // }
-    // public void Save_Wait(string temp)
-    // {
-    //     float temp_wait = float.Parse(temp);
-    //     wait = temp_wait;
-    // }  
 
     public void Complete_note()
     {
