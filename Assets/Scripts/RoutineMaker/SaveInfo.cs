@@ -11,7 +11,6 @@ public class Settings
     public string artistLinks;
     public string song;
     public string author;
-    public string previewImage;
     public string previewIcon;
     public string levelDesc;
     public string levelTags;
@@ -46,7 +45,6 @@ public class SaveInfo : MonoBehaviour
     public string artistLinks;
     public string song;
     public string author;
-    public string previewImage;
     public string previewIcon;
     public string levelDesc;
     public string levelTags;
@@ -149,7 +147,6 @@ public class SaveInfo : MonoBehaviour
                 artistLinks = artistLinks,
                 song = song,
                 author = author,
-                previewImage = previewImage,
                 previewIcon = previewIcon,
                 levelDesc = levelDesc,
                 levelTags = levelTags,
