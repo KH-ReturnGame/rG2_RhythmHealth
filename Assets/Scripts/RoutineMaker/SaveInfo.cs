@@ -5,9 +5,9 @@ using UnityEngine;
 using UnityEngine.UI;
 
 [Serializable]
-public class Settings {
+public class Settings 
+{
     public string artist;
-    public string artistPermission;
     public string artistLinks;
     public string song;
     public string author;
@@ -23,7 +23,8 @@ public class Settings {
 }
 
 [Serializable]
-public class ActionData {
+public class ActionData 
+{
     public string NoteType;
     public int Gym;
     public float beatsPerMinute;
@@ -33,7 +34,8 @@ public class ActionData {
 }
 
 [Serializable]
-public class SaveData {
+public class SaveData 
+{
     public Settings settings;
     public List<ActionData> actions;
 }
@@ -41,7 +43,6 @@ public class SaveData {
 public class SaveInfo : MonoBehaviour
 {
     public string artist;
-    public string artistPermission;
     public string artistLinks;
     public string song;
     public string author;
@@ -70,12 +71,6 @@ public class SaveInfo : MonoBehaviour
     {
         beats = GameObject.Find("Beats").GetComponent<Beats>();
         warn = GameObject.Find("Canvas").GetComponent<Warn>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     public void Save_Artist(InputField temp)
@@ -123,7 +118,7 @@ public class SaveInfo : MonoBehaviour
         speed = temp_speed;
     }
 
-    public void Complete_note()
+    public void Complete_note() // 노트 하나 완료료
     {
         if(selected_index != null)
         {
@@ -142,7 +137,7 @@ public class SaveInfo : MonoBehaviour
         {
             warn.make_Warn("노트가 하나도 선택되지 않았습니다.");
         }
-        else if(artist == null || artistPermission == null || artistLinks == null || song == null || author == null || levelDesc == null || levelTags == null || difficulty == 0 || songFile == null || bpm == 0 || damageRate == 0 || speed == 0)
+        else if(artist == null || artistLinks == null || song == null || author == null || levelDesc == null || levelTags == null || difficulty == 0 || songFile == null || bpm == 0 || damageRate == 0 || speed == 0)
         {
             warn.make_Warn("정보가 모두 입력되지 않았습니다.");
         }
@@ -151,7 +146,6 @@ public class SaveInfo : MonoBehaviour
             var data = new SaveData();
             data.settings = new Settings {
                 artist = artist,
-                artistPermission = artistPermission,
                 artistLinks = artistLinks,
                 song = song,
                 author = author,
