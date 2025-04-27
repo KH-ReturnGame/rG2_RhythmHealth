@@ -19,12 +19,12 @@ public class SaveInfo : MonoBehaviour
     private float damageRate;
     private float speed;
 
-    private string noteType;
-    private int Gym;
-    private float BPM;
-    private float wait;
-    private float longNote;
-    private int multiNote;
+    // private string noteType;
+    // private int Gym;
+    // private float BPM;
+    // private float wait;
+    // private float longNote;
+    // private int multiNote;
 
     Beats beats;
     public int selected_index;
@@ -42,82 +42,82 @@ public class SaveInfo : MonoBehaviour
         
     }
 
-    public void Save_Artist(string temp)
+    public void Save_Artist(InputField temp)
     {
-        artist = temp;
+        artist = temp.text;
     }
-    public void Save_ArtistLinks(string temp)
+    public void Save_ArtistLinks(InputField temp)
     {
-        artistLinks = temp;
+        artistLinks = temp.text;
     }
-    public void Save_Songname(string temp)
+    public void Save_Songname(InputField temp)
     {
-        song = temp;
+        song = temp.text;
     }
-    public void Save_Author(string temp)
+    public void Save_Author(InputField temp)
     {
-        author = temp;
+        author = temp.text;
     }
-    public void Save_LevelDesc(string temp)
+    public void Save_LevelDesc(InputField temp)
     {
-        levelDesc = temp;
+        levelDesc = temp.text;
     }
-    public void Save_levelTags(string temp)
+    public void Save_levelTags(InputField temp)
     {
-        levelTags = temp;
+        levelTags = temp.text;
     }
-    public void Save_Difficulty(string temp)
+    public void Save_Difficulty(InputField temp)
     {
-        int temp_difficulty = int.Parse(temp);
+        int temp_difficulty = int.Parse(temp.text);
         difficulty = temp_difficulty;
     }
-    public void Save_BPM(string temp)
+    public void Save_BPM(InputField temp)
     {
-        float temp_bpm = float.Parse(temp);
+        float temp_bpm = float.Parse(temp.text);
         bpm = temp_bpm;
     }
-    public void Save_DamageRate(string temp)
+    public void Save_DamageRate(InputField temp)
     {
-        float temp_damagerate = float.Parse(temp);
+        float temp_damagerate = float.Parse(temp.text);
         damageRate = temp_damagerate;
     }
-    public void Save_speed(string temp)
+    public void Save_speed(InputField temp)
     {
-        float temp_speed = float.Parse(temp);
+        float temp_speed = float.Parse(temp.text);
         speed = temp_speed;
     }
 
 //##########################################################################################################
 
-    public void Save_bpm(string temp)
-    {
-        float temp_bpm = float.Parse(temp);
-        BPM = temp_bpm;
-    }
-    public void Save_NotesType(string temp)
-    {
-        noteType = temp;
-    }
-    public void Save_Gym(string temp)
-    {
-        int temp_gym = int.Parse(temp);
-        Gym = temp_gym;
-    }
-    public void Save_Multi(string temp)
-    {
-        int temp_multi = int.Parse(temp);
-        multiNote = temp_multi;
-    }
-    public void Save_Long(string temp)
-    {
-        float temp_long = float.Parse(temp);
-        longNote = temp_long;
-    }
-    public void Save_Wait(string temp)
-    {
-        float temp_wait = float.Parse(temp);
-        wait = temp_wait;
-    }  
+    // public void Save_bpm(string temp)
+    // {
+    //     float temp_bpm = float.Parse(temp);
+    //     BPM = temp_bpm;
+    // }
+    // public void Save_NotesType(string temp)
+    // {
+    //     noteType = temp;
+    // }
+    // public void Save_Gym(string temp)
+    // {
+    //     int temp_gym = int.Parse(temp);
+    //     Gym = temp_gym;
+    // }
+    // public void Save_Multi(string temp)
+    // {
+    //     int temp_multi = int.Parse(temp);
+    //     multiNote = temp_multi;
+    // }
+    // public void Save_Long(string temp)
+    // {
+    //     float temp_long = float.Parse(temp);
+    //     longNote = temp_long;
+    // }
+    // public void Save_Wait(string temp)
+    // {
+    //     float temp_wait = float.Parse(temp);
+    //     wait = temp_wait;
+    // }  
 
     public void Complete_note()
     {
