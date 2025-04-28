@@ -21,10 +21,12 @@ public class BeatInfo : MonoBehaviour
     public string[] NoteTypeList = { "Short", "Long", "Double", "Multi" };
 
     public SaveInfo saveInfo;
+    public Beats beats;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         saveInfo = GameObject.Find("SAVEBUTTON").GetComponent<SaveInfo>();
+        beats = GameObject.Find("Beats").GetComponent<Beats>();
         NoteType_ID = GameObject.Find("Notetype").GetComponent<TMP_Dropdown>();
         Gym_ID = GameObject.Find("Gym").GetComponent<InputField>();        
         Multi_ID = GameObject.Find("Multi").GetComponent<InputField>();
@@ -34,7 +36,7 @@ public class BeatInfo : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     public void NoteClick()     
@@ -45,7 +47,6 @@ public class BeatInfo : MonoBehaviour
             Gym_ID.text = Gym.ToString();
             LongTime_ID.text = LongTime.ToString();
             Multi_ID.text = Multi.ToString();
-            saveInfo.selected_index = Beat_index;
         }
         else
         {   
@@ -53,8 +54,8 @@ public class BeatInfo : MonoBehaviour
             Gym_ID.text = "";
             LongTime_ID.text = "";
             Multi_ID.text = "";
-            saveInfo.selected_index = Beat_index;
         }
+        saveInfo.selected_index = Beat_index;
     }
 
     public void SetNoteType()
@@ -73,6 +74,25 @@ public class BeatInfo : MonoBehaviour
     {
         Multi = int.Parse(Multi_ID.text);
     }
+    public void SetWait()
+    {
+        WaitBeat = 0;
+        if(Beat_index == 0)
+        {
+            WaitBeat = 0;
+        }
+        else
+        {
+            for(int i = Beat_index - 1; i >= 0; i--)
+            {
+                WaitBeat++;
+                if (beats.beatList[i].GetComponent<BeatInfo>().isBeat == true)
+                {
+                    break;
+                }
+            }
+        }
+    }
 
     public void End_note()
     {
@@ -81,6 +101,10 @@ public class BeatInfo : MonoBehaviour
         SetGym();
         SetLongtime();
         SetMulti();
+        for(int i = Beat_index; i < beats.beatList.Count; i++)
+        {
+            beats.beatList[i].GetComponent<BeatInfo>().SetWait();
+        }
         Change_Color();
     }
 

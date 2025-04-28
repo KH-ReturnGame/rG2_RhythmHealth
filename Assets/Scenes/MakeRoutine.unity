@@ -6522,20 +6522,14 @@ MonoBehaviour:
   artistLinks: 
   song: 
   author: 
-  previewIcon: 
+  previewIcon: aa
   levelDesc: 
   levelTags: 
   difficulty: 0
-  songFile: 
+  songFile: aa
   bpm: 0
   damageRate: 0
   speed: 0
-  NoteType: 
-  Gym: 0
-  beatsPerMinute: 0
-  WaitBeat: 0
-  LongTime: 0
-  Multi: 0
   beats: {fileID: 0}
   selected_index: 0
   warn: {fileID: 0}

@@ -54,13 +54,6 @@ public class SaveInfo : MonoBehaviour
     public float damageRate;
     public float speed;
     //###################################################################################
-    public string NoteType;
-    public int Gym;
-    public float beatsPerMinute;
-    public int WaitBeat;
-    public float LongTime;
-    public int Multi;
-    //###################################################################################
     public Beats beats;
     public int selected_index;
     public Warn warn;
@@ -116,9 +109,9 @@ public class SaveInfo : MonoBehaviour
         speed = temp_speed;
     }
 
-    public void Complete_note() // 노트 하나 완료료
+    public void Complete_note() // 노트 하나 완료
     {
-        if(selected_index != null)
+        if(beats.beatList.Count != 0)
         {
             beats.Complete_note(selected_index);
         }
@@ -131,7 +124,7 @@ public class SaveInfo : MonoBehaviour
     [ContextMenu("To Json Data")]
     public void Write_File() //찐_최종 마지막 파일 쓰기 메소드
     {
-        if(selected_index == null)
+        if(beats.beatList.Count == 0)
         {
             warn.make_Warn("노트가 하나도 선택되지 않았습니다.");
         }
@@ -162,14 +155,7 @@ public class SaveInfo : MonoBehaviour
                 var info = beatObj.GetComponent<BeatInfo>();
                 if (info == null || !info.isBeat) continue;
     
-                var action = new ActionData {
-                    NoteType = info.NoteType,
-                    Gym = info.Gym,
-                    beatsPerMinute = bpm,
-                    WaitBeat = info.WaitBeat,
-                    LongTime = info.LongTime,
-                    Multi = info.Multi
-                };
+                var action = new ActionData {NoteType = info.NoteType, Gym = info.Gym, beatsPerMinute = bpm, WaitBeat = info.WaitBeat, LongTime = info.LongTime, Multi = info.Multi};
                 data.actions.Add(action);
             }
     
