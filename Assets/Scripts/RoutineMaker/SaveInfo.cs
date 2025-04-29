@@ -3,6 +3,7 @@ using System.IO;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using SimpleFileBrowser;
 
 [Serializable]
 public class Settings 
@@ -107,6 +108,28 @@ public class SaveInfo : MonoBehaviour
     {
         float temp_speed = float.Parse(temp.text);
         speed = temp_speed;
+    }
+    public void Save_SongFile()
+    {
+        FileBrowser.SetFilters(true, new FileBrowser.Filter("노래", ".mp3", ".wav"));
+        StartCoroutine( FileBrowser.WaitForLoadDialog(FileBrowser.PickMode.Files, true, null, null,
+        "Select Music", "Open"));
+        if( FileBrowser.Success ) {
+          var raw = System.IO.File.ReadAllBytes(FileBrowser.Result[0]);
+          Texture2D tex = new Texture2D(2,2);
+          tex.LoadImage(raw);
+        }
+    }
+    public void Save_PreviewIcon()
+    {
+        FileBrowser.SetFilters(true, new FileBrowser.Filter("이미지", ".jpg", ".png"));
+        StartCoroutine( FileBrowser.WaitForLoadDialog(FileBrowser.PickMode.Files, true, null, null,
+        "Select Image", "Open"));
+        if( FileBrowser.Success ) {
+          var raw = System.IO.File.ReadAllBytes(FileBrowser.Result[0]);
+          Texture2D tex = new Texture2D(2,2);
+          tex.LoadImage(raw);
+        }
     }
 
     public void Complete_note() // 노트 하나 완료
