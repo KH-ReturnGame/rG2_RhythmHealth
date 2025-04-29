@@ -114,37 +114,14 @@ public class SaveInfo : MonoBehaviour
         float temp_speed = float.Parse(temp.text);
         speed = temp_speed;
     }
-    public void Save_SongFile()
+    
+    public void Save_PreviewIcon(GameObject temp)
     {
-        StartCoroutine(BrowseSongFile());
+        StartCoroutine(BrowseIcon(temp));
     }
-    IEnumerator BrowseSongFile()
+    IEnumerator BrowseIcon(GameObject temp)
     {
-        FileBrowser.SetFilters(true, new FileBrowser.Filter("노래", ".mp3", ".wav"));
-        yield return FileBrowser.WaitForLoadDialog(
-            FileBrowser.PickMode.Files,   // 파일만 선택
-            false,                        // 다중 선택 비허용
-            null, null,                   // 초기 경로·이름 없음
-            "Select music", "Open"        // 제목·버튼 텍스트
-        );
-        if( FileBrowser.Success )
-        {
-            songFile = FileBrowser.Result[0];
-            Debug.Log($"music path saved: {songFile}");
-        }
-        else
-        {
-            Debug.Log("music selection canceled.");
-        }
-        yield return null;
-    }
-    public void Save_PreviewIcon()
-    {
-        StartCoroutine(BrowseIcon());
-    }
-    IEnumerator BrowseIcon()
-    {
-        FileBrowser.SetFilters(true, new FileBrowser.Filter("이미지", ".jpg", ".png"));
+        FileBrowser.SetFilters(true, new FileBrowser.Filter(".jpg", ".png"));
         yield return FileBrowser.WaitForLoadDialog(
             FileBrowser.PickMode.Files,   // 파일만 선택
             false,                        // 다중 선택 비허용
@@ -155,10 +132,37 @@ public class SaveInfo : MonoBehaviour
         {
             previewIcon = FileBrowser.Result[0];
             Debug.Log($"Preview icon path saved: {previewIcon}");
+            temp.SetActive(true);
         }
         else
         {
             Debug.Log("Image selection canceled.");
+        }
+        yield return null;
+    }
+
+    public void Save_SongFile(GameObject tempp)
+    {
+        StartCoroutine(BrowseSongFile(tempp));
+    }
+    IEnumerator BrowseSongFile(GameObject tempp)
+    {
+        FileBrowser.SetFilters(true, new FileBrowser.Filter(".mp3", ".wav"));
+        yield return FileBrowser.WaitForLoadDialog(
+            FileBrowser.PickMode.Files,   // 파일만 선택
+            false,                        // 다중 선택 비허용
+            null, null,                   // 초기 경로·이름 없음
+            "Select music", "Open"        // 제목·버튼 텍스트
+        );
+        if( FileBrowser.Success )
+        {
+            songFile = FileBrowser.Result[0];
+            Debug.Log($"music path saved: {songFile}");
+            tempp.SetActive(true);
+        }
+        else
+        {
+            Debug.Log("music selection canceled.");
         }
         yield return null;
     }
@@ -195,11 +199,10 @@ public class SaveInfo : MonoBehaviour
     void Write_json()
     {
         Directory.CreateDirectory("C:/RHRoutines/" + song); // 디렉토리 생성
-        // 노래파일 복사 및 경로 변경
-        File.Copy(songFile, "C:/RHRoutines/" + song + "/" + song + ".mp3", true); // 노래파일 복사 및 경로 변경
-        songFile = "C:/RHRoutines/" + song + "/" + song + ".mp3"; // 노래파일 경로 변경
-        // 미리보기 이미지 복사 및 경로 변경
+        // 노래파일, 미리보기 이미지지 복사 및 경로 변경
+        File.Copy(songFile, "C:/RHRoutines/" + song + "/" + song + ".mp3", true);
         File.Copy(previewIcon, "C:/RHRoutines/" + song + "/" + song + ".png", true);
+        songFile = "C:/RHRoutines/" + song + "/" + song + ".mp3"; // 노래파일 경로 변경
         previewIcon = "C:/RHRoutines/" + song + "/" + song + ".png"; // 미리보기 이미지 경로 변경
 
         var data = new SaveData();
