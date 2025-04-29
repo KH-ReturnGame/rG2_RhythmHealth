@@ -14,11 +14,9 @@ public class GameData_
 public class GameSettings_
 {
     public string artist;
-    public string artistPermission;
     public string artistLinks;
     public string song;
     public string author;
-    public string previewImage;
     public string previewIcon;
     public string levelInfo;
     public string levelTags;
