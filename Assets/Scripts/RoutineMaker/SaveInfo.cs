@@ -197,10 +197,11 @@ public class SaveInfo : MonoBehaviour
         Directory.CreateDirectory("C:/RHRoutines/" + song); // 디렉토리 생성
         // 노래파일 복사 및 경로 변경
         File.Copy(songFile, "C:/RHRoutines/" + song + "/" + song + ".mp3", true); // 노래파일 복사 및 경로 변경
-        
+        songFile = "C:/RHRoutines/" + song + "/" + song + ".mp3"; // 노래파일 경로 변경
         // 미리보기 이미지 복사 및 경로 변경
         File.Copy(previewIcon, "C:/RHRoutines/" + song + "/" + song + ".png", true);
-        
+        previewIcon = "C:/RHRoutines/" + song + "/" + song + ".png"; // 미리보기 이미지 경로 변경
+
         var data = new SaveData();
         data.settings = new Settings {
             artist = artist,
