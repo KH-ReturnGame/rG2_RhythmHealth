@@ -184,36 +184,41 @@ public class SaveInfo : MonoBehaviour
         }
         else
         {
-            var data = new SaveData();
-            data.settings = new Settings {
-                artist = artist,
-                artistLinks = artistLinks,
-                song = song,
-                author = author,
-                previewIcon = previewIcon,
-                levelDesc = levelDesc,
-                levelTags = levelTags,
-                difficulty = difficulty,
-                songFile = songFile,
-                bpm = bpm,
-                damageRate = damageRate,
-                speed = speed
-            };
-            data.actions = new List<ActionData>();
-    
-            foreach (var beatObj in beats.beatList) {
-                var info = beatObj.GetComponent<BeatInfo>();
-                if (info == null || !info.isBeat) continue;
-    
-                var action = new ActionData {NoteType = info.NoteType, Gym = info.Gym, beatsPerMinute = bpm, WaitBeat = info.WaitBeat, LongTime = info.LongTime, Multi = info.Multi};
-                data.actions.Add(action);
-            }
-    
-            // JSON 변환 및 저장
-            string json = JsonUtility.ToJson(data, true);
-            string path = Path.Combine(Application.persistentDataPath, song + ".json");
-            File.WriteAllText(path, json);
-            Debug.Log("JSON 저장 완료: " + path);
+            Write_json();
         }
+    }
+
+    void Write_json()
+    {
+        var data = new SaveData();
+        data.settings = new Settings {
+            artist = artist,
+            artistLinks = artistLinks,
+            song = song,
+            author = author,
+            previewIcon = previewIcon,
+            levelDesc = levelDesc,
+            levelTags = levelTags,
+            difficulty = difficulty,
+            songFile = songFile,
+            bpm = bpm,
+            damageRate = damageRate,
+            speed = speed
+        };
+        data.actions = new List<ActionData>();
+
+        foreach (var beatObj in beats.beatList) {
+            var info = beatObj.GetComponent<BeatInfo>();
+            if (info == null || !info.isBeat) continue;
+
+            var action = new ActionData {NoteType = info.NoteType, Gym = info.Gym, beatsPerMinute = bpm, WaitBeat = info.WaitBeat, LongTime = info.LongTime, Multi = info.Multi};
+            data.actions.Add(action);
+        }
+
+        // JSON 변환 및 저장
+        string json = JsonUtility.ToJson(data, true);
+        string path = Path.Combine(Application.persistentDataPath, song + ".json");
+        File.WriteAllText(path, json);
+        Debug.Log("JSON 저장 완료: " + path);
     }
 }
