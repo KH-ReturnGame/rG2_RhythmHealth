@@ -1,5 +1,6 @@
 using System;
 using System.IO;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -111,25 +112,51 @@ public class SaveInfo : MonoBehaviour
     }
     public void Save_SongFile()
     {
+        StartCoroutine(BrowseSongFile());
+    }
+    IEnumerator BrowseSongFile()
+    {
         FileBrowser.SetFilters(true, new FileBrowser.Filter("노래", ".mp3", ".wav"));
-        StartCoroutine( FileBrowser.WaitForLoadDialog(FileBrowser.PickMode.Files, true, null, null,
-        "Select Music", "Open"));
-        if( FileBrowser.Success ) {
-          var raw = System.IO.File.ReadAllBytes(FileBrowser.Result[0]);
-          Texture2D tex = new Texture2D(2,2);
-          tex.LoadImage(raw);
+        yield return FileBrowser.WaitForLoadDialog(
+            FileBrowser.PickMode.Files,   // 파일만 선택
+            false,                        // 다중 선택 비허용
+            null, null,                   // 초기 경로·이름 없음
+            "Select music", "Open"        // 제목·버튼 텍스트
+        );
+        if( FileBrowser.Success )
+        {
+            songFile = FileBrowser.Result[0];
+            Debug.Log($"music path saved: {songFile}");
         }
+        else
+        {
+            Debug.Log("music selection canceled.");
+        }
+        yield return null;
     }
     public void Save_PreviewIcon()
     {
+        StartCoroutine(BrowseIcon());
+    }
+    IEnumerator BrowseIcon()
+    {
         FileBrowser.SetFilters(true, new FileBrowser.Filter("이미지", ".jpg", ".png"));
-        StartCoroutine( FileBrowser.WaitForLoadDialog(FileBrowser.PickMode.Files, true, null, null,
-        "Select Image", "Open"));
-        if( FileBrowser.Success ) {
-          var raw = System.IO.File.ReadAllBytes(FileBrowser.Result[0]);
-          Texture2D tex = new Texture2D(2,2);
-          tex.LoadImage(raw);
+        yield return FileBrowser.WaitForLoadDialog(
+            FileBrowser.PickMode.Files,   // 파일만 선택
+            false,                        // 다중 선택 비허용
+            null, null,                   // 초기 경로·이름 없음
+            "Select Image", "Open"        // 제목·버튼 텍스트
+        );
+        if( FileBrowser.Success )
+        {
+            previewIcon = FileBrowser.Result[0];
+            Debug.Log($"Preview icon path saved: {previewIcon}");
         }
+        else
+        {
+            Debug.Log("Image selection canceled.");
+        }
+        yield return null;
     }
 
     public void Complete_note() // 노트 하나 완료
