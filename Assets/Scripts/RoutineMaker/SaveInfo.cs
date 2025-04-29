@@ -64,6 +64,10 @@ public class SaveInfo : MonoBehaviour
     {
         beats = GameObject.Find("Beats").GetComponent<Beats>();
         warn = GameObject.Find("Canvas").GetComponent<Warn>();
+        if(!Directory.Exists("C:/RHRoutines"))
+        {
+            Directory.CreateDirectory("C:/RHRoutines");
+        }
     }
 
     public void Save_Artist(InputField temp)
@@ -190,6 +194,13 @@ public class SaveInfo : MonoBehaviour
 
     void Write_json()
     {
+        Directory.CreateDirectory("C:/RHRoutines/" + song); // 디렉토리 생성
+        // 노래파일 복사 및 경로 변경
+        File.Copy(songFile, "C:/RHRoutines/" + song + "/" + song + ".mp3", true); // 노래파일 복사 및 경로 변경
+        
+        // 미리보기 이미지 복사 및 경로 변경
+        File.Copy(previewIcon, "C:/RHRoutines/" + song + "/" + song + ".png", true);
+        
         var data = new SaveData();
         data.settings = new Settings {
             artist = artist,
@@ -215,10 +226,10 @@ public class SaveInfo : MonoBehaviour
             data.actions.Add(action);
         }
 
-        // JSON 변환 및 저장
-        string json = JsonUtility.ToJson(data, true);
-        string path = Path.Combine(Application.persistentDataPath, song + ".json");
-        File.WriteAllText(path, json);
+        string json = JsonUtility.ToJson(data, true); // JSON 변환
+
+        string path = Path.Combine("C:/RHRoutines/" + song, song + ".json");
+        File.WriteAllText(path, json); // JSON 파일로 저장
         Debug.Log("JSON 저장 완료: " + path);
     }
 }
