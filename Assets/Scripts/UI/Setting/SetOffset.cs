@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -20,6 +21,16 @@ public class SetOffset : MonoBehaviour
 
     public void SetOffetStart()
     {
-
+        List<float> _Offset = new List<float>();
+        float offset = 0;
+        for(int i = 0; i < 10; i++)
+        {
+            _Offset.Add(0);
+        }
+        for(int i = 0; i < 10; i++)
+        {
+            offset += _Offset[i];   
+        }
+        offset /= 10;
     }
 }
