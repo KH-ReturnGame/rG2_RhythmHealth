@@ -51,7 +51,7 @@ public class ReadLoadGame : MonoBehaviour
     int WorkIndex = 0;
     string songPath;  
     public float offset;
-
+    public bool isNotPrologue;
     void Start()
     {
         offset = PlayerPrefs.GetInt("PlayerOffset");
@@ -62,7 +62,18 @@ public class ReadLoadGame : MonoBehaviour
 
     void SetUp()
     {
-        gameData = JsonUtility.FromJson<GameData>(jsonFile.text);
+        if(isNotPrologue)
+        {
+            string song = PlayerPrefs.GetString("SongName");
+            string jsonPath = Path.Combine("C:/RHRoutines", song, song + ".json");
+
+            string jsonText = File.ReadAllText(jsonPath);
+            gameData = JsonUtility.FromJson<GameData>(jsonText);
+        }
+        else
+        {
+            gameData = JsonUtility.FromJson<GameData>(jsonFile.text);
+        }
         BPM = gameData.settings.bpm;
         songPath = Path.Combine(Application.streamingAssetsPath, gameData.settings.songFile);
     }

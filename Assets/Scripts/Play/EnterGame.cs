@@ -3,6 +3,7 @@ using System.IO;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using TMPro;
 
 [Serializable]
@@ -104,7 +105,8 @@ public class EnterGame : MonoBehaviour
 
     public void EnterGameData()
     {
-        
+        PlayerPrefs.SetString("SongName", routines[index].settings.song);
+        SceneManager.LoadScene("ReadRHT");
     }
 
     public void ExitGameData()

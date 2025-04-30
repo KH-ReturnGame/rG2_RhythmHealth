@@ -5,11 +5,11 @@
 		"artistLinks": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13209173&menuNo=200020", 
 		"song": "애국가", 
 		"author": "Pangu",
-		"previewIcon": "icon.png",
+		"previewIcon": "애국가.png",
 		"levelDesc": "Aegukka is a Korean national anthem.", 
 		"levelTags": "국가, anthem, national", 
 		"difficulty": 1, 
-		"songFile": "kns.ogg", 
+		"songFile": "애국가.ogg", 
 		"bpm": 100,
 		"damageRate": 2,
 		"speed": 1.0
