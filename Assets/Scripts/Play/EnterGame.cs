@@ -75,23 +75,9 @@ public class EnterGame : MonoBehaviour
         {
             texture2d.LoadImage(byteTexture);
         }
-
-        if(texture2d.width > 500)
-        {
-            icon.rectTransform.sizeDelta = new Vector2(500, 500 * texture2d.height / texture2d.width);
-        }
-        else if(texture2d.height > 500)
-        {
-            icon.rectTransform.sizeDelta = new Vector2(500 / texture2d.height * texture2d.width, 500);
-        }
-        else
-        {
-            if(texture2d.width > texture2d.height)
-                icon.rectTransform.sizeDelta = new Vector2(500, 500 * texture2d.height / texture2d.width);
-            else
-                icon.rectTransform.sizeDelta = new Vector2(500 / texture2d.height * texture2d.width, 500);
-        }
-
+        
+        icon.rectTransform.sizeDelta = new Vector2(500, 500);
+    
         Sprite sprite = Sprite.Create(texture2d, new Rect(0, 0, texture2d.width, texture2d.height), new Vector2(0.5f, 0.5f), 100);
         icon.sprite = sprite;
     }
@@ -114,5 +100,16 @@ public class EnterGame : MonoBehaviour
             index = routines.Count - 1;
         }
         LoadData();
+    }
+
+    public void EnterGameData()
+    {
+        
+    }
+
+    public void ExitGameData()
+    {
+        GameObject PUI = GameObject.Find("SongSelectUi");
+        PUI.SetActive(false);
     }
 }
