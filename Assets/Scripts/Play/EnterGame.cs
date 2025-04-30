@@ -63,10 +63,34 @@ public class EnterGame : MonoBehaviour
     public void LoadData()
     {   
         var data = routines[index];
-        SongName.text = data.settings.song;
-        SongDesc.text = data.settings.levelDesc;
-        string spriteName = Path.GetFileNameWithoutExtension(data.settings.previewIcon);
-        icon.sprite = Resources.Load<Sprite>(spriteName);
+
+        SongName.text = data.settings.song; // 제목 읽어오기
+        SongDesc.text = data.settings.levelDesc; // 설명 읽어오기
+
+        // 아이콘 읽어오기
+        byte[] byteTexture = File.ReadAllBytes(data.settings.previewIcon);
+
+        Texture2D texture2d = new Texture2D(0, 0);
+        if(byteTexture.Length > 0)
+        {
+            texture2d.LoadImage(byteTexture);
+        }
+
+        if(texture2d.width > 500)
+        {
+            icon.rectTransform.sizeDelta = new Vector2(500, 500 * texture2d.height / texture2d.width);
+        }
+        else if(texture2d.height > 500)
+        {
+            icon.rectTransform.sizeDelta = new Vector2(500 / texture2d.height * texture2d.width, 500);
+        }
+        else
+        {
+            icon.rectTransform.sizeDelta = new Vector2(texture2d.width, texture2d.height);
+        }
+
+        Sprite sprite = Sprite.Create(texture2d, new Rect(0, 0, texture2d.width, texture2d.height), new Vector2(0.5f, 0.5f), 100);
+        icon.sprite = sprite;
     }
 
     public void RightData()
