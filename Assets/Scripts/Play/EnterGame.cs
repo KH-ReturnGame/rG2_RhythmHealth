@@ -86,7 +86,10 @@ public class EnterGame : MonoBehaviour
         }
         else
         {
-            icon.rectTransform.sizeDelta = new Vector2(texture2d.width, texture2d.height);
+            if(texture2d.width > texture2d.height)
+                icon.rectTransform.sizeDelta = new Vector2(500, 500 * texture2d.height / texture2d.width);
+            else
+                icon.rectTransform.sizeDelta = new Vector2(500 / texture2d.height * texture2d.width, 500);
         }
 
         Sprite sprite = Sprite.Create(texture2d, new Rect(0, 0, texture2d.width, texture2d.height), new Vector2(0.5f, 0.5f), 100);
