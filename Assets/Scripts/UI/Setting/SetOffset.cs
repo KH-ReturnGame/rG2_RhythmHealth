@@ -1,4 +1,8 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class SetOffset : MonoBehaviour
 {
@@ -12,5 +16,10 @@ public class SetOffset : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void SetOffetStart()
+    {
+
     }
 }
