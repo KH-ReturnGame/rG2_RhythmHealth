@@ -19,7 +19,7 @@ public class GameSettings
     public string song;
     public string author;
     public string previewIcon;
-    public string levelInfo;
+    public string levelDesc;
     public string levelTags;
     public int difficulty;
     public string songFile;

@@ -226,7 +226,13 @@ public class SaveInfo : MonoBehaviour
             var info = beatObj.GetComponent<BeatInfo>();
             if (info == null || !info.isBeat) continue;
 
-            var action = new ActionData {NoteType = info.NoteType, Gym = info.Gym, beatsPerMinute = bpm, WaitBeat = info.WaitBeat, LongTime = info.LongTime, Multi = info.Multi};
+            var action = new ActionData {
+                NoteType = info.NoteType, 
+                Gym = info.Gym, 
+                beatsPerMinute = bpm, 
+                WaitBeat = info.WaitBeat, 
+                LongTime = info.LongTime, 
+                Multi = info.Multi};
             data.actions.Add(action);
         }
 
