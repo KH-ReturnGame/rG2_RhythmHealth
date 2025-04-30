@@ -33,12 +33,6 @@ public class BeatInfo : MonoBehaviour
         LongTime_ID = GameObject.Find("LongTime").GetComponent<InputField>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     public void NoteClick()     
     {
         if(isBeat)
@@ -77,19 +71,12 @@ public class BeatInfo : MonoBehaviour
     public void SetWait()
     {
         WaitBeat = 0;
-        if(Beat_index == 0)
+        for(int i = Beat_index + 1; i < beats.beatList.Count; i++)
         {
-            WaitBeat = 0;
-        }
-        else
-        {
-            for(int i = Beat_index - 1; i >= 0; i--)
+            WaitBeat++;
+            if (beats.beatList[i].GetComponent<BeatInfo>().isBeat == true)
             {
-                WaitBeat++;
-                if (beats.beatList[i].GetComponent<BeatInfo>().isBeat == true)
-                {
-                    break;
-                }
+                break;
             }
         }
     }
@@ -101,7 +88,7 @@ public class BeatInfo : MonoBehaviour
         SetGym();
         SetLongtime();
         SetMulti();
-        for(int i = Beat_index; i < beats.beatList.Count; i++)
+        for(int i = 0; i < beats.beatList.Count; i++)
         {
             beats.beatList[i].GetComponent<BeatInfo>().SetWait();
         }
