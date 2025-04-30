@@ -1,41 +1,78 @@
+using System;
 using System.IO;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
+[Serializable]
+public class Setting
+{
+    public string artist;
+    public string artistLinks;
+    public string song;
+    public string author;
+    public string previewIcon;
+    public string levelDesc;
+    public string levelTags;
+    public int difficulty;
+    public string songFile;
+    public int bpm;
+    public int damageRate;
+    public float speed;
+}
+
+[Serializable]
+public class ActionDatas
+{
+    public string NoteType;
+    public int Gym;
+    public int beatsPerMinute;
+    public int WaitBeat;
+    public int LongTime;
+    public int Multi;
+}
+
+[Serializable]
+public class RoutineData
+{
+    public Setting settings;
+    public ActionDatas[] actions;
+}
+
 public class EnterGame : MonoBehaviour
 {
-    public TextAsset[] jsonList;
+    [SerializeField]
+    private List<RoutineData> routines = new List<RoutineData>();
     public Image icon;
+    public TextMeshProUGUI SongName;
     public TextMeshProUGUI SongDesc;
     public int index = 0;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        icon = GetComponent<Image>();
-        foreach (string directoryPath in Directory.EnumerateDirectories("C:/RHRoutines"))
+        foreach (var file in Directory.GetFiles("C:/RHRoutines", "*.json", SearchOption.AllDirectories)) 
         {
-            string[] jsonFiles = Directory.GetFiles(directoryPath, "*.json", SearchOption.AllDirectories);
-            foreach (string file in jsonFiles)
-            {
-                TextAsset textAsset = new TextAsset(File.ReadAllText(file));
-                jsonList[index] = textAsset;
-                index++;
-            }
+            string json = File.ReadAllText(file);
+            routines.Add(JsonUtility.FromJson<RoutineData>(json));
         }
+        index = 0;
         LoadData();
     }
 
     public void LoadData()
-    {
-        // icon.sprite = ;
-        SongDesc.text = jsonList[index].text;   
+    {   
+        var data = routines[index];
+        SongName.text = data.settings.song;
+        SongDesc.text = data.settings.levelDesc;
+        string spriteName = Path.GetFileNameWithoutExtension(data.settings.previewIcon);
+        icon.sprite = Resources.Load<Sprite>(spriteName);
     }
 
     public void RightData()
     {
         index++;
-        if (index >= jsonList.Length)
+        if (index >= routines.Count)
         {
             index = 0;
         }
@@ -47,7 +84,8 @@ public class EnterGame : MonoBehaviour
         index--;
         if (index < 0)
         {
-            index = jsonList.Length - 1;
+            index = routines.Count - 1;
         }
+        LoadData();
     }
 }
