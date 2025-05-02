@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class EnableOffset : MonoBehaviour
+public class EnableOffset : MonoBehaviour // UI 껐다 켰다 스크립트
 {
     public GameObject _Offset;
 
