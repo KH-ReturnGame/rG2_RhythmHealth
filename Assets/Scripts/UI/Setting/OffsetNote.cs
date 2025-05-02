@@ -9,4 +9,12 @@ public class OffsetNote : MonoBehaviour
         float speed = (72 / 60f) / 0.6f; // BPM을 초당 이동 거리로 변환
         transform.position += Vector3.right * speed * Time.deltaTime;
     }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("stage"))
+        {
+            Destroy(gameObject);
+        }
+    }
 }

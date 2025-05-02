@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EnableOffset : MonoBehaviour // UI 껐다 켰다 스크립트
 {
@@ -12,7 +13,16 @@ public class EnableOffset : MonoBehaviour // UI 껐다 켰다 스크립트
 
     public void DisableOffsetGame()
     {
-        _Offset.SetActive(false);
-        Time.timeScale = 0;
+        SetOffset setOffset = _Offset.GetComponent<SetOffset>();
+        if(!setOffset.isInOffseting)
+        {
+            _Offset.SetActive(false);
+            Time.timeScale = 0;
+        }
+    }
+
+    public void LoadStartScene()
+    {
+        SceneManager.LoadScene("StartScene");
     }
 }

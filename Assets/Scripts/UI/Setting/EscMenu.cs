@@ -6,7 +6,6 @@ using UnityEngine.UI;
 public class EscMenu : MonoBehaviour
 {
     public GameObject _Settings;
-    public GameObject _OffSet;
     GameObject _Canvas;
     // Start is called before the first frame update
     void Start()

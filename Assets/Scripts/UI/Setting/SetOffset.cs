@@ -9,11 +9,11 @@ public class SetOffset : MonoBehaviour
 {
     public GameObject OffsetBar;
     int OffsetBarCount = 0;
-    bool isInOffseting = false;
+    public bool isInOffseting = false;
     List<float> _Offset = new List<float>();
     public AudioSource OffsetSong;
     public AudioSource OffsetSFX;
-    float Beat = 4f;
+    float[] Beat = {4, 8, 12, 16};
 
     public TextMeshProUGUI OffsetText;
 
@@ -28,8 +28,11 @@ public class SetOffset : MonoBehaviour
     {
         if (isInOffseting)
         {
-            Beat -= Time.deltaTime;
-            if(Input.GetKeyDown(KeyCode.Space) && Beat < 1)
+            Beat[0] -= Time.deltaTime;
+            Beat[1] -= Time.deltaTime;
+            Beat[2] -= Time.deltaTime;
+            Beat[3] -= Time.deltaTime;
+            if(Input.GetKeyDown(KeyCode.Space) && Beat[OffsetBarCount] < 1)
             {
                 AddOffset();
             }
@@ -37,6 +40,7 @@ public class SetOffset : MonoBehaviour
         
         if(OffsetBarCount == 4)
         {
+            isInOffseting = false;
             FinallSetOffset();
             OffsetSong.Stop();
             isInOffseting = false;
@@ -45,7 +49,7 @@ public class SetOffset : MonoBehaviour
 
     }
 
-    public void SetOffetStart()
+    public void SetOffsetStart()
     {
         if(!isInOffseting)
         {
@@ -62,24 +66,23 @@ public class SetOffset : MonoBehaviour
 
     void AddOffset()
     {
-        OffsetSFX.Play();
-        _Offset.Add(Beat);
+        OffsetSFX.PlayOneShot(OffsetSFX.clip);
+        _Offset.Add(Beat[OffsetBarCount]);
+        OffsetBarCount++;
     }
 
     IEnumerator OffsetBarGenerate()
     {
         Instantiate(OffsetBar, new Vector3(-8f, 0, 0), Quaternion.identity);
-        Beat = 4f;
-        
+
         yield return new WaitForSeconds(4f);
-        OffsetBarCount++;
-        if(OffsetBarCount < 4)
+
+        if(OffsetBarCount < 3)
         {
             StartCoroutine(OffsetBarGenerate());
         }
         else
         {
-            isInOffseting = false;
             yield break;
         }
         yield return null;
@@ -88,11 +91,11 @@ public class SetOffset : MonoBehaviour
     void FinallSetOffset()
     {
         float offset = 0;
-        for(int i = 0; i < 4; i++)
+        for(int i = 0; i < _Offset.Count; i++)
         {
-            offset += _Offset[i];   
+            offset += _Offset[i];
         }
-        offset /= 4;
+        offset /= _Offset.Count;;
         PlayerPrefs.SetFloat("PlayerOffset", offset);
         
         int OffsetMS = Mathf.RoundToInt(offset * 1000); 
