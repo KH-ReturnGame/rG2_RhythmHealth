@@ -12,7 +12,11 @@ public class SetOffset : MonoBehaviour
     bool isInOffseting = false;
     List<float> _Offset = new List<float>();
     public AudioSource OffsetSong;
+    public AudioSource OffsetSFX;
     float Beat = 4f;
+
+    public TextMeshProUGUI OffsetText;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -22,32 +26,50 @@ public class SetOffset : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && isInOffseting)
+        if (isInOffseting)
         {
-            AddOffset();
+            Beat -= Time.deltaTime;
+            if(Input.GetKeyDown(KeyCode.Space) && Beat < 1)
+            {
+                AddOffset();
+            }
         }
-    }
+        
+        if(OffsetBarCount == 4)
+        {
+            FinallSetOffset();
+            OffsetSong.Stop();
+            isInOffseting = false;
+            OffsetBarCount++;
+        }
 
-    void AddOffset()
-    {
-        _Offset.Add();
-        FinallSetOffset();
     }
 
     public void SetOffetStart()
     {
         if(!isInOffseting)
         {
+            OffsetSong.time = 0;
+            OffsetSong.Play();
+
             isInOffseting = true;
             OffsetBarCount = 0;
+
             PlayerPrefs.SetFloat("PlayerOffset", 0);
             StartCoroutine(OffsetBarGenerate());
         }
     }
 
+    void AddOffset()
+    {
+        OffsetSFX.Play();
+        _Offset.Add(Beat);
+    }
+
     IEnumerator OffsetBarGenerate()
     {
-        Instantiate(OffsetBar, new Vector3(-8.85f, 0, 0), Quaternion.identity);
+        Instantiate(OffsetBar, new Vector3(-8f, 0, 0), Quaternion.identity);
+        Beat = 4f;
         
         yield return new WaitForSeconds(4f);
         OffsetBarCount++;
@@ -72,5 +94,8 @@ public class SetOffset : MonoBehaviour
         }
         offset /= 4;
         PlayerPrefs.SetFloat("PlayerOffset", offset);
+        
+        int OffsetMS = Mathf.RoundToInt(offset * 1000); 
+        OffsetText.text = OffsetMS.ToString() + "ms";
     }
 }
