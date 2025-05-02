@@ -11,7 +11,8 @@ public class SetOffset : MonoBehaviour
     int OffsetBarCount = 0;
     bool isInOffseting = false;
     List<float> _Offset = new List<float>();
-    AudioSource audioSource;
+    public AudioSource OffsetSong;
+    float Beat = 4f;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -29,7 +30,7 @@ public class SetOffset : MonoBehaviour
 
     void AddOffset()
     {
-        //_Offset.Add(OffsetBar.transform.position.x - OffsetBarTransform.position.x);
+        _Offset.Add();
         FinallSetOffset();
     }
 
@@ -48,9 +49,9 @@ public class SetOffset : MonoBehaviour
     {
         Instantiate(OffsetBar, new Vector3(-8.85f, 0, 0), Quaternion.identity);
         
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(4f);
         OffsetBarCount++;
-        if(OffsetBarCount < 10)
+        if(OffsetBarCount < 4)
         {
             StartCoroutine(OffsetBarGenerate());
         }
@@ -65,11 +66,11 @@ public class SetOffset : MonoBehaviour
     void FinallSetOffset()
     {
         float offset = 0;
-        for(int i = 0; i < 10; i++)
+        for(int i = 0; i < 4; i++)
         {
             offset += _Offset[i];   
         }
-        offset /= 10;
+        offset /= 4;
         PlayerPrefs.SetFloat("PlayerOffset", offset);
     }
 }
