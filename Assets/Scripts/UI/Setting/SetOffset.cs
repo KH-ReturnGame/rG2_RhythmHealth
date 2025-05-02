@@ -8,7 +8,6 @@ using TMPro;
 public class SetOffset : MonoBehaviour
 {
     public GameObject OffsetBar;
-    public Transform OffsetBarTransform;
     int OffsetBarCount = 0;
     bool isInOffseting = false;
     List<float> _Offset = new List<float>();
@@ -30,7 +29,7 @@ public class SetOffset : MonoBehaviour
 
     void AddOffset()
     {
-        _Offset.Add(OffsetBar.transform.position.x - OffsetBarTransform.position.x);
+        //_Offset.Add(OffsetBar.transform.position.x - OffsetBarTransform.position.x);
         FinallSetOffset();
     }
 
@@ -47,7 +46,7 @@ public class SetOffset : MonoBehaviour
 
     IEnumerator OffsetBarGenerate()
     {
-        Instantiate(OffsetBar, OffsetBarTransform.position, Quaternion.identity);
+        Instantiate(OffsetBar, new Vector3(-8.85f, 0, 0), Quaternion.identity);
         
         yield return new WaitForSeconds(1f);
         OffsetBarCount++;

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8136120465014588796}
   - component: {fileID: 5879497898988178428}
   - component: {fileID: 590831280480693134}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: OffsetNote
   m_TagString: note
   m_Icon: {fileID: 0}
