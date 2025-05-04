@@ -14,12 +14,11 @@ public class DialogTest : MonoBehaviour
 	private	DialogSystem dialogSystem04;
 	[SerializeField]
 	private	DialogSystem dialogSystem05;
-	[SerializeField]
-	private	DialogSystem dialogSystem06;
-	int dialogIndex = 0;
+	public int dialogIndex = 0;
 
 	private IEnumerator Start()
 	{
+		dialogIndex = PlayerPrefs.GetInt("DialogIndex");
 		switch(dialogIndex)
 		{
 			case 0:
@@ -38,7 +37,7 @@ public class DialogTest : MonoBehaviour
 				yield return new WaitUntil(()=>dialogSystem05.UpdateDialog());
 				break;
 			default:
-				yield return new WaitUntil(()=>dialogSystem06.UpdateDialog());
+				yield return null;
 				break;
 		}
 	}

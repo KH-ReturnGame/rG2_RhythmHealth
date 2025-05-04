@@ -20,4 +20,10 @@ public class DoExerciseProl : MonoBehaviour
     {
         SceneManager.LoadScene(ReadIt);
     }
+
+    public void SaveDialogue(int i)
+    {
+        PlayerPrefs.SetInt("DialogIndex", i);
+        PlayerPrefs.Save();
+    }
 }
