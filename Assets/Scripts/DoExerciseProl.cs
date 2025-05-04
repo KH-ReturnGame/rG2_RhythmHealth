@@ -26,4 +26,9 @@ public class DoExerciseProl : MonoBehaviour
         PlayerPrefs.SetInt("DialogIndex", i);
         PlayerPrefs.Save();
     }
+
+    public void NextStart(GymEquip gymEquip)
+    {
+        gymEquip.CanStart = true;
+    }
 }

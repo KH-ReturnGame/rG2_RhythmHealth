@@ -1,36 +1,48 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class ProlManager : MonoBehaviour
 {
-    
 	[SerializeField]
 	private	DialogSystem[] dialogSystems;
     
 	[SerializeField]
-	private	GameObject[] playFiles;
+	private	TextAsset[] playRoutineFiles;
+    
+	[SerializeField]
+	private	AudioClip[] playSongFiles;
     int index_STD = 0;
     int index_PF = 0;
+    public NoteVerdict noteVerdict;
+    public ReadLoadGame readLoadGame;
+    public GameObject readLoadGameObj;
+    public GameObject Printer;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    private IEnumerator Start()
     {
-        StartDialog(index_STD);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        yield return new WaitUntil(()=>dialogSystems[index_STD].UpdateDialog());
+        index_STD++;
+        if(index_STD <= dialogSystems.Length && index_PF < playRoutineFiles.Length)
+        {
+            StartCoroutine(PlayFile(index_PF));
+        }
+        else
+        {
+            yield return null;
+        }
     }
 
     private IEnumerator StartDialog(int i)
 	{
 		yield return new WaitUntil(()=>dialogSystems[i].UpdateDialog());
         index_STD++;
-        if(index_STD <= dialogSystems.Length && index_PF < playFiles.Length)
+        if(index_STD <= dialogSystems.Length && index_PF < playRoutineFiles.Length)
         {
-            PlayFile(index_PF);
+            readLoadGameObj.SetActive(false);
+            Printer.SetActive(false);
+            StartCoroutine(PlayFile(index_PF));
         }
         else
         {
@@ -40,15 +52,28 @@ public class ProlManager : MonoBehaviour
 
     private IEnumerator PlayFile(int i)
 	{
-		yield return new WaitForSeconds(5f); // 여기에 실제 그 파일 로드 및 시작ㄴㄴ
+		yield return new WaitForSeconds(2.5f); // 여기에 실제 그 파일 로드 및 시작ㄴㄴ
+        noteVerdict.currentNoteIndex = -1;
+
+        readLoadGame.jsonFile = playRoutineFiles[i];
+        readLoadGameObj.SetActive(true);
+
+        PrintResult printResult = Printer.GetComponent<PrintResult>();
+        
+        yield return new WaitUntil(()=>printResult.UpdateResult());
         index_PF++;
-        if(index_STD < dialogSystems.Length && index_PF <= playFiles.Length)
+        if(index_STD < dialogSystems.Length && index_PF <= playRoutineFiles.Length)
         {
-            StartDialog(index_STD);
+            StartCoroutine(StartDialog(index_STD));
         }
         else
         {
             yield return null;
         }
 	}
+     
+    public void BackToStage() // 버튼에 넣을거
+    {
+        SceneManager.LoadScene("Stage");
+    }
 }

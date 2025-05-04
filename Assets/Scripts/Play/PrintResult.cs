@@ -11,21 +11,26 @@ public class PrintResult : MonoBehaviour
     public TextMeshProUGUI _accuracy;
     public TextMeshProUGUI _combo;
     public TextMeshProUGUI _grade;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    bool isPrint = false;
+    void OnEnable()
     {
+        isPrint = true;
         StartCoroutine(Result());
+        UpdateResult();
     }
 
-    // Update is called once per frame
-    void Update()
+    void OnDisable()
     {
-        
+        isPrint = false;
+    }
+
+    public bool UpdateResult()
+    {
+        return isPrint;
     }
 
     IEnumerator Result()
     {
-        yield return new WaitForSeconds(1.5f); // 0.5초 대기
         _accuracy.text = noteVerdict.Accuracy.ToString("F1") + "%"; // 정확도를 소수점 1자리로 표시
         _score.text = noteVerdict.Score.ToString();                // 점수 설정
         _combo.text = noteVerdict.Combo.ToString();

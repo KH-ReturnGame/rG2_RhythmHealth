@@ -43,7 +43,6 @@ public class ReadLoadGame : MonoBehaviour
 {
     AudioSource audioSource;
     public NoteSpawn noteSpawn;
-    public Animator player_work;
     public TextAsset jsonFile;
     public GameData gameData;
     float BPM;
@@ -52,7 +51,8 @@ public class ReadLoadGame : MonoBehaviour
     string songPath;  
     public float offset;
     public bool isNotPrologue;
-    void Start()
+    
+    void OnEnable()
     {
         offset = PlayerPrefs.GetInt("PlayerOffset");
         audioSource = GetComponent<AudioSource>();

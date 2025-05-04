@@ -157,6 +157,17 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &68347569 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3392652359194593424, guid: 396a8208324e4774ba3cbb1f401890b5, type: 3}
+  m_PrefabInstance: {fileID: 862678689}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27b28afb5e3c1224f80366b197ceed28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &76293670
 GameObject:
   m_ObjectHideFlags: 0
@@ -988,18 +999,6 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 264249725}
-        m_TargetAssemblyTypeName: DoExercise, Assembly-CSharp
-        m_MethodName: BtnExercise
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 1
-      - m_Target: {fileID: 264249725}
         m_TargetAssemblyTypeName: DoExerciseProl, Assembly-CSharp
         m_MethodName: SaveDialogue
         m_Mode: 3
@@ -1007,6 +1006,18 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 4
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
+      - m_Target: {fileID: 264249725}
+        m_TargetAssemblyTypeName: DoExercise, Assembly-CSharp
+        m_MethodName: BtnExercise
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -3592,6 +3603,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1787096276}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1116628184 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3392652359194593424, guid: 396a8208324e4774ba3cbb1f401890b5, type: 3}
+  m_PrefabInstance: {fileID: 1443680033}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27b28afb5e3c1224f80366b197ceed28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1124102624
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5451,7 +5473,6 @@ MonoBehaviour:
   dialogSystem03: {fileID: 1748313055}
   dialogSystem04: {fileID: 294742200}
   dialogSystem05: {fileID: 1099959327}
-  dialogSystem06: {fileID: 0}
   dialogIndex: 0
 --- !u!4 &1770787720
 Transform:
@@ -5601,18 +5622,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1807571396}
-        m_TargetAssemblyTypeName: DoExercise, Assembly-CSharp
-        m_MethodName: BtnExercise
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 1
       - m_Target: {fileID: 264249725}
         m_TargetAssemblyTypeName: DoExerciseProl, Assembly-CSharp
         m_MethodName: SaveDialogue
@@ -5621,6 +5630,30 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 3
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
+      - m_Target: {fileID: 264249725}
+        m_TargetAssemblyTypeName: DoExerciseProl, Assembly-CSharp
+        m_MethodName: NextStart
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1946986750}
+          m_ObjectArgumentAssemblyTypeName: GymEquip, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
+      - m_Target: {fileID: 1807571396}
+        m_TargetAssemblyTypeName: DoExercise, Assembly-CSharp
+        m_MethodName: BtnExercise
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -5837,18 +5870,6 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1839459416}
-        m_TargetAssemblyTypeName: DoExercise, Assembly-CSharp
-        m_MethodName: BtnExercise
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 1
-      - m_Target: {fileID: 1839459416}
         m_TargetAssemblyTypeName: DoExerciseProl, Assembly-CSharp
         m_MethodName: SaveDialogue
         m_Mode: 3
@@ -5856,6 +5877,30 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
+      - m_Target: {fileID: 264249725}
+        m_TargetAssemblyTypeName: DoExerciseProl, Assembly-CSharp
+        m_MethodName: NextStart
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 68347569}
+          m_ObjectArgumentAssemblyTypeName: GymEquip, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
+      - m_Target: {fileID: 1839459416}
+        m_TargetAssemblyTypeName: DoExercise, Assembly-CSharp
+        m_MethodName: BtnExercise
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -6008,18 +6053,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1911216905}
-        m_TargetAssemblyTypeName: DoExercise, Assembly-CSharp
-        m_MethodName: BtnExercise
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 1
       - m_Target: {fileID: 264249725}
         m_TargetAssemblyTypeName: DoExerciseProl, Assembly-CSharp
         m_MethodName: SaveDialogue
@@ -6028,6 +6061,30 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
+      - m_Target: {fileID: 264249725}
+        m_TargetAssemblyTypeName: DoExerciseProl, Assembly-CSharp
+        m_MethodName: NextStart
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1116628184}
+          m_ObjectArgumentAssemblyTypeName: GymEquip, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
+      - m_Target: {fileID: 1911216905}
+        m_TargetAssemblyTypeName: DoExercise, Assembly-CSharp
+        m_MethodName: BtnExercise
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -6342,6 +6399,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1938962360}
   m_CullTransparentMesh: 1
+--- !u!114 &1946986750 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3392652359194593424, guid: 396a8208324e4774ba3cbb1f401890b5, type: 3}
+  m_PrefabInstance: {fileID: 337979994}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27b28afb5e3c1224f80366b197ceed28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1950727951
 GameObject:
   m_ObjectHideFlags: 0

@@ -58,7 +58,6 @@ public class NoteVerdict : MonoBehaviour
                 if (longNoteHoldTimes.ContainsKey(currentLongNote))
                 {
                     longNoteHoldTimes[currentLongNote] += Time.deltaTime;
-                    //Debug.Log($"Long Note Hold Time: {longNoteHoldTimes[currentLongNote]}");
                 }
             }
             else
@@ -335,14 +334,14 @@ public class NoteVerdict : MonoBehaviour
     IEnumerator Die()
     {
         life++;
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(2.5f);
         Printer.SetActive(true);
         yield return null;
     }
 
     IEnumerator Result()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(2f);
         Printer.SetActive(true);
         yield return null;
     }
