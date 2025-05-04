@@ -25,6 +25,7 @@ public class PrintResult : MonoBehaviour
 
     IEnumerator Result()
     {
+        yield return new WaitForSeconds(1.5f); // 0.5초 대기
         _accuracy.text = noteVerdict.Accuracy.ToString("F1") + "%"; // 정확도를 소수점 1자리로 표시
         _score.text = noteVerdict.Score.ToString();                // 점수 설정
         _combo.text = noteVerdict.Combo.ToString();
