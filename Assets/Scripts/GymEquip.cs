@@ -65,6 +65,7 @@ public class GymEquip : MonoBehaviour
     {
         if(other.gameObject.tag == "Player" && CanStart)
         {
+            Lock.SetActive(!CanStart);
             Finteract.SetActive(true);
             CanPT = true;
         }
@@ -74,6 +75,7 @@ public class GymEquip : MonoBehaviour
     {
         if(other.gameObject.tag == "Player" && CanStart)
         {
+            Lock.SetActive(!CanStart);
             Finteract.SetActive(false);
             CanPT = false;
         }

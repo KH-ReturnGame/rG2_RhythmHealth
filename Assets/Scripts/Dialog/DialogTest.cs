@@ -15,6 +15,7 @@ public class DialogTest : MonoBehaviour
 	[SerializeField]
 	private	DialogSystem dialogSystem05;
 	public int dialogIndex = 0;
+	public GymEquip[] gymEquips;
 
 	private IEnumerator Start()
 	{
@@ -25,15 +26,24 @@ public class DialogTest : MonoBehaviour
 				yield return new WaitUntil(()=>dialogSystem01.UpdateDialog());
 				break;
 			case 1:
+				gymEquips[0].CanStart = true;
 				yield return new WaitUntil(()=>dialogSystem02.UpdateDialog());
 				break;
 			case 2:
+				gymEquips[0].CanStart = true;
+				gymEquips[1].CanStart = true;
 				yield return new WaitUntil(()=>dialogSystem03.UpdateDialog());
 				break;
 			case 3:
+				gymEquips[0].CanStart = true;
+				gymEquips[1].CanStart = true;
+				gymEquips[2].CanStart = true;
 				yield return new WaitUntil(()=>dialogSystem04.UpdateDialog());
 				break;
 			case 4:
+				gymEquips[0].CanStart = true;
+				gymEquips[1].CanStart = true;
+				gymEquips[2].CanStart = true;
 				yield return new WaitUntil(()=>dialogSystem05.UpdateDialog());
 				break;
 			default:

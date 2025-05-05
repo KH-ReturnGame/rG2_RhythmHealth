@@ -5474,6 +5474,10 @@ MonoBehaviour:
   dialogSystem04: {fileID: 294742200}
   dialogSystem05: {fileID: 1099959327}
   dialogIndex: 0
+  gymEquips:
+  - {fileID: 68347569}
+  - {fileID: 1116628184}
+  - {fileID: 1946986750}
 --- !u!4 &1770787720
 Transform:
   m_ObjectHideFlags: 0
@@ -5630,18 +5634,6 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 3
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 1
-      - m_Target: {fileID: 264249725}
-        m_TargetAssemblyTypeName: DoExerciseProl, Assembly-CSharp
-        m_MethodName: NextStart
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 1946986750}
-          m_ObjectArgumentAssemblyTypeName: GymEquip, Assembly-CSharp
-          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -5881,18 +5873,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 1
-      - m_Target: {fileID: 264249725}
-        m_TargetAssemblyTypeName: DoExerciseProl, Assembly-CSharp
-        m_MethodName: NextStart
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 68347569}
-          m_ObjectArgumentAssemblyTypeName: GymEquip, Assembly-CSharp
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 1
       - m_Target: {fileID: 1839459416}
         m_TargetAssemblyTypeName: DoExercise, Assembly-CSharp
         m_MethodName: BtnExercise
@@ -6061,18 +6041,6 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 2
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 1
-      - m_Target: {fileID: 264249725}
-        m_TargetAssemblyTypeName: DoExerciseProl, Assembly-CSharp
-        m_MethodName: NextStart
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 1116628184}
-          m_ObjectArgumentAssemblyTypeName: GymEquip, Assembly-CSharp
-          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
