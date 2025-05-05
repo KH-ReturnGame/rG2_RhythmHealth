@@ -11,10 +11,9 @@ public class ProlManager : MonoBehaviour
 	[SerializeField]
 	private	TextAsset[] playRoutineFiles;
     
-	[SerializeField]
-	private	AudioClip[] playSongFiles;
+	public AudioClip[] playSongFiles;
     int index_STD = 0;
-    int index_PF = 0;
+    public int index_PF = 0;
     public NoteVerdict noteVerdict;
     public ReadLoadGame readLoadGame;
     public GameObject readLoadGameObj;

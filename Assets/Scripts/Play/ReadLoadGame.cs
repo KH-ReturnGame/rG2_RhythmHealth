@@ -80,25 +80,34 @@ public class ReadLoadGame : MonoBehaviour
 
     IEnumerator PlayMusicWithOffset()
     {
-        // string url = "file://" + songPath;
-        // using (UnityWebRequest www = UnityWebRequestMultimedia.GetAudioClip(url, AudioType.UNKNOWN))
-        // {
-        //     yield return www.SendWebRequest();
+        if(isNotPrologue)
+        {
+            // string url = "file://" + songPath;
+            // using (UnityWebRequest www = UnityWebRequestMultimedia.GetAudioClip(url, AudioType.UNKNOWN))
+            // {
+            //     yield return www.SendWebRequest();
 
-        //     if (www.result == UnityWebRequest.Result.ConnectionError || www.result == UnityWebRequest.Result.ProtocolError)
-        //     {
-        //         Debug.LogError("오디오 로드 오류: " + www.error);
-        //     }
-        //     else
-        //     {
-        //         AudioClip clip = DownloadHandlerAudioClip.GetContent(www);
-        //         audioSource.clip = clip;
+            //     if (www.result == UnityWebRequest.Result.ConnectionError || www.result == UnityWebRequest.Result.ProtocolError)
+            //     {
+            //         Debug.LogError("오디오 로드 오류: " + www.error);
+            //     }
+            //     else
+            //     {
+            //         AudioClip clip = DownloadHandlerAudioClip.GetContent(www);
+            //         audioSource.clip = clip;
+
+            //         audioSource.Play();
+            //     }
+            // }
+        }
+        else
+        {
+            ProlManager prolManager = GameObject.Find("ProlManager").GetComponent<ProlManager>();
+            audioSource.clip = prolManager.playSongFiles[prolManager.index_PF];
+            audioSource.Play();
+        }
         
-        //         audioSource.Play();
-        //         StartCoroutine(WorkRythm());
-        //     }
-        // }
-        
+        Debug.Log("offset : " + offset);
         yield return new WaitForSeconds(offset / 1000f); // 오프셋 적용
         StartCoroutine(WorkRythm());
     }

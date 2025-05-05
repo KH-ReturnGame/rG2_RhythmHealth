@@ -2841,6 +2841,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 06ab49e1cb7745e44911f748e11387b4, type: 3}
   - {fileID: 8300000, guid: 06ab49e1cb7745e44911f748e11387b4, type: 3}
   - {fileID: 8300000, guid: 06ab49e1cb7745e44911f748e11387b4, type: 3}
+  index_PF: 0
   noteVerdict: {fileID: 1825230942}
   readLoadGame: {fileID: 1592125607}
   readLoadGameObj: {fileID: 1592125605}
@@ -3077,7 +3078,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
