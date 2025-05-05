@@ -19,6 +19,7 @@ public class ProlManager : MonoBehaviour
     public ReadLoadGame readLoadGame;
     public GameObject readLoadGameObj;
     public GameObject Printer;
+    public GameObject BackToStageButton;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private IEnumerator Start()
     {
@@ -47,6 +48,7 @@ public class ProlManager : MonoBehaviour
         }
         else
         {
+            BackToStageButton.SetActive(true);
             yield return null;
         }
 	}
@@ -71,6 +73,7 @@ public class ProlManager : MonoBehaviour
         }
         else
         {
+            BackToStageButton.SetActive(true);
             yield return null;
         }
 	}

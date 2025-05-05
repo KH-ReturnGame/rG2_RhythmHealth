@@ -2419,9 +2419,9 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 972622902}
+  - {fileID: 243457646}
   - {fileID: 1194519276}
   - {fileID: 67072817}
-  - {fileID: 243457646}
   - {fileID: 1820476567}
   - {fileID: 1214997804}
   m_Father: {fileID: 0}
@@ -2845,6 +2845,7 @@ MonoBehaviour:
   readLoadGame: {fileID: 1592125607}
   readLoadGameObj: {fileID: 1592125605}
   Printer: {fileID: 243457645}
+  BackToStageButton: {fileID: 1214997803}
 --- !u!4 &1525662088
 Transform:
   m_ObjectHideFlags: 0
@@ -3061,6 +3062,7 @@ MonoBehaviour:
       damageRate: 0
       speed: 0
     actions: []
+  WorkIndex: 0
   offset: 0
   isNotPrologue: 0
 --- !u!82 &1592125609
