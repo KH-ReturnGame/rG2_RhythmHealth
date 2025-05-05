@@ -54,7 +54,7 @@ public class ReadLoadGame : MonoBehaviour
 
     void OnEnable()
     {
-        offset = PlayerPrefs.GetInt("PlayerOffset");
+        offset = PlayerPrefs.GetFloat("PlayerOffset");
         audioSource = GetComponent<AudioSource>();
         SetUp();
         StartCoroutine(PlayMusicWithOffset());
@@ -93,15 +93,13 @@ public class ReadLoadGame : MonoBehaviour
         //     {
         //         AudioClip clip = DownloadHandlerAudioClip.GetContent(www);
         //         audioSource.clip = clip;
-
-        //         // 오프셋 적용
-        //         yield return new WaitForSeconds(offset / 1000f);
+        
         //         audioSource.Play();
         //         StartCoroutine(WorkRythm());
         //     }
         // }
         
-        yield return new WaitForSeconds(offset / 1000f);
+        yield return new WaitForSeconds(offset / 1000f); // 오프셋 적용
         StartCoroutine(WorkRythm());
     }
 
