@@ -36,6 +36,7 @@ public class ProlManager : MonoBehaviour
 
     private IEnumerator StartDialog(int i)
 	{
+        yield return new WaitForSeconds(2.5f);
 		yield return new WaitUntil(()=>dialogSystems[i].UpdateDialog());
         index_STD++;
         if(index_STD <= dialogSystems.Length && index_PF < playRoutineFiles.Length)
@@ -53,13 +54,15 @@ public class ProlManager : MonoBehaviour
     private IEnumerator PlayFile(int i)
 	{
 		yield return new WaitForSeconds(2.5f); // 여기에 실제 그 파일 로드 및 시작ㄴㄴ
-        noteVerdict.currentNoteIndex = -1;
 
+        noteVerdict.currentNoteIndex = -1;
+        noteVerdict.isSuccess = null;
+        readLoadGame.WorkIndex = 0;
         readLoadGame.jsonFile = playRoutineFiles[i];
+
         readLoadGameObj.SetActive(true);
 
         PrintResult printResult = Printer.GetComponent<PrintResult>();
-        
         yield return new WaitUntil(()=>printResult.UpdateResult());
         index_PF++;
         if(index_STD < dialogSystems.Length && index_PF <= playRoutineFiles.Length)

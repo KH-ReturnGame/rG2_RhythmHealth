@@ -47,11 +47,11 @@ public class ReadLoadGame : MonoBehaviour
     public GameData gameData;
     float BPM;
     string WorkType;
-    int WorkIndex = 0;
+    public int WorkIndex = 0;
     string songPath;  
     public float offset;
     public bool isNotPrologue;
-    
+
     void OnEnable()
     {
         offset = PlayerPrefs.GetInt("PlayerOffset");
