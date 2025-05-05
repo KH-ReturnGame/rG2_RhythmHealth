@@ -11,6 +11,7 @@ TagManager:
   - doublenote
   - longnoteout
   - multinote
+  - FreeRoutine
   layers:
   - Default
   - TransparentFX

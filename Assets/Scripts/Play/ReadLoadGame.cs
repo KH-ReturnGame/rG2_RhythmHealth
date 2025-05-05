@@ -82,23 +82,19 @@ public class ReadLoadGame : MonoBehaviour
     {
         if(isNotPrologue)
         {
-            // string url = "file://" + songPath;
-            // using (UnityWebRequest www = UnityWebRequestMultimedia.GetAudioClip(url, AudioType.UNKNOWN))
-            // {
-            //     yield return www.SendWebRequest();
-
-            //     if (www.result == UnityWebRequest.Result.ConnectionError || www.result == UnityWebRequest.Result.ProtocolError)
-            //     {
-            //         Debug.LogError("오디오 로드 오류: " + www.error);
-            //     }
-            //     else
-            //     {
-            //         AudioClip clip = DownloadHandlerAudioClip.GetContent(www);
-            //         audioSource.clip = clip;
-
-            //         audioSource.Play();
-            //     }
-            // }
+            string uri = "file://" + songPath;
+            using (UnityWebRequest uwr = UnityWebRequestMultimedia.GetAudioClip(uri, AudioType.UNKNOWN))
+            {
+                yield return uwr.SendWebRequest();
+                if (uwr.result == UnityWebRequest.Result.ConnectionError || uwr.result == UnityWebRequest.Result.ProtocolError)
+                {
+                    Debug.LogError("오디오 로드 오류: " + uwr.error);
+                    yield break;
+                }
+                AudioClip clip = DownloadHandlerAudioClip.GetContent(uwr);
+                audioSource.clip = clip;
+                audioSource.Play();
+            }
         }
         else
         {
