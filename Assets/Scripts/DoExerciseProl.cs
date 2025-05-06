@@ -14,4 +14,9 @@ public class DoExerciseProl : MonoBehaviour
         PlayerPrefs.SetInt("DialogIndex", i);
         PlayerPrefs.Save();
     }
+
+    public void Cancle(GameObject StartUI)
+    {
+        StartUI.SetActive(false);
+    }
 }

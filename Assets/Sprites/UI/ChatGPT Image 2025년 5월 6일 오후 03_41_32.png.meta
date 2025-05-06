@@ -79,7 +79,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -88,12 +88,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 1024
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -117,7 +117,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -475,7 +475,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -484,7 +484,22 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      "ChatGPT Image 2025\uB144 5\uC6D4 6\uC77C \uC624\uD6C4 03_41_32_0": 9083996199987292226
+      "ChatGPT Image 2025\uB144 5\uC6D4 6\uC77C \uC624\uD6C4 03_41_32_1": -2544638741491308865
+      "ChatGPT Image 2025\uB144 5\uC6D4 6\uC77C \uC624\uD6C4 03_41_32_10": 7718585880424834444
+      "ChatGPT Image 2025\uB144 5\uC6D4 6\uC77C \uC624\uD6C4 03_41_32_11": 5789137829134008520
+      "ChatGPT Image 2025\uB144 5\uC6D4 6\uC77C \uC624\uD6C4 03_41_32_12": 2560960014963822726
+      "ChatGPT Image 2025\uB144 5\uC6D4 6\uC77C \uC624\uD6C4 03_41_32_13": -7997367416858784556
+      "ChatGPT Image 2025\uB144 5\uC6D4 6\uC77C \uC624\uD6C4 03_41_32_14": 3338263021956453179
+      "ChatGPT Image 2025\uB144 5\uC6D4 6\uC77C \uC624\uD6C4 03_41_32_2": -6778567852022490907
+      "ChatGPT Image 2025\uB144 5\uC6D4 6\uC77C \uC624\uD6C4 03_41_32_3": 2537933225288599136
+      "ChatGPT Image 2025\uB144 5\uC6D4 6\uC77C \uC624\uD6C4 03_41_32_4": 4033014179290681593
+      "ChatGPT Image 2025\uB144 5\uC6D4 6\uC77C \uC624\uD6C4 03_41_32_5": 9022836128963727278
+      "ChatGPT Image 2025\uB144 5\uC6D4 6\uC77C \uC624\uD6C4 03_41_32_6": -4692523633401254012
+      "ChatGPT Image 2025\uB144 5\uC6D4 6\uC77C \uC624\uD6C4 03_41_32_7": 4884172997140898934
+      "ChatGPT Image 2025\uB144 5\uC6D4 6\uC77C \uC624\uD6C4 03_41_32_8": -1253309669077055893
+      "ChatGPT Image 2025\uB144 5\uC6D4 6\uC77C \uC624\uD6C4 03_41_32_9": -3666916380150003683
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
