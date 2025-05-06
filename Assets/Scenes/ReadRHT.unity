@@ -455,7 +455,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   noteSpawn: {fileID: 1992987065}
-  player_work: {fileID: 0}
   jsonFile: {fileID: 0}
   gameData:
     settings:
@@ -472,6 +471,7 @@ MonoBehaviour:
       damageRate: 0
       speed: 0
     actions: []
+  WorkIndex: 0
   offset: 0
   isNotPrologue: 1
 --- !u!4 &297927928
