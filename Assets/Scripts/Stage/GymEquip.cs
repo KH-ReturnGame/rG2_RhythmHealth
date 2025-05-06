@@ -56,6 +56,11 @@ public class GymEquip : MonoBehaviour
     {
         if(CanPT && Input.GetKey("f"))
         {
+            var parent = StartPT_UI.transform;
+            for (int i = 0; i < parent.childCount; i++)
+            {
+                parent.GetChild(i).gameObject.SetActive(false);
+            }
             StartPT_UI.SetActive(true);
             StartPT_Btn.SetActive(true);
         }

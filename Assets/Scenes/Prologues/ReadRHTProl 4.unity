@@ -373,6 +373,85 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 237975533}
   m_CullTransparentMesh: 1
+--- !u!1 &250716605
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 250716607}
+  - component: {fileID: 250716606}
+  m_Layer: 0
+  m_Name: DialogueSystem03
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &250716606
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 250716605}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0419833f5ea819c4aa219b33aaea6d80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speakers:
+  - spriteRenderer: {fileID: 772980389}
+    imageDialog: {fileID: 1072444967}
+    feelings:
+    - {fileID: -1461449804, guid: 249bf3760c6ef25498f7571987c51266, type: 3}
+    - {fileID: -2115298241, guid: 249bf3760c6ef25498f7571987c51266, type: 3}
+    - {fileID: 45794425, guid: 249bf3760c6ef25498f7571987c51266, type: 3}
+    - {fileID: 1966453398, guid: 249bf3760c6ef25498f7571987c51266, type: 3}
+    textName: {fileID: 1599956144}
+    textDialogue: {fileID: 1169278119}
+    objectArrow: {fileID: 237975533}
+  - spriteRenderer: {fileID: 986136515}
+    imageDialog: {fileID: 2072945408}
+    feelings:
+    - {fileID: -465831528, guid: 41e2cadd85d02b6449d76cedc8cd8207, type: 3}
+    - {fileID: 1178135293, guid: 41e2cadd85d02b6449d76cedc8cd8207, type: 3}
+    - {fileID: -1146954887, guid: 41e2cadd85d02b6449d76cedc8cd8207, type: 3}
+    - {fileID: 1971903458, guid: 41e2cadd85d02b6449d76cedc8cd8207, type: 3}
+    textName: {fileID: 1669697432}
+    textDialogue: {fileID: 1061254073}
+    objectArrow: {fileID: 1140105670}
+  dialogs:
+  - speakerIndex: 0
+    name: "\uD5EC\uC0A3\uC090"
+    dialogue: "\uB108\uBB34 \uC5B4\uB824\uC6CC\uC694 \uD53C\uD2F0\uCC44\uB4DC...."
+    feeling: 4
+  - speakerIndex: 1
+    name: "PT\uCC44\uB4DC"
+    dialogue: "YOU FUCKING ASSHOLE!!!!! \uD5EC\uC0A3\uC090!!!"
+    feeling: 3
+  - speakerIndex: 1
+    name: "PT\uCC44\uB4DC"
+    dialogue: "\uADF8\uB7F4\uC218\uB85D HARD WORK!! HARD TRAINNG!!!!"
+    feeling: 1
+  isAutoStart: 1
+--- !u!4 &250716607
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 250716605}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 709.0826, y: 646.99774, z: -3.7825954}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &260239930
 GameObject:
   m_ObjectHideFlags: 0
@@ -1463,9 +1542,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogSystems:
-  - {fileID: 1326326543}
-  - {fileID: 1720820441}
-  - {fileID: 1093800212}
+  - {fileID: 1934011282}
+  - {fileID: 2107625054}
+  - {fileID: 250716606}
   playRoutineFiles:
   - {fileID: 4900000, guid: e3f057758b77b8d4b893b8d01c97240f, type: 3}
   - {fileID: 4900000, guid: ba27081b1aac9a347ac9b6bfe9779851, type: 3}
@@ -2085,85 +2164,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1093800211
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1093800213}
-  - component: {fileID: 1093800212}
-  m_Layer: 0
-  m_Name: DialogueSystem03
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1093800212
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1093800211}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0419833f5ea819c4aa219b33aaea6d80, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speakers:
-  - spriteRenderer: {fileID: 772980389}
-    imageDialog: {fileID: 1072444967}
-    feelings:
-    - {fileID: -8274610306897860791, guid: bc072fc033cee38408e3499fe230858d, type: 3}
-    - {fileID: -4954453915406221759, guid: b19f219ea41be974983979e2d84f0868, type: 3}
-    - {fileID: -6513740556092432728, guid: 7717930d7e434d942886ea8d55565347, type: 3}
-    - {fileID: -7650855215846507548, guid: 5f5852ab497e668468e8b1fec30a44dd, type: 3}
-    textName: {fileID: 1599956144}
-    textDialogue: {fileID: 1169278119}
-    objectArrow: {fileID: 237975533}
-  - spriteRenderer: {fileID: 986136515}
-    imageDialog: {fileID: 2072945408}
-    feelings:
-    - {fileID: 2917858534878216652, guid: 9c7248394d73b134ca8edfebbea781cd, type: 3}
-    - {fileID: 4878601868718218778, guid: 9d399ad397b817c47ab9433093c9fa14, type: 3}
-    - {fileID: 8957324059118975939, guid: 3629ce8197e0edb4d9c41a72344727eb, type: 3}
-    - {fileID: -8360091075629873259, guid: 1a3ad0be7c2375d41a0a1fa26ef98c45, type: 3}
-    textName: {fileID: 1669697432}
-    textDialogue: {fileID: 1061254073}
-    objectArrow: {fileID: 1140105670}
-  dialogs:
-  - speakerIndex: 0
-    name: "\uD5EC\uC0A3\uC090"
-    dialogue: "\uB108\uBB34 \uC5B4\uB824\uC6CC\uC694 \uD53C\uD2F0\uCC44\uB4DC...."
-    feeling: 4
-  - speakerIndex: 1
-    name: "PT\uCC44\uB4DC"
-    dialogue: "YOU FUCKING ASSHOLE!!!!! \uD5EC\uC0A3\uC090!!!"
-    feeling: 3
-  - speakerIndex: 1
-    name: "PT\uCC44\uB4DC"
-    dialogue: "\uADF8\uB7F4\uC218\uB85D HARD WORK!! HARD TRAINNG!!!!"
-    feeling: 1
-  isAutoStart: 1
---- !u!4 &1093800213
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1093800211}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 709.0826, y: 646.99774, z: -3.7825954}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1119352420
 GameObject:
   m_ObjectHideFlags: 0
@@ -2772,85 +2772,6 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
---- !u!1 &1326326542
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1326326544}
-  - component: {fileID: 1326326543}
-  m_Layer: 0
-  m_Name: DialogueSystem01
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1326326543
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1326326542}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0419833f5ea819c4aa219b33aaea6d80, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speakers:
-  - spriteRenderer: {fileID: 772980389}
-    imageDialog: {fileID: 1072444967}
-    feelings:
-    - {fileID: -8274610306897860791, guid: bc072fc033cee38408e3499fe230858d, type: 3}
-    - {fileID: -4954453915406221759, guid: b19f219ea41be974983979e2d84f0868, type: 3}
-    - {fileID: -6513740556092432728, guid: 7717930d7e434d942886ea8d55565347, type: 3}
-    - {fileID: -7650855215846507548, guid: 5f5852ab497e668468e8b1fec30a44dd, type: 3}
-    textName: {fileID: 1599956144}
-    textDialogue: {fileID: 1169278119}
-    objectArrow: {fileID: 237975533}
-  - spriteRenderer: {fileID: 986136515}
-    imageDialog: {fileID: 2072945408}
-    feelings:
-    - {fileID: 2917858534878216652, guid: 9c7248394d73b134ca8edfebbea781cd, type: 3}
-    - {fileID: 4878601868718218778, guid: 9d399ad397b817c47ab9433093c9fa14, type: 3}
-    - {fileID: 8957324059118975939, guid: 3629ce8197e0edb4d9c41a72344727eb, type: 3}
-    - {fileID: -8360091075629873259, guid: 1a3ad0be7c2375d41a0a1fa26ef98c45, type: 3}
-    textName: {fileID: 1669697432}
-    textDialogue: {fileID: 1061254073}
-    objectArrow: {fileID: 1140105670}
-  dialogs:
-  - speakerIndex: 0
-    name: "\uD5EC\uC0A3\uC090"
-    dialogue: "\uB108\uBB34 \uC5B4\uB824\uC6CC\uC694 \uD53C\uD2F0\uCC44\uB4DC...."
-    feeling: 4
-  - speakerIndex: 1
-    name: "PT\uCC44\uB4DC"
-    dialogue: "YOU FUCKING ASSHOLE!!!!! \uD5EC\uC0A3\uC090!!!"
-    feeling: 3
-  - speakerIndex: 1
-    name: "PT\uCC44\uB4DC"
-    dialogue: "\uADF8\uB7F4\uC218\uB85D HARD WORK!! HARD TRAINNG!!!!"
-    feeling: 1
-  isAutoStart: 1
---- !u!4 &1326326544
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1326326542}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 709.0826, y: 646.99774, z: -3.7825954}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1359061800
 GameObject:
   m_ObjectHideFlags: 0
@@ -3773,85 +3694,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1699597088}
   m_CullTransparentMesh: 1
---- !u!1 &1720820440
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1720820442}
-  - component: {fileID: 1720820441}
-  m_Layer: 0
-  m_Name: DialogueSystem02
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1720820441
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1720820440}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0419833f5ea819c4aa219b33aaea6d80, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speakers:
-  - spriteRenderer: {fileID: 772980389}
-    imageDialog: {fileID: 1072444967}
-    feelings:
-    - {fileID: -8274610306897860791, guid: bc072fc033cee38408e3499fe230858d, type: 3}
-    - {fileID: -4954453915406221759, guid: b19f219ea41be974983979e2d84f0868, type: 3}
-    - {fileID: -6513740556092432728, guid: 7717930d7e434d942886ea8d55565347, type: 3}
-    - {fileID: -7650855215846507548, guid: 5f5852ab497e668468e8b1fec30a44dd, type: 3}
-    textName: {fileID: 1599956144}
-    textDialogue: {fileID: 1169278119}
-    objectArrow: {fileID: 237975533}
-  - spriteRenderer: {fileID: 986136515}
-    imageDialog: {fileID: 2072945408}
-    feelings:
-    - {fileID: 2917858534878216652, guid: 9c7248394d73b134ca8edfebbea781cd, type: 3}
-    - {fileID: 4878601868718218778, guid: 9d399ad397b817c47ab9433093c9fa14, type: 3}
-    - {fileID: 8957324059118975939, guid: 3629ce8197e0edb4d9c41a72344727eb, type: 3}
-    - {fileID: -8360091075629873259, guid: 1a3ad0be7c2375d41a0a1fa26ef98c45, type: 3}
-    textName: {fileID: 1669697432}
-    textDialogue: {fileID: 1061254073}
-    objectArrow: {fileID: 1140105670}
-  dialogs:
-  - speakerIndex: 0
-    name: "\uD5EC\uC0A3\uC090"
-    dialogue: "\uB108\uBB34 \uC5B4\uB824\uC6CC\uC694 \uD53C\uD2F0\uCC44\uB4DC...."
-    feeling: 4
-  - speakerIndex: 1
-    name: "PT\uCC44\uB4DC"
-    dialogue: "YOU FUCKING ASSHOLE!!!!! \uD5EC\uC0A3\uC090!!!"
-    feeling: 3
-  - speakerIndex: 1
-    name: "PT\uCC44\uB4DC"
-    dialogue: "\uADF8\uB7F4\uC218\uB85D HARD WORK!! HARD TRAINNG!!!!"
-    feeling: 1
-  isAutoStart: 1
---- !u!4 &1720820442
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1720820440}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 709.0826, y: 646.99774, z: -3.7825954}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1755346737
 GameObject:
   m_ObjectHideFlags: 0
@@ -3989,6 +3831,85 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1934011281
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1934011283}
+  - component: {fileID: 1934011282}
+  m_Layer: 0
+  m_Name: DialogueSystem01
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1934011282
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1934011281}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0419833f5ea819c4aa219b33aaea6d80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speakers:
+  - spriteRenderer: {fileID: 772980389}
+    imageDialog: {fileID: 1072444967}
+    feelings:
+    - {fileID: -1461449804, guid: 249bf3760c6ef25498f7571987c51266, type: 3}
+    - {fileID: -2115298241, guid: 249bf3760c6ef25498f7571987c51266, type: 3}
+    - {fileID: 45794425, guid: 249bf3760c6ef25498f7571987c51266, type: 3}
+    - {fileID: 1966453398, guid: 249bf3760c6ef25498f7571987c51266, type: 3}
+    textName: {fileID: 1599956144}
+    textDialogue: {fileID: 1169278119}
+    objectArrow: {fileID: 237975533}
+  - spriteRenderer: {fileID: 986136515}
+    imageDialog: {fileID: 2072945408}
+    feelings:
+    - {fileID: -465831528, guid: 41e2cadd85d02b6449d76cedc8cd8207, type: 3}
+    - {fileID: 1178135293, guid: 41e2cadd85d02b6449d76cedc8cd8207, type: 3}
+    - {fileID: -1146954887, guid: 41e2cadd85d02b6449d76cedc8cd8207, type: 3}
+    - {fileID: 1971903458, guid: 41e2cadd85d02b6449d76cedc8cd8207, type: 3}
+    textName: {fileID: 1669697432}
+    textDialogue: {fileID: 1061254073}
+    objectArrow: {fileID: 1140105670}
+  dialogs:
+  - speakerIndex: 0
+    name: "\uD5EC\uC0A3\uC090"
+    dialogue: "\uB108\uBB34 \uC5B4\uB824\uC6CC\uC694 \uD53C\uD2F0\uCC44\uB4DC...."
+    feeling: 4
+  - speakerIndex: 1
+    name: "PT\uCC44\uB4DC"
+    dialogue: "YOU FUCKING ASSHOLE!!!!! \uD5EC\uC0A3\uC090!!!"
+    feeling: 3
+  - speakerIndex: 1
+    name: "PT\uCC44\uB4DC"
+    dialogue: "\uADF8\uB7F4\uC218\uB85D HARD WORK!! HARD TRAINNG!!!!"
+    feeling: 1
+  isAutoStart: 1
+--- !u!4 &1934011283
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1934011281}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 709.0826, y: 646.99774, z: -3.7825954}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2072945405
 GameObject:
   m_ObjectHideFlags: 0
@@ -4064,17 +3985,96 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!1 &2107625053
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2107625055}
+  - component: {fileID: 2107625054}
+  m_Layer: 0
+  m_Name: DialogueSystem02
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2107625054
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2107625053}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0419833f5ea819c4aa219b33aaea6d80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speakers:
+  - spriteRenderer: {fileID: 772980389}
+    imageDialog: {fileID: 1072444967}
+    feelings:
+    - {fileID: -1461449804, guid: 249bf3760c6ef25498f7571987c51266, type: 3}
+    - {fileID: -2115298241, guid: 249bf3760c6ef25498f7571987c51266, type: 3}
+    - {fileID: 45794425, guid: 249bf3760c6ef25498f7571987c51266, type: 3}
+    - {fileID: 1966453398, guid: 249bf3760c6ef25498f7571987c51266, type: 3}
+    textName: {fileID: 1599956144}
+    textDialogue: {fileID: 1169278119}
+    objectArrow: {fileID: 237975533}
+  - spriteRenderer: {fileID: 986136515}
+    imageDialog: {fileID: 2072945408}
+    feelings:
+    - {fileID: -465831528, guid: 41e2cadd85d02b6449d76cedc8cd8207, type: 3}
+    - {fileID: 1178135293, guid: 41e2cadd85d02b6449d76cedc8cd8207, type: 3}
+    - {fileID: -1146954887, guid: 41e2cadd85d02b6449d76cedc8cd8207, type: 3}
+    - {fileID: 1971903458, guid: 41e2cadd85d02b6449d76cedc8cd8207, type: 3}
+    textName: {fileID: 1669697432}
+    textDialogue: {fileID: 1061254073}
+    objectArrow: {fileID: 1140105670}
+  dialogs:
+  - speakerIndex: 0
+    name: "\uD5EC\uC0A3\uC090"
+    dialogue: "\uB108\uBB34 \uC5B4\uB824\uC6CC\uC694 \uD53C\uD2F0\uCC44\uB4DC...."
+    feeling: 4
+  - speakerIndex: 1
+    name: "PT\uCC44\uB4DC"
+    dialogue: "YOU FUCKING ASSHOLE!!!!! \uD5EC\uC0A3\uC090!!!"
+    feeling: 3
+  - speakerIndex: 1
+    name: "PT\uCC44\uB4DC"
+    dialogue: "\uADF8\uB7F4\uC218\uB85D HARD WORK!! HARD TRAINNG!!!!"
+    feeling: 1
+  isAutoStart: 1
+--- !u!4 &2107625055
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2107625053}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 709.0826, y: 646.99774, z: -3.7825954}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
-  - {fileID: 1119352423}
-  - {fileID: 1720820442}
+  - {fileID: 1755346741}
   - {fileID: 187194131}
-  - {fileID: 897587454}
   - {fileID: 1003747896}
   - {fileID: 1286880273}
-  - {fileID: 1326326544}
+  - {fileID: 1934011283}
+  - {fileID: 2107625055}
+  - {fileID: 250716607}
+  - {fileID: 897587454}
   - {fileID: 1092221084}
-  - {fileID: 1093800213}
-  - {fileID: 1755346741}
+  - {fileID: 1119352423}

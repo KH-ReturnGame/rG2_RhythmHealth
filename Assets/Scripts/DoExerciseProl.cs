@@ -11,7 +11,11 @@ public class DoExerciseProl : MonoBehaviour
 
     public void SaveDialogue(int i)
     {
-        PlayerPrefs.SetInt("DialogIndex", i);
+        int temp = PlayerPrefs.GetInt("DialogIndex");
+        if(i >= temp)
+        {
+            PlayerPrefs.SetInt("DialogIndex", i);
+        }
         PlayerPrefs.Save();
     }
 
