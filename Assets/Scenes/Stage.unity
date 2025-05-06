@@ -4327,15 +4327,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8306015668953561727, guid: fe0d7b706afa3fd40a1a5d1b05613001, type: 3}
       propertyPath: m_Color.a
-      value: 0.79607844
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8306015668953561727, guid: fe0d7b706afa3fd40a1a5d1b05613001, type: 3}
       propertyPath: m_Color.b
-      value: 0.72979975
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8306015668953561727, guid: fe0d7b706afa3fd40a1a5d1b05613001, type: 3}
       propertyPath: m_Color.g
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8306015668953561727, guid: fe0d7b706afa3fd40a1a5d1b05613001, type: 3}
       propertyPath: m_Color.r
