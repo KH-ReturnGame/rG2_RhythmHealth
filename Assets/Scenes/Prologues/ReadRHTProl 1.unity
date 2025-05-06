@@ -2447,7 +2447,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -8274610306897860791, guid: 312b12b02f2086c43819d055159168b4, type: 3}
+  m_Sprite: {fileID: -922482149, guid: 094ebc7c4611e6d499dbe01ef1abfb18, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2551,13 +2551,10 @@ MonoBehaviour:
   dialogSystems:
   - {fileID: 1584478947}
   - {fileID: 1948286569}
-  - {fileID: 2065057540}
   playRoutineFiles:
   - {fileID: 4900000, guid: e3f057758b77b8d4b893b8d01c97240f, type: 3}
   - {fileID: 4900000, guid: ba27081b1aac9a347ac9b6bfe9779851, type: 3}
-  - {fileID: 4900000, guid: fd201cd8221159f41ad853c8b1f9eda1, type: 3}
   playSongFiles:
-  - {fileID: 8300000, guid: 06ab49e1cb7745e44911f748e11387b4, type: 3}
   - {fileID: 8300000, guid: 06ab49e1cb7745e44911f748e11387b4, type: 3}
   - {fileID: 8300000, guid: 06ab49e1cb7745e44911f748e11387b4, type: 3}
   index_PF: 0
@@ -2768,17 +2765,52 @@ MonoBehaviour:
     textDialogue: {fileID: 418733361}
     objectArrow: {fileID: 1997500509}
   dialogs:
-  - speakerIndex: 0
-    name: "\uD5EC\uC0A3\uC090"
-    dialogue: "\uB108\uBB34 \uC5B4\uB824\uC6CC\uC694 \uD53C\uD2F0\uCC44\uB4DC...."
-    feeling: 4
   - speakerIndex: 1
-    name: "PT\uCC44\uB4DC"
-    dialogue: "YOU FUCKING ASSHOLE!!!!! \uD5EC\uC0A3\uC090!!!"
+    name: "\uC1A1\uC18C\uB839"
+    dialogue: "\uC774\uBC88\uC5D0 \uBC30\uC6B8 \uAC83\uC740 \"\uC9E7\uC740 \uB178\uD2B8\"
+      \uC784\uB2E4!"
+    feeling: 1
+  - speakerIndex: 0
+    name: "\uAE08\uB9C8\uB9AC"
+    dialogue: "\uC800\uAE30..\uB2E4 \uC88B\uC740\uB370 \uC65C \uB9AC\uB4EC\uC5D0
+      \uB9DE\uCDB0\uC11C \uD574\uC57C\uB418\uB294.."
     feeling: 3
   - speakerIndex: 1
-    name: "PT\uCC44\uB4DC"
-    dialogue: "\uADF8\uB7F4\uC218\uB85D HARD WORK!! HARD TRAINNG!!!!"
+    name: "\uC1A1\uC18C\uB839"
+    dialogue: "\uC0AC\uB78C\uC5D0\uAC90 \uD0C0\uACE0\uB09C \uC2B5\uAD00\uB4E4\uC774
+      \uC788\uC2B4\uB2E4."
+    feeling: 1
+  - speakerIndex: 1
+    name: "\uC1A1\uC18C\uB839"
+    dialogue: "\uADF8\uB9AC\uACE0 \uADF8 \uC2B5\uAD00\uC740 \uB300\uBD80\uBD84 \uC6B4\uB3D9\uACFC\uB294
+      \uB9DE\uC9C0 \uC54A\uC2B4\uB2E4."
+    feeling: 1
+  - speakerIndex: 1
+    name: "\uC1A1\uC18C\uB839"
+    dialogue: "\uADF8 \uC2B5\uAD00\uC744 \uBC14\uAFB8\uB294 \uBE60\uB978 \uBC29\uBC95\uC774
+      \uBC14\uB85C \"\uB9AC\uB4EC\"!"
+    feeling: 2
+  - speakerIndex: 0
+    name: "\uAE08\uB9C8\uB9AC"
+    dialogue: "(\uB0A9\uB4DD\uC740 \uC548\uAC00\uC9C0\uB9CC...)"
+    feeling: 3
+  - speakerIndex: 0
+    name: "\uAE08\uB9C8\uB9AC"
+    dialogue: "(\uBC29\uAD6C\uC11D \uCC9C\uC7AC \uAC1C\uBC1C\uC790\uC758 \uC19C\uC528\uB97C
+      \uBCF4\uC5EC\uC8FC\uC5B4\uC57C\uACA0\uAD70)"
+    feeling: 2
+  - speakerIndex: 1
+    name: "\uC1A1\uC18C\uB839"
+    dialogue: "\uC790\uC2E0\uB9CC\uB9CC\uD55C \uD45C\uC815\uC784\uB2E4, \uC544\uAC00\uC528?"
+    feeling: 1
+  - speakerIndex: 1
+    name: "\uC1A1\uC18C\uB839"
+    dialogue: "\uADF8\uB7FC \uBC14\uB85C \uC2DC\uC791\uD558\uACA0\uC2B4\uB2E4!"
+    feeling: 2
+  - speakerIndex: 0
+    name: "\uAE08\uB9C8\uB9AC"
+    dialogue: "(\uC77C\uB2E8 \"\uD0C0\uC774\uBC0D\" \uC5D0 \uB9DE\uCD94\uC5B4 \"\uC544\uBB34
+      \uD0A4\"\uB098 \uB204\uB974\uC790.)"
     feeling: 1
   isAutoStart: 1
 --- !u!4 &1584478948
@@ -3768,17 +3800,29 @@ MonoBehaviour:
     objectArrow: {fileID: 1997500509}
   dialogs:
   - speakerIndex: 0
-    name: "\uD5EC\uC0A3\uC090"
-    dialogue: "\uB108\uBB34 \uC5B4\uB824\uC6CC\uC694 \uD53C\uD2F0\uCC44\uB4DC...."
-    feeling: 4
-  - speakerIndex: 1
-    name: "PT\uCC44\uB4DC"
-    dialogue: "YOU FUCKING ASSHOLE!!!!! \uD5EC\uC0A3\uC090!!!"
+    name: "\uAE08\uB9C8\uB9AC"
+    dialogue: "(\uC870\uAE08 \uD798\uB4E4\uC9C0\uB9CC...\uADF8\uB798\uB3C4...)"
     feeling: 3
-  - speakerIndex: 1
-    name: "PT\uCC44\uB4DC"
-    dialogue: "\uADF8\uB7F4\uC218\uB85D HARD WORK!! HARD TRAINNG!!!!"
+  - speakerIndex: 0
+    name: "\uAE08\uB9C8\uB9AC"
+    dialogue: "\uC758\uC678\uB85C \uD560\uB9CC \uD55C\uAC78\uC694?"
     feeling: 1
+  - speakerIndex: 1
+    name: "\uC1A1\uC18C\uB839"
+    dialogue: "\uD638\uC624...\uADF8\uB807\uB2E8 \uB9D0\uC784\uAE4C...?"
+    feeling: 1
+  - speakerIndex: 1
+    name: "\uC1A1\uC18C\uB839"
+    dialogue: "\uADF8\uB7FC \uBA87\uAC00\uC9C0, \"\uBCC0\uC8FC\"\uB97C \uC918\uBCF4\uACA0\uC2B4\uB2E4!"
+    feeling: 2
+  - speakerIndex: 0
+    name: "\uAE08\uB9C8\uB9AC"
+    dialogue: ......
+    feeling: 3
+  - speakerIndex: 0
+    name: "\uAE08\uB9C8\uB9AC"
+    dialogue: "(\uAD1C\uD788 \uB9D0\uD588\uB2E4.)"
+    feeling: 4
   isAutoStart: 1
 --- !u!4 &1948286570
 Transform:
@@ -3884,85 +3928,6 @@ RectTransform:
   m_AnchoredPosition: {x: -340, y: -158}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &2065057539
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2065057541}
-  - component: {fileID: 2065057540}
-  m_Layer: 0
-  m_Name: DialogueSystem03
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &2065057540
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2065057539}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0419833f5ea819c4aa219b33aaea6d80, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speakers:
-  - spriteRenderer: {fileID: 1194519274}
-    imageDialog: {fileID: 999644317}
-    feelings:
-    - {fileID: -1461449804, guid: 249bf3760c6ef25498f7571987c51266, type: 3}
-    - {fileID: -2115298241, guid: 249bf3760c6ef25498f7571987c51266, type: 3}
-    - {fileID: 45794425, guid: 249bf3760c6ef25498f7571987c51266, type: 3}
-    - {fileID: 1966453398, guid: 249bf3760c6ef25498f7571987c51266, type: 3}
-    textName: {fileID: 350535259}
-    textDialogue: {fileID: 781876047}
-    objectArrow: {fileID: 1797293748}
-  - spriteRenderer: {fileID: 67072818}
-    imageDialog: {fileID: 268330765}
-    feelings:
-    - {fileID: -465831528, guid: 41e2cadd85d02b6449d76cedc8cd8207, type: 3}
-    - {fileID: 1178135293, guid: 41e2cadd85d02b6449d76cedc8cd8207, type: 3}
-    - {fileID: -1146954887, guid: 41e2cadd85d02b6449d76cedc8cd8207, type: 3}
-    - {fileID: 1971903458, guid: 41e2cadd85d02b6449d76cedc8cd8207, type: 3}
-    textName: {fileID: 152415026}
-    textDialogue: {fileID: 418733361}
-    objectArrow: {fileID: 1997500509}
-  dialogs:
-  - speakerIndex: 0
-    name: "\uD5EC\uC0A3\uC090"
-    dialogue: "\uB108\uBB34 \uC5B4\uB824\uC6CC\uC694 \uD53C\uD2F0\uCC44\uB4DC...."
-    feeling: 4
-  - speakerIndex: 1
-    name: "PT\uCC44\uB4DC"
-    dialogue: "YOU FUCKING ASSHOLE!!!!! \uD5EC\uC0A3\uC090!!!"
-    feeling: 3
-  - speakerIndex: 1
-    name: "PT\uCC44\uB4DC"
-    dialogue: "\uADF8\uB7F4\uC218\uB85D HARD WORK!! HARD TRAINNG!!!!"
-    feeling: 1
-  isAutoStart: 1
---- !u!4 &2065057541
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2065057539}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 709.0826, y: 646.99774, z: -3.7825954}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2170399753159139563
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4078,7 +4043,6 @@ SceneRoots:
   - {fileID: 1365948513}
   - {fileID: 1584478948}
   - {fileID: 1948286570}
-  - {fileID: 2065057541}
   - {fileID: 1525662088}
   - {fileID: 619394802}
   - {fileID: 1798531418}
