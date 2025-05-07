@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 86b2d0b1662600d4ca71011e910e60d4
+guid: cd3b93a52569fbb46ad8e9bac01bb0e7
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -134,8 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      "ChatGPT Image 2025\uB144 5\uC6D4 7\uC77C \uC624\uD6C4 11_05_09_0": 5299549801017780027
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
