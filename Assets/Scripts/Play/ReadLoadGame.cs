@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using System.IO;
 using UnityEngine.Networking;
 
@@ -51,13 +52,14 @@ public class ReadLoadGame : MonoBehaviour
     string songPath;  
     public float offset;
     public bool isNotPrologue;
+    public GameObject[] ThreeCount;
 
     void OnEnable()
     {
         offset = PlayerPrefs.GetFloat("PlayerOffset");
         audioSource = GetComponent<AudioSource>();
         SetUp();
-        StartCoroutine(PlayMusicWithOffset());
+        StartCoroutine(ThreeCountDown());
     }
 
     void SetUp()
@@ -78,7 +80,29 @@ public class ReadLoadGame : MonoBehaviour
         songPath = Path.Combine(Application.streamingAssetsPath, gameData.settings.songFile);
     }
 
-    IEnumerator PlayMusicWithOffset()
+    IEnumerator ThreeCountDown()
+    {
+        ThreeCount[0].SetActive(true);
+        yield return new WaitForSeconds(1f);
+        ThreeCount[0].SetActive(false);
+        ThreeCount[1].SetActive(true);
+        yield return new WaitForSeconds(1f);
+        ThreeCount[1].SetActive(false);
+        ThreeCount[2].SetActive(true);
+        yield return new WaitForSeconds(1f);
+        ThreeCount[2].SetActive(false);
+        if(offset >= 0)
+        {
+            StartCoroutine(PlayMusicWithOffsetPLUS());
+        }
+        else
+        {
+            StartCoroutine(WorkRythm());
+            StartCoroutine(PlayMusicWithOffsetMINUS());
+        }
+    }
+
+    IEnumerator PlayMusicWithOffsetPLUS()
     {
         if(isNotPrologue)
         {
@@ -106,6 +130,34 @@ public class ReadLoadGame : MonoBehaviour
         Debug.Log("offset : " + offset);
         yield return new WaitForSeconds(offset / 1000f); // 오프셋 적용
         StartCoroutine(WorkRythm());
+    }
+
+    IEnumerator PlayMusicWithOffsetMINUS()
+    {
+        Debug.Log("offset : " + offset);
+        yield return new WaitForSeconds(offset / 1000f);
+        if(isNotPrologue)
+        {
+            string uri = "file://" + songPath;
+            using (UnityWebRequest uwr = UnityWebRequestMultimedia.GetAudioClip(uri, AudioType.UNKNOWN))
+            {
+                yield return uwr.SendWebRequest();
+                if (uwr.result == UnityWebRequest.Result.ConnectionError || uwr.result == UnityWebRequest.Result.ProtocolError)
+                {
+                    Debug.LogError("오디오 로드 오류: " + uwr.error);
+                    yield break;
+                }
+                AudioClip clip = DownloadHandlerAudioClip.GetContent(uwr);
+                audioSource.clip = clip;
+                audioSource.Play();
+            }
+        }
+        else
+        {
+            ProlManager prolManager = GameObject.Find("ProlManager").GetComponent<ProlManager>();
+            audioSource.clip = prolManager.playSongFiles[prolManager.index_PF];
+            audioSource.Play();
+        }
     }
 
     IEnumerator WorkRythm()
