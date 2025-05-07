@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using TMPro;
 
@@ -16,5 +17,10 @@ public class Warn : MonoBehaviour
         
         // Show the warning panel
         Instantiate(warningPanel, canvasTransform);
+    }
+
+    public void BackToStage()
+    {
+        SceneManager.LoadScene("Stage");
     }
 }
