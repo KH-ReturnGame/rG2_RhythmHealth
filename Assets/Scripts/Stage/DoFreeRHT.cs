@@ -5,7 +5,8 @@ using UnityEngine;
 public class DoFreeRHT : MonoBehaviour
 {
     bool CanStart = false;
-    public GameObject SelectRHTUI;
+    public GameObject SelectRHTUI;    
+    public GameObject Finteract;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -26,6 +27,7 @@ public class DoFreeRHT : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             CanStart = true;
+            Finteract.SetActive(true);
         }
     }
 
@@ -34,6 +36,7 @@ public class DoFreeRHT : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             CanStart = false;
+            Finteract.SetActive(false);
         }
     }
 }

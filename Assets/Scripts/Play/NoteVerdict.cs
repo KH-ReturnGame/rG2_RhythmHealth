@@ -13,7 +13,7 @@ public class NoteVerdict : MonoBehaviour
     public int Combo { get; private set; }
     public float Score { get; private set; }
     public float Accuracy { get; private set; }
-    public float life = 100f;
+    public float life;
 
     // 기본 노트 구조
     public List<GameObject> notesInRange = new List<GameObject>();

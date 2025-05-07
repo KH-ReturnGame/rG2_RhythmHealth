@@ -3693,7 +3693,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   realLoadGame: {fileID: 1592125607}
   changeSprite: {fileID: 1499449356}
-  life: 100
+  life: 10000
   notesInRange: []
   isInLong: 0
   currentLongNote: {fileID: 0}
