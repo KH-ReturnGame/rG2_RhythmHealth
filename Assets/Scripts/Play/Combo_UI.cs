@@ -53,7 +53,7 @@ public class Combo_UI : MonoBehaviour
     IEnumerator ScaleTextEffect()
     {
         // 파티클 생성
-        Instantiate(Combo_Particle, new Vector3(0, -5, 0), Quaternion.identity);
+        Instantiate(Combo_Particle, new Vector3(0, -5, -5), Quaternion.identity);
 
         // 텍스트 크기 크게 시작
         Combo_text.transform.localScale = originalScale * 1.5f;  
