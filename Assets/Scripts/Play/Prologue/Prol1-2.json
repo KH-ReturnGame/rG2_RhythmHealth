@@ -1,25 +1,31 @@
 {
 	"settings":
 	{
-		"artist": "안익태",
+		"artist": "이형주",
 		"artistLinks": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13209173&menuNo=200020", 
-		"song": "애국가", 
-		"author": "Pangu",
-		"previewIcon": "애국가.png",
-		"levelDesc": "Aegukka is a Korean national anthem.", 
-		"levelTags": "국가, anthem, national", 
+		"song": "프롤로그송", 
+		"author": "이형주",
+		"previewIcon": "프롤로그송.png",
+		"levelDesc": "프롤로그송", 
+		"levelTags": "프롤로그송", 
 		"difficulty": 1, 
-		"songFile": "애국가.ogg", 
-		"bpm": 100,
-		"damageRate": 2,
+		"songFile": "프롤로그송.mp3", 
+		"bpm": 120,
+		"damageRate": 1,
 		"speed": 1.0
 	},
 	"actions":
 	[
-		{ "NoteType": "Long", "Gym": 1, "beatsPerMinute": 100, "WaitBeat": 5, "LongTime":3, "Multi":0},
-		{ "NoteType": "Short", "Gym": 1, "beatsPerMinute": 100, "WaitBeat": 5, "LongTime":0, "Multi":0},
-		{ "NoteType": "Long", "Gym": 1, "beatsPerMinute": 100, "WaitBeat": 6, "LongTime":5, "Multi":0},
-		{ "NoteType": "Multi", "Gym": 1, "beatsPerMinute": 100, "WaitBeat": 5, "LongTime":0, "Multi":5},
-		{ "NoteType": "Double", "Gym": 1, "beatsPerMinute": 100, "WaitBeat": 5, "LongTime":0, "Multi":0}
+		{ "NoteType": "Short", "Gym": 1, "beatsPerMinute": 90, "WaitBeat": 5, "LongTime":0, "Multi":0},
+		{ "NoteType": "Short", "Gym": 1, "beatsPerMinute": 90, "WaitBeat": 5, "LongTime":0, "Multi":0},
+		{ "NoteType": "Short", "Gym": 1, "beatsPerMinute": 90, "WaitBeat": 5, "LongTime":0, "Multi":0},
+		{ "NoteType": "Short", "Gym": 1, "beatsPerMinute": 90, "WaitBeat": 5, "LongTime":0, "Multi":0},
+		{ "NoteType": "Short", "Gym": 1, "beatsPerMinute": 90, "WaitBeat": 5, "LongTime":0, "Multi":0},
+		{ "NoteType": "Short", "Gym": 1, "beatsPerMinute": 90, "WaitBeat": 5, "LongTime":0, "Multi":0},
+		{ "NoteType": "Short", "Gym": 1, "beatsPerMinute": 90, "WaitBeat": 5, "LongTime":0, "Multi":0},
+		{ "NoteType": "Short", "Gym": 1, "beatsPerMinute": 90, "WaitBeat": 5, "LongTime":0, "Multi":0},
+		{ "NoteType": "Short", "Gym": 1, "beatsPerMinute": 90, "WaitBeat": 5, "LongTime":0, "Multi":0},
+		{ "NoteType": "Short", "Gym": 1, "beatsPerMinute": 90, "WaitBeat": 5, "LongTime":0, "Multi":0},
+		{ "NoteType": "Short", "Gym": 1, "beatsPerMinute": 90, "WaitBeat": 5, "LongTime":0, "Multi":0}
 	]
 }
