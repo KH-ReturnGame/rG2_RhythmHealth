@@ -759,7 +759,6 @@ GameObject:
   m_Component:
   - component: {fileID: 516379901}
   - component: {fileID: 516379900}
-  - component: {fileID: 516379899}
   - component: {fileID: 516379898}
   m_Layer: 0
   m_Name: Player
@@ -825,28 +824,6 @@ MonoBehaviour:
   - {fileID: -8989894747091061331, guid: 3af6290881570674a88dbd3be13bad94, type: 3}
   multinote_fail:
   - {fileID: -1467866385772104529, guid: f7f17b811a0fd59439a5e68d6c5054d0, type: 3}
---- !u!95 &516379899
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 516379897}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 1b766d263c0197e42aa83e1e9ddc5359, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!212 &516379900
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3655,9 +3632,9 @@ MonoBehaviour:
   dialogSystems:
   - {fileID: 2107751742}
   playRoutineFiles:
-  - {fileID: 4900000, guid: e3f057758b77b8d4b893b8d01c97240f, type: 3}
+  - {fileID: 4900000, guid: ba27081b1aac9a347ac9b6bfe9779851, type: 3}
   playSongFiles:
-  - {fileID: 8300000, guid: 06ab49e1cb7745e44911f748e11387b4, type: 3}
+  - {fileID: 8300000, guid: f4fd68bc26fd9c745b4f0b531677c74d, type: 3}
   index_PF: 0
   noteVerdict: {fileID: 930722969}
   readLoadGame: {fileID: 1910878612}

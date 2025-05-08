@@ -2577,7 +2577,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1499449355}
   - component: {fileID: 1499449354}
-  - component: {fileID: 1499449353}
   - component: {fileID: 1499449356}
   m_Layer: 0
   m_Name: Player
@@ -2586,28 +2585,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!95 &1499449353
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1499449351}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 1b766d263c0197e42aa83e1e9ddc5359, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!212 &1499449354
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2771,8 +2748,8 @@ MonoBehaviour:
   - {fileID: 4900000, guid: e3f057758b77b8d4b893b8d01c97240f, type: 3}
   - {fileID: 4900000, guid: ba27081b1aac9a347ac9b6bfe9779851, type: 3}
   playSongFiles:
-  - {fileID: 8300000, guid: 06ab49e1cb7745e44911f748e11387b4, type: 3}
-  - {fileID: 8300000, guid: 06ab49e1cb7745e44911f748e11387b4, type: 3}
+  - {fileID: 8300000, guid: 5725e60b3f813274aae185e5b9ffc25c, type: 3}
+  - {fileID: 8300000, guid: c36451bb73842b6449b4741e7fd1b25a, type: 3}
   index_PF: 0
   noteVerdict: {fileID: 1825230942}
   readLoadGame: {fileID: 1592125607}

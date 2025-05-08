@@ -4071,9 +4071,9 @@ MonoBehaviour:
   dialogSystems:
   - {fileID: 780291716}
   playRoutineFiles:
-  - {fileID: 4900000, guid: e3f057758b77b8d4b893b8d01c97240f, type: 3}
+  - {fileID: 4900000, guid: fd201cd8221159f41ad853c8b1f9eda1, type: 3}
   playSongFiles:
-  - {fileID: 8300000, guid: 06ab49e1cb7745e44911f748e11387b4, type: 3}
+  - {fileID: 8300000, guid: 78b05b8e4e4725e4a8d5e0a0d013830d, type: 3}
   index_PF: 0
   noteVerdict: {fileID: 1005148632}
   readLoadGame: {fileID: 587187179}
