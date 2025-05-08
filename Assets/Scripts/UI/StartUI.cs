@@ -18,6 +18,8 @@ public class StartUI : MonoBehaviour
 
     public void Exercise()
     {
+        PlayerPrefs.SetInt("DialogIndex", 0);
+        PlayerPrefs.Save();
         SceneManager.LoadScene("Stage");
     }
 
