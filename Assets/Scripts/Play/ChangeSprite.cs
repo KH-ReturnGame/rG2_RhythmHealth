@@ -55,7 +55,7 @@ public class ChangeSprite : MonoBehaviour
             }
             else if(_is_Success == false)
             {
-                spriteRenderer.sprite = note_fail[noteVerdict.realLoadGame.gameData.actions[noteVerdict.currentNoteIndex].Gym -1];
+                spriteRenderer.sprite = note_fail[0];
             }
         }
         else if(noteVerdict.realLoadGame.gameData.actions[noteVerdict.currentNoteIndex].NoteType == "Double")
@@ -66,14 +66,14 @@ public class ChangeSprite : MonoBehaviour
             }
             else if(_is_Success == false)
             {
-                spriteRenderer.sprite = doublenote_fail[noteVerdict.realLoadGame.gameData.actions[noteVerdict.currentNoteIndex].Gym -1];
+                spriteRenderer.sprite = doublenote_fail[0];
             }
         }
         else if(noteVerdict.realLoadGame.gameData.actions[noteVerdict.currentNoteIndex].NoteType == "Multi")
         {
             if(_is_Success == false)
             {
-                spriteRenderer.sprite = multinote_fail[noteVerdict.realLoadGame.gameData.actions[noteVerdict.currentNoteIndex].Gym -1];
+                spriteRenderer.sprite = multinote_fail[0];
             }
         }
         else if(noteVerdict.realLoadGame.gameData.actions[noteVerdict.currentNoteIndex].NoteType == "Long")
@@ -84,7 +84,7 @@ public class ChangeSprite : MonoBehaviour
             }
             if(_is_Success == false)
             {
-                spriteRenderer.sprite = longnote_fail[noteVerdict.realLoadGame.gameData.actions[noteVerdict.currentNoteIndex].Gym -1];
+                spriteRenderer.sprite = longnote_fail[0];
             }
         }
     }

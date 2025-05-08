@@ -16,16 +16,22 @@
 	},
 	"actions":
 	[
-		{ "NoteType": "Short", "Gym": 1, "beatsPerMinute": 90, "WaitBeat": 5, "LongTime":0, "Multi":0},
-		{ "NoteType": "Short", "Gym": 1, "beatsPerMinute": 90, "WaitBeat": 5, "LongTime":0, "Multi":0},
-		{ "NoteType": "Short", "Gym": 1, "beatsPerMinute": 90, "WaitBeat": 5, "LongTime":0, "Multi":0},
-		{ "NoteType": "Short", "Gym": 1, "beatsPerMinute": 90, "WaitBeat": 5, "LongTime":0, "Multi":0},
-		{ "NoteType": "Short", "Gym": 1, "beatsPerMinute": 90, "WaitBeat": 5, "LongTime":0, "Multi":0},
-		{ "NoteType": "Short", "Gym": 1, "beatsPerMinute": 90, "WaitBeat": 5, "LongTime":0, "Multi":0},
-		{ "NoteType": "Short", "Gym": 1, "beatsPerMinute": 90, "WaitBeat": 5, "LongTime":0, "Multi":0},
-		{ "NoteType": "Short", "Gym": 1, "beatsPerMinute": 90, "WaitBeat": 5, "LongTime":0, "Multi":0},
-		{ "NoteType": "Short", "Gym": 1, "beatsPerMinute": 90, "WaitBeat": 5, "LongTime":0, "Multi":0},
-		{ "NoteType": "Short", "Gym": 1, "beatsPerMinute": 90, "WaitBeat": 5, "LongTime":0, "Multi":0},
-		{ "NoteType": "Short", "Gym": 1, "beatsPerMinute": 90, "WaitBeat": 5, "LongTime":0, "Multi":0}
+		{ "NoteType": "Short", "Gym": 1, "beatsPerMinute": 120, "WaitBeat": 4, "LongTime":0, "Multi":0},
+		{ "NoteType": "Short", "Gym": 2, "beatsPerMinute": 120, "WaitBeat": 4, "LongTime":0, "Multi":0},
+		{ "NoteType": "Short", "Gym": 1, "beatsPerMinute": 120, "WaitBeat": 4, "LongTime":0, "Multi":0},
+		{ "NoteType": "Short", "Gym": 2, "beatsPerMinute": 120, "WaitBeat": 4, "LongTime":0, "Multi":0},
+		{ "NoteType": "Short", "Gym": 1, "beatsPerMinute": 120, "WaitBeat": 1, "LongTime":0, "Multi":0},
+
+		{ "NoteType": "Short", "Gym": 3, "beatsPerMinute": 120, "WaitBeat": 1, "LongTime":0, "Multi":0},
+		{ "NoteType": "Short", "Gym": 1, "beatsPerMinute": 120, "WaitBeat": 1, "LongTime":0, "Multi":0},
+		{ "NoteType": "Short", "Gym": 3, "beatsPerMinute": 120, "WaitBeat": 1, "LongTime":0, "Multi":0},
+		{ "NoteType": "Short", "Gym": 1, "beatsPerMinute": 120, "WaitBeat": 1, "LongTime":0, "Multi":0},
+		{ "NoteType": "Short", "Gym": 4, "beatsPerMinute": 120, "WaitBeat": 1, "LongTime":0, "Multi":0},
+		{ "NoteType": "Short", "Gym": 1, "beatsPerMinute": 120, "WaitBeat": 1, "LongTime":0, "Multi":0},
+		{ "NoteType": "Short", "Gym": 4, "beatsPerMinute": 120, "WaitBeat": 2, "LongTime":0, "Multi":0},
+		{ "NoteType": "Short", "Gym": 2, "beatsPerMinute": 120, "WaitBeat": 1, "LongTime":0, "Multi":0},
+		{ "NoteType": "Short", "Gym": 4, "beatsPerMinute": 120, "WaitBeat": 1, "LongTime":0, "Multi":0},
+		{ "NoteType": "Short", "Gym": 1, "beatsPerMinute": 120, "WaitBeat": 1, "LongTime":0, "Multi":0},
+		{ "NoteType": "Short", "Gym": 4, "beatsPerMinute": 120, "WaitBeat": 2, "LongTime":0, "Multi":0}
 	]
 }
