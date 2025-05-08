@@ -35,7 +35,7 @@ public class ChangeSprite : MonoBehaviour
         _is_Success = noteVerdict.isSuccess;
         if(_is_Success != null)
         {
-            ChangeSpriteNote();
+            StartCoroutine(ChangeSpriteNote());
             _is_Success = null;
         }
 
@@ -45,12 +45,14 @@ public class ChangeSprite : MonoBehaviour
         }
     }
 
-    void ChangeSpriteNote()
+    IEnumerator ChangeSpriteNote()
     {
         if(noteVerdict.realLoadGame.gameData.actions[noteVerdict.currentNoteIndex].NoteType == "Short")
         {
             if(_is_Success == true)
             {
+                spriteRenderer.sprite = note_ready[noteVerdict.realLoadGame.gameData.actions[noteVerdict.currentNoteIndex].Gym -1];
+                yield return new WaitForSeconds(0.25f);
                 spriteRenderer.sprite = note[noteVerdict.realLoadGame.gameData.actions[noteVerdict.currentNoteIndex].Gym -1];
             }
             else if(_is_Success == false)
@@ -62,6 +64,8 @@ public class ChangeSprite : MonoBehaviour
         {
             if(_is_Success == true)
             {
+                spriteRenderer.sprite = doublenote_ready[noteVerdict.realLoadGame.gameData.actions[noteVerdict.currentNoteIndex].Gym -1];
+                yield return new WaitForSeconds(0.25f);
                 spriteRenderer.sprite = doublenote[noteVerdict.realLoadGame.gameData.actions[noteVerdict.currentNoteIndex].Gym -1];
             }
             else if(_is_Success == false)
@@ -87,6 +91,8 @@ public class ChangeSprite : MonoBehaviour
                 spriteRenderer.sprite = longnote_fail[0];
             }
         }
+        noteVerdict.isSuccess = null;
+        yield return null;
     }
 
     public void ChangeSpriteMultiNote()

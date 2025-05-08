@@ -106,7 +106,7 @@ public class NoteVerdict : MonoBehaviour
         if (closestNote.CompareTag("note"))
         {
             // 일반 노트 판정
-            if (minDistance <= judgeCollider.bounds.size.x * 0.25f)
+            if (minDistance <= judgeCollider.bounds.size.x * 0.3f)
             {
                 Debug.Log("Excellent!");
                 Score += 20;
@@ -114,7 +114,7 @@ public class NoteVerdict : MonoBehaviour
                 Combo++;
                 isSuccess = true;
             }
-            else if (minDistance <= judgeCollider.bounds.size.x * 0.5f)
+            else if (minDistance <= judgeCollider.bounds.size.x * 0.6f)
             {
                 Debug.Log("Great!");
                 Score += 15;
@@ -211,7 +211,7 @@ public class NoteVerdict : MonoBehaviour
                 Combo++;
                 isSuccess = true;
             }
-            else if (holdPercentage >= 0.5f)
+            else if (holdPercentage >= 0.4f)
             {
                 Debug.Log(holdTime);
                 Debug.Log(requiredTime);
