@@ -632,38 +632,49 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   noteVerdict: {fileID: 1005148632}
   note_ready:
-  - {fileID: -855298285791758126, guid: 82d176c33b59b854990a89ef0c009b21, type: 3}
-  - {fileID: -855298285791758126, guid: 30ecfedd7ed0e8847877c54aade3f321, type: 3}
+  - {fileID: -304204894930885578, guid: e91875b8a416cad4d81983bfe5a4dad3, type: 3}
+  - {fileID: 4005262419326781661, guid: 7f2c0e8a776c3ab49b0aaad9cff89210, type: 3}
+  - {fileID: 5299549801017780027, guid: 86b2d0b1662600d4ca71011e910e60d4, type: 3}
+  - {fileID: 2111866881, guid: e103de0cb86bd5049bf95de1723b6540, type: 3}
   note:
-  - {fileID: 241758831, guid: 82d176c33b59b854990a89ef0c009b21, type: 3}
-  - {fileID: -175248703, guid: 30ecfedd7ed0e8847877c54aade3f321, type: 3}
+  - {fileID: -1397728976612781682, guid: c006128926eebff4a861dd7cc07aea5b, type: 3}
+  - {fileID: -1024925748, guid: 7f2c0e8a776c3ab49b0aaad9cff89210, type: 3}
+  - {fileID: -1458588023, guid: 86b2d0b1662600d4ca71011e910e60d4, type: 3}
+  - {fileID: 4781844732984420303, guid: e103de0cb86bd5049bf95de1723b6540, type: 3}
   note_fail:
-  - {fileID: -1794465345, guid: 82d176c33b59b854990a89ef0c009b21, type: 3}
-  - {fileID: 8957324059118975939, guid: 99752395f763e6d4faf25e8d8416c51b, type: 3}
+  - {fileID: -1467866385772104529, guid: f7f17b811a0fd59439a5e68d6c5054d0, type: 3}
   longnote_ready:
-  - {fileID: -855298285791758126, guid: 57a5c3093c7db204093d635363ed8ff6, type: 3}
+  - {fileID: 4335129750501990285, guid: 026e0ad0920427046817cfc75c5d8973, type: 3}
+  - {fileID: -6677924097281249547, guid: d01fad9012424cb4bad4ac788c41d641, type: 3}
+  - {fileID: -2536996726317995964, guid: 6ec4a2a7cfcd77b4eaab6c97524795c8, type: 3}
+  - {fileID: -4217569172708217576, guid: 5ef8c43e6fa8ac74db8cfdbafd46685d, type: 3}
   longnote:
-  - {fileID: 1981968534, guid: 57a5c3093c7db204093d635363ed8ff6, type: 3}
+  - {fileID: -2119683646219056703, guid: 200ccb310879ee140868b8b30159103a, type: 3}
+  - {fileID: -6677924097281249547, guid: d01fad9012424cb4bad4ac788c41d641, type: 3}
+  - {fileID: 4585578527704925817, guid: e18adbd840cc52e4dbdd99a408ad13db, type: 3}
+  - {fileID: -4217569172708217576, guid: 5ef8c43e6fa8ac74db8cfdbafd46685d, type: 3}
   longnote_fail:
-  - {fileID: 6937817954938267909, guid: 3c79aaf64ae1ab849bbbda9514e3691e, type: 3}
+  - {fileID: -1467866385772104529, guid: f7f17b811a0fd59439a5e68d6c5054d0, type: 3}
   doublenote_ready:
-  - {fileID: -6470460504253458178, guid: 9a6a8d4c3aaf0da48a358275d6d57bb4, type: 3}
+  - {fileID: 5009300870465982778, guid: f11d4b363f76fa74da3cc227ac8de93b, type: 3}
+  - {fileID: 132881975, guid: 4949920275e57ae439fa05ffc0648167, type: 3}
   doublenote:
-  - {fileID: -1809891423, guid: 9a6a8d4c3aaf0da48a358275d6d57bb4, type: 3}
+  - {fileID: -6874598312334413297, guid: 75023f0027c971b4fbfbb9867acc3f1e, type: 3}
+  - {fileID: -549143132, guid: 4949920275e57ae439fa05ffc0648167, type: 3}
   doublenote_fail:
-  - {fileID: -855298285791758126, guid: ec9e3666ebb39f94897856b19cd9c657, type: 3}
+  - {fileID: -1467866385772104529, guid: f7f17b811a0fd59439a5e68d6c5054d0, type: 3}
   multinote_ready:
-  - {fileID: -855298285791758126, guid: 523f9c825677c694c9719273ff132d3f, type: 3}
+  - {fileID: -6799156006113035591, guid: 13cadad365c458f4ca413c88b179fe5f, type: 3}
   multinote_one:
-  - {fileID: 104482666, guid: 523f9c825677c694c9719273ff132d3f, type: 3}
+  - {fileID: 6851756498971959073, guid: a42545ea66ef7d441ba811a0570d2c7b, type: 3}
   multinote_two:
-  - {fileID: -1222266813, guid: 523f9c825677c694c9719273ff132d3f, type: 3}
+  - {fileID: -6799156006113035591, guid: 13cadad365c458f4ca413c88b179fe5f, type: 3}
   multinote_three:
-  - {fileID: -268749039, guid: 523f9c825677c694c9719273ff132d3f, type: 3}
+  - {fileID: -8989894747091061331, guid: 3af6290881570674a88dbd3be13bad94, type: 3}
   multinote_four:
-  - {fileID: 1660010144, guid: 523f9c825677c694c9719273ff132d3f, type: 3}
+  - {fileID: -8989894747091061331, guid: 3af6290881570674a88dbd3be13bad94, type: 3}
   multinote_fail:
-  - {fileID: 6937817954938267909, guid: b1f43c19383efe74791f782d6185acb8, type: 3}
+  - {fileID: -1467866385772104529, guid: f7f17b811a0fd59439a5e68d6c5054d0, type: 3}
 --- !u!95 &264943210
 Animator:
   serializedVersion: 7
@@ -1027,7 +1038,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &503632015
 MonoBehaviour:
   m_ObjectHideFlags: 0
