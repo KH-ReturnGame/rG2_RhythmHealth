@@ -1,0 +1,29 @@
+{
+	"settings":
+	{
+		"artist": "요루시카",
+		"artistLinks": "https://www.youtube.com/@nbuna", 
+		"song": "화성인", 
+		"author": "이형주",
+		"previewIcon": "화성인.png",
+		"levelDesc": "화성인", 
+		"levelTags": "화성인", 
+		"difficulty": 1, 
+		"songFile": "화성인.mp3", 
+		"bpm": 100,
+		"damageRate": 1,
+		"speed": 1.0
+	},
+	"actions":
+	[
+		{ "NoteType": "Short", "Gym": 1, "beatsPerMinute": 100, "WaitBeat": 4, "LongTime":0, "Multi":0},
+		{ "NoteType": "Short", "Gym": 2, "beatsPerMinute": 100, "WaitBeat": 4, "LongTime":0, "Multi":0},
+		{ "NoteType": "Short", "Gym": 1, "beatsPerMinute": 100, "WaitBeat": 4, "LongTime":0, "Multi":0},
+		{ "NoteType": "Short", "Gym": 2, "beatsPerMinute": 100, "WaitBeat": 4, "LongTime":0, "Multi":0},
+		{ "NoteType": "Short", "Gym": 1, "beatsPerMinute": 100, "WaitBeat": 2, "LongTime":0, "Multi":0},
+		{ "NoteType": "Short", "Gym": 2, "beatsPerMinute": 100, "WaitBeat": 2, "LongTime":0, "Multi":0},
+		{ "NoteType": "Short", "Gym": 1, "beatsPerMinute": 100, "WaitBeat": 4, "LongTime":0, "Multi":0},
+		{ "NoteType": "Short", "Gym": 2, "beatsPerMinute": 100, "WaitBeat": 4, "LongTime":0, "Multi":0},
+		{ "NoteType": "Short", "Gym": 1, "beatsPerMinute": 100, "WaitBeat": 4, "LongTime":0, "Multi":0}
+	]
+}
