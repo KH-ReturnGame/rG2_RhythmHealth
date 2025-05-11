@@ -10,6 +10,9 @@ public class ProlManager : MonoBehaviour
     
 	[SerializeField]
 	private	TextAsset[] playRoutineFiles;
+
+    [SerializeField]
+	private	SkipDialog[] skipDialogs;
     
 	public AudioClip[] playSongFiles;
     int index_STD = 0;
@@ -22,7 +25,7 @@ public class ProlManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private IEnumerator Start()
     {
-        yield return new WaitUntil(()=>dialogSystems[index_STD].UpdateDialog());
+        yield return new WaitUntil(()=>dialogSystems[index_STD].UpdateDialog() || skipDialogs[index_STD].SkipBool());
         index_STD++;
         if(index_STD <= dialogSystems.Length && index_PF < playRoutineFiles.Length)
         {
