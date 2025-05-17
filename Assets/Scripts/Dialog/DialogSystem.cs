@@ -17,6 +17,8 @@ public class DialogSystem : MonoBehaviour
 	private	float			typingSpeed = 0.1f;			
 	private	bool			isTypingEffect = false;		
 
+	public GameObject skipDialogBTN;
+
 	private void Awake()
 	{
 		Setup();
@@ -29,6 +31,7 @@ public class DialogSystem : MonoBehaviour
 			SetActiveObjects(speakers[i], false);
 			speakers[i].spriteRenderer.gameObject.SetActive(true);
 		}
+		skipDialogBTN.SetActive(true);
 	}
 
 	public bool UpdateDialog()

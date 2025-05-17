@@ -15,12 +15,11 @@ public class SkipDialog : MonoBehaviour
         
     }
 
-    public void Skip(GameObject obj)
+    public void Skip(GameObject obj) // Skip the dialog
     {
-        // Skip the dialog
         obj.SetActive(false);
         skip = true;
-        
+        gameObject.SetActive(false);    
     }
 
     public bool SkipBool()

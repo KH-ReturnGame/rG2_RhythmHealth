@@ -39,8 +39,8 @@ public class ProlManager : MonoBehaviour
 
     private IEnumerator StartDialog(int i)
 	{
-        yield return new WaitForSeconds(2.5f);
-		yield return new WaitUntil(()=>dialogSystems[i].UpdateDialog());
+        yield return new WaitForSeconds(1f);
+		yield return new WaitUntil(()=>dialogSystems[i].UpdateDialog() || skipDialogs[index_STD].SkipBool());
         index_STD++;
         if(index_STD <= dialogSystems.Length && index_PF < playRoutineFiles.Length)
         {
@@ -57,7 +57,7 @@ public class ProlManager : MonoBehaviour
 
     private IEnumerator PlayFile(int i)
 	{
-		yield return new WaitForSeconds(2.5f); // 여기에 실제 그 파일 로드 및 시작ㄴㄴ
+		yield return new WaitForSeconds(0.5f); // 여기에 실제 그 파일 로드 및 시작ㄴㄴ
 
         noteVerdict.currentNoteIndex = -1;
         noteVerdict.isSuccess = null;

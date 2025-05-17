@@ -150,7 +150,7 @@ GameObject:
   - component: {fileID: 2875115194943321314}
   - component: {fileID: 3599856326341868506}
   m_Layer: 5
-  m_Name: "\uB300\uC0AC \uC2A4\uD0B51"
+  m_Name: "\uB300\uC0AC \uC2A4\uD0B5"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
