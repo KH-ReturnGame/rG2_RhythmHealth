@@ -11,14 +11,24 @@ public class NoteSpawn : MonoBehaviour
     public GameObject Multi;
     public Transform pivot;
 
+    public ReadLoadGame read;
+    float speedMultiplier;
+    void Start()
+    {
+        read = GameObject.Find("플레이!").GetComponent<ReadLoadGame>();
+        speedMultiplier = read.gameData.settings.speed;
+    }
+
     public void ShortNote()
     {
         Instantiate(Short, pivot.position, Quaternion.identity);
     }
     public void LongNote(float longTime, float bpm)
-    {   
-        // 롱노트 길이 계산 도대체 왜 시이발 2.8이 차이나는가?????????????????
-        float totalLength = longTime * 2.8f * (60f / bpm); 
+    {
+        // 시간 -> 거리로 바꾸는 일인데... 거리=속력X시간
+        float speed = (bpm / 60f) * speedMultiplier / 0.6f;
+        float totalLength = longTime * speed / 2;
+        // 길이기는한데 아마 40번째줄에서 나누니까 4가 아니라 2로 나눠야 하는 듯
 
         // 시작 부분 (long_note_0)
         GameObject startNote = Instantiate(longNoteStartPrefab, pivot.position, Quaternion.identity);
