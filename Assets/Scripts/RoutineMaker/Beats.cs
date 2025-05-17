@@ -33,7 +33,7 @@ public class Beats : MonoBehaviour
     {
         if (!string.IsNullOrEmpty(BPM_ID.text) && !string.IsNullOrEmpty(inputField_ID.text))
         {
-            float frameCount = HowLong * int.Parse(BPM_ID.text) / 60f;
+            float frameCount = HowLong * int.Parse(BPM_ID.text) * 4 / 60f;
             Transform content = GetComponent<ScrollRect>().content;
 
             // 기존 자식 오브젝트 제거

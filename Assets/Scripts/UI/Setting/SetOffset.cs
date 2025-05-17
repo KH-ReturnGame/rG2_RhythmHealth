@@ -95,11 +95,18 @@ public class SetOffset : MonoBehaviour
         {
             offset += _Offset[i];
         }
-        offset /= _Offset.Count;;
-        PlayerPrefs.SetFloat("PlayerOffset", offset);
-        PlayerPrefs.Save();
-        
-        int OffsetMS = Mathf.RoundToInt(offset * 1000); 
-        OffsetText.text = OffsetMS.ToString() + "ms";
+        offset /= _Offset.Count;
+        if (offset > 1 || offset < -1)
+        {
+            OffsetText.text = "다시 해봐요 :(";
+        }
+        else
+        {
+            PlayerPrefs.SetFloat("PlayerOffset", offset);
+            PlayerPrefs.Save();
+
+            int OffsetMS = Mathf.RoundToInt(offset * 1000); 
+            OffsetText.text = OffsetMS.ToString() + "ms";  
+        }
     }
 }

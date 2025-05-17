@@ -76,6 +76,7 @@ public class BeatInfo : MonoBehaviour
             WaitBeat++;
             if (beats.beatList[i].GetComponent<BeatInfo>().isBeat == true)
             {
+                WaitBeat /= 4;
                 break;
             }
         }

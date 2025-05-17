@@ -53,6 +53,7 @@ public class ReadLoadGame : MonoBehaviour
     public float offset;
     public bool isNotPrologue;
     public GameObject[] ThreeCount;
+    float PlayWaitTime;
 
     void OnEnable()
     {
@@ -64,7 +65,7 @@ public class ReadLoadGame : MonoBehaviour
 
     void SetUp()
     {
-        if(isNotPrologue)
+        if (isNotPrologue)
         {
             string song = PlayerPrefs.GetString("SongName");
             string jsonPath = Path.Combine("C:/RHRoutines", song, song + ".json");
@@ -78,10 +79,12 @@ public class ReadLoadGame : MonoBehaviour
         }
         BPM = gameData.settings.bpm;
         songPath = Path.Combine(Application.streamingAssetsPath, gameData.settings.songFile);
+        PlayWaitTime = 6.25f / ((BPM / 60f) * gameData.settings.speed / 0.6f);
     }
 
     IEnumerator ThreeCountDown()
     {
+        // 거리가 6.25f임 // 거리 = 속력 * 시간 => 시간 = 거리 / 속력 => 시간 = 6.25f / speed
         ThreeCount[0].SetActive(true);
         yield return new WaitForSeconds(1f);
         ThreeCount[0].SetActive(false);
@@ -91,51 +94,13 @@ public class ReadLoadGame : MonoBehaviour
         ThreeCount[2].SetActive(true);
         yield return new WaitForSeconds(1f);
         ThreeCount[2].SetActive(false);
-        if(offset >= 0)
-        {
-            StartCoroutine(PlayMusicWithOffsetPLUS());
-        }
-        else
-        {
-            StartCoroutine(WorkRythm());
-            StartCoroutine(PlayMusicWithOffsetMINUS());
-        }
-    }
 
-    IEnumerator PlayMusicWithOffsetPLUS()
-    {
-        if(isNotPrologue)
-        {
-            string uri = "file://" + songPath;
-            using (UnityWebRequest uwr = UnityWebRequestMultimedia.GetAudioClip(uri, AudioType.UNKNOWN))
-            {
-                yield return uwr.SendWebRequest();
-                if (uwr.result == UnityWebRequest.Result.ConnectionError || uwr.result == UnityWebRequest.Result.ProtocolError)
-                {
-                    Debug.LogError("오디오 로드 오류: " + uwr.error);
-                    yield break;
-                }
-                AudioClip clip = DownloadHandlerAudioClip.GetContent(uwr);
-                audioSource.clip = clip;
-                audioSource.Play();
-            }
-        }
-        else
-        {
-            ProlManager prolManager = GameObject.Find("ProlManager").GetComponent<ProlManager>();
-            audioSource.clip = prolManager.playSongFiles[prolManager.index_PF];
-            audioSource.Play();
-        }
-        
-        Debug.Log("offset : " + offset);
-        yield return new WaitForSeconds(offset / 1000f); // 오프셋 적용
         StartCoroutine(WorkRythm());
+        StartCoroutine(PlayWait());
     }
 
-    IEnumerator PlayMusicWithOffsetMINUS()
+    IEnumerator PlayMusicWithOffset()
     {
-        Debug.Log("offset : " + offset);
-        yield return new WaitForSeconds(offset / 1000f);
         if(isNotPrologue)
         {
             string uri = "file://" + songPath;
@@ -182,10 +147,17 @@ public class ReadLoadGame : MonoBehaviour
                 noteSpawn.MultiNote();
             }
             yield return new WaitForSeconds(gameData.actions[WorkIndex].WaitBeat * 60 / (BPM * gameData.settings.speed));
-            Debug.Log(gameData.actions[WorkIndex].WaitBeat * 60 / (BPM * gameData.settings.speed));
             WorkIndex++;
+            //Debug.Log(gameData.actions[WorkIndex].WaitBeat * 60 / (BPM * gameData.settings.speed));
         }
         StartCoroutine(End());
+    }
+
+    IEnumerator PlayWait()
+    {
+        Debug.Log("offset : " + offset);
+        yield return new WaitForSeconds(PlayWaitTime + offset); // 오프셋 적용
+        StartCoroutine(PlayMusicWithOffset());
     }
 
     IEnumerator End()

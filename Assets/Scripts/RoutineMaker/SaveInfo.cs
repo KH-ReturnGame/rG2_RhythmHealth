@@ -29,7 +29,7 @@ public class ActionData
     public string NoteType;
     public int Gym;
     public float beatsPerMinute;
-    public int WaitBeat;
+    public float WaitBeat;
     public float LongTime;
     public int Multi;
 }
