@@ -10,7 +10,7 @@ public class BeatInfo : MonoBehaviour
 
     public string NoteType;
     public int Gym;
-    public int WaitBeat;
+    public float WaitBeat;
     public float LongTime;
     public int Multi;
 
@@ -76,7 +76,7 @@ public class BeatInfo : MonoBehaviour
             WaitBeat++;
             if (beats.beatList[i].GetComponent<BeatInfo>().isBeat == true)
             {
-                WaitBeat /= 4;
+                WaitBeat = WaitBeat / 4;
                 break;
             }
         }
