@@ -1,0 +1,20 @@
+{
+    "settings": {
+        "artist": "Yorushika",
+        "artistLinks": "https://www.youtube.com/@nbuna",
+        "song": "말해줘",
+        "author": "딸기왕자",
+        "previewIcon": "C:/RHRoutines/말해줘/말해줘.png",
+        "levelDesc": "말해줘는 2017년 6월 28일에 발매된 요루시카의 미니 1집 [여름풀이 방해를 해]의 수록곡이다. 앨범 발매와 함께 MV가 투고되었다. 요루시카는 신이고 sui는 무적이다.",
+        "levelTags": "a",
+        "difficulty": 3,
+        "songFile": "C:/RHRoutines/말해줘/말해줘.mp3",
+        "bpm": 90.0,
+        "damageRate": 1.0,
+        "speed": 1.0
+    },
+    "actions": [
+        {"NoteType": "Short", "Gym": 1, "beatsPerMinute": 90.0, "WaitBeat": 6, "LongTime": 0.0, "Multi": 0},
+        {"NoteType": "Multi", "Gym": 1, "beatsPerMinute": 90.0, "WaitBeat": 6, "LongTime": 0.0, "Multi": 5}
+    ]
+}

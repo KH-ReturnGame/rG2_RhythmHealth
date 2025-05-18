@@ -65,13 +65,20 @@ public class ReadLoadGame : MonoBehaviour
 
     void SetUp()
     {
-        if (isNotPrologue)
+        if(isNotPrologue)
         {
-            string song = PlayerPrefs.GetString("SongName");
-            string jsonPath = Path.Combine("C:/RHRoutines", song, song + ".json");
+            if (DataManager.Instance.isPre == false)
+            {
+                string song = PlayerPrefs.GetString("SongName");
+                string jsonPath = Path.Combine("C:/RHRoutines", song, song + ".json");
 
-            string jsonText = File.ReadAllText(jsonPath);
-            gameData = JsonUtility.FromJson<GameData>(jsonText);
+                string jsonText = File.ReadAllText(jsonPath);
+                gameData = JsonUtility.FromJson<GameData>(jsonText);
+            }
+            else
+            {
+                gameData = JsonUtility.FromJson<GameData>(DataManager.Instance.jsonData.text);
+            }
         }
         else
         {
@@ -103,17 +110,25 @@ public class ReadLoadGame : MonoBehaviour
     {
         if(isNotPrologue)
         {
-            string uri = "file://" + songPath;
-            using (UnityWebRequest uwr = UnityWebRequestMultimedia.GetAudioClip(uri, AudioType.UNKNOWN))
+            if (DataManager.Instance.isPre == false)
             {
-                yield return uwr.SendWebRequest();
-                if (uwr.result == UnityWebRequest.Result.ConnectionError || uwr.result == UnityWebRequest.Result.ProtocolError)
+                string uri = "file://" + songPath;
+                using (UnityWebRequest uwr = UnityWebRequestMultimedia.GetAudioClip(uri, AudioType.UNKNOWN))
                 {
-                    Debug.LogError("오디오 로드 오류: " + uwr.error);
-                    yield break;
+                    yield return uwr.SendWebRequest();
+                    if (uwr.result == UnityWebRequest.Result.ConnectionError || uwr.result == UnityWebRequest.Result.ProtocolError)
+                    {
+                        Debug.LogError("오디오 로드 오류: " + uwr.error);
+                        yield break;
+                    }
+                    AudioClip clip = DownloadHandlerAudioClip.GetContent(uwr);
+                    audioSource.clip = clip;
+                    audioSource.Play();
                 }
-                AudioClip clip = DownloadHandlerAudioClip.GetContent(uwr);
-                audioSource.clip = clip;
+            }
+            else
+            {
+                audioSource.clip = DataManager.Instance.audioClip;
                 audioSource.Play();
             }
         }
