@@ -3688,15 +3688,32 @@ MonoBehaviour:
       damageRate: 0
       speed: 0
     actions: []
+  - settings:
+      artist: "\u3141"
+      artistLinks: "\u3141"
+      song: "\u3141"
+      author: "\u3141"
+      previewIcon: "\u3141\u3141"
+      levelDesc: "\u3141"
+      levelTags: 
+      difficulty: 0
+      songFile: 
+      bpm: 0
+      damageRate: 0
+      speed: 0
+    actions: []
   PreIcons:
   - {fileID: 21300000, guid: 0237b99f9f9bbb64c949c8733d05b05e, type: 3}
   - {fileID: 21300000, guid: 8aad854843f4d3d4b92267c459f30436, type: 3}
+  - {fileID: 8022259998939120738, guid: 092428a24e05e2c46bae5537a7f03bb4, type: 3}
   PreMusics:
   - {fileID: 8300000, guid: d20ea4ce90ad3cd4e84b7de82a29a6e9, type: 3}
   - {fileID: 8300000, guid: 919866c0023655b42956aa0d9deae4c1, type: 3}
+  - {fileID: 8300000, guid: 622f1e73926b68047828ba600cacad0a, type: 3}
   PreJsons:
   - {fileID: 4900000, guid: 73a1bbfe563475d41bc82173bf671bec, type: 3}
   - {fileID: 4900000, guid: 184967faa41b6ea4798957ec95bf8198, type: 3}
+  - {fileID: 4900000, guid: d176d684e626487479760798e9b77bcd, type: 3}
   icon: {fileID: 1999381888}
   SongName: {fileID: 804956398}
   SongDesc: {fileID: 759009903}
