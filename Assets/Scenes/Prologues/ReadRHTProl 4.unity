@@ -203,7 +203,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -2524,6 +2524,7 @@ MonoBehaviour:
   Double: {fileID: 3027471405472939796, guid: d7127006b3c8c994680c0dfb207fffab, type: 3}
   Multi: {fileID: 3177745941865738628, guid: ffd350d68bb621444974b2299d50c28b, type: 3}
   pivot: {fileID: 1385580795}
+  read: {fileID: 0}
 --- !u!4 &1277929613
 Transform:
   m_ObjectHideFlags: 0
