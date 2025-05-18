@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class EscMenu : MonoBehaviour
@@ -20,7 +21,7 @@ public class EscMenu : MonoBehaviour
     public void DisableMenu()
     {
         this.gameObject.SetActive(false);
-        if(_Settings != null)
+        if (_Settings != null)
         {
             _Settings.SetActive(false);
         }
@@ -35,5 +36,11 @@ public class EscMenu : MonoBehaviour
     public void QuitGame()
     {
         Application.Quit();
+    }
+
+    public void RestartGame()
+    {
+        Time.timeScale = 1;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

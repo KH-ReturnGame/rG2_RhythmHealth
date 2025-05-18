@@ -2,7 +2,7 @@
 	"settings":
 	{
 		"artist": "이형주",
-		"artistLinks": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13209173&menuNo=200020", 
+		"artistLinks": "https://www.youtube.com/@Love_Erai", 
 		"song": "프롤로그송", 
 		"author": "이형주",
 		"previewIcon": "프롤로그송.png",
@@ -16,9 +16,123 @@
 	},
 	"actions":
 	[
-		{ "NoteType": "Short", "Gym": 3, "beatsPerMinute": 120, "WaitBeat": 2.5, "LongTime":0, "Multi":0},
-		{ "NoteType": "Multi", "Gym": 1, "beatsPerMinute": 120, "WaitBeat": 8, "LongTime":0, "Multi":5},
-		{ "NoteType": "Multi", "Gym": 1, "beatsPerMinute": 120, "WaitBeat": 8, "LongTime":0, "Multi":5},
-		{ "NoteType": "Multi", "Gym": 1, "beatsPerMinute": 120, "WaitBeat": 8, "LongTime":0, "Multi":5}
+		{
+            "NoteType": "Short",
+            "Gym": 1,
+            "beatsPerMinute": 120.0,
+            "WaitBeat": 0.75,
+            "LongTime": 0.0,
+            "Multi": 0
+        },
+        {
+            "NoteType": "Short",
+            "Gym": 1,
+            "beatsPerMinute": 120.0,
+            "WaitBeat": 0.75,
+            "LongTime": 0.0,
+            "Multi": 0
+        },
+        {
+            "NoteType": "Short",
+            "Gym": 1,
+            "beatsPerMinute": 120.0,
+            "WaitBeat": 2.5,
+            "LongTime": 0.0,
+            "Multi": 0
+        },
+        {
+            "NoteType": "Short",
+            "Gym": 1,
+            "beatsPerMinute": 120.0,
+            "WaitBeat": 1.5,
+            "LongTime": 0.0,
+            "Multi": 0
+        },
+        {
+            "NoteType": "Multi",
+            "Gym": 1,
+            "beatsPerMinute": 120.0,
+            "WaitBeat": 2.5,
+            "LongTime": 0.0,
+            "Multi": 7
+        },{
+            "NoteType": "Short",
+            "Gym": 1,
+            "beatsPerMinute": 120.0,
+            "WaitBeat": 0.75,
+            "LongTime": 0.0,
+            "Multi": 0
+        },
+        {
+            "NoteType": "Short",
+            "Gym": 1,
+            "beatsPerMinute": 120.0,
+            "WaitBeat": 0.75,
+            "LongTime": 0.0,
+            "Multi": 0
+        },
+        {
+            "NoteType": "Short",
+            "Gym": 1,
+            "beatsPerMinute": 120.0,
+            "WaitBeat": 2.5,
+            "LongTime": 0.0,
+            "Multi": 0
+        },
+        {
+            "NoteType": "Short",
+            "Gym": 1,
+            "beatsPerMinute": 120.0,
+            "WaitBeat": 1.5,
+            "LongTime": 0.0,
+            "Multi": 0
+        },
+        {
+            "NoteType": "Multi",
+            "Gym": 1,
+            "beatsPerMinute": 120.0,
+            "WaitBeat": 2.5,
+            "LongTime": 0.0,
+            "Multi": 7
+        },{
+            "NoteType": "Short",
+            "Gym": 1,
+            "beatsPerMinute": 120.0,
+            "WaitBeat": 0.75,
+            "LongTime": 0.0,
+            "Multi": 0
+        },
+        {
+            "NoteType": "Short",
+            "Gym": 1,
+            "beatsPerMinute": 120.0,
+            "WaitBeat": 0.75,
+            "LongTime": 0.0,
+            "Multi": 0
+        },
+        {
+            "NoteType": "Short",
+            "Gym": 1,
+            "beatsPerMinute": 120.0,
+            "WaitBeat": 2.5,
+            "LongTime": 0.0,
+            "Multi": 0
+        },
+        {
+            "NoteType": "Short",
+            "Gym": 1,
+            "beatsPerMinute": 120.0,
+            "WaitBeat": 1.5,
+            "LongTime": 0.0,
+            "Multi": 0
+        },
+        {
+            "NoteType": "Multi",
+            "Gym": 1,
+            "beatsPerMinute": 120.0,
+            "WaitBeat": 2.5,
+            "LongTime": 0.0,
+            "Multi": 7
+        }
 	]
 }

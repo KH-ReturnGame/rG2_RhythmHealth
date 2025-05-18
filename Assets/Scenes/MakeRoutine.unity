@@ -4652,7 +4652,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 413807545}
   m_Direction: 2
   m_Value: 1
-  m_Size: 0.71910113
+  m_Size: 0.60674155
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -9888,7 +9888,7 @@ GameObject:
   - component: {fileID: 2020021344}
   - component: {fileID: 2020021343}
   m_Layer: 5
-  m_Name: rigjt
+  m_Name: right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

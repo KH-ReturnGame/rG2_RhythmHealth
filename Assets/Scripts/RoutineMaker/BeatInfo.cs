@@ -58,15 +58,24 @@ public class BeatInfo : MonoBehaviour
     }
     public void SetGym()
     {
-        Gym = int.Parse(Gym_ID.text);
+        if(Gym_ID.text == "")
+            Gym = 1;
+        else
+            Gym = int.Parse(Gym_ID.text);
     }
     public void SetLongtime()
     {
-        LongTime = float.Parse(LongTime_ID.text);
+        if(LongTime_ID.text == "")
+            LongTime = 0;
+        else
+            LongTime = float.Parse(LongTime_ID.text);
     }
     public void SetMulti()
     {
-        Multi = int.Parse(Multi_ID.text);
+        if(Multi_ID.text == "")
+            Multi = 0;
+        else
+            Multi = int.Parse(Multi_ID.text);
     }
     public void SetWait()
     {

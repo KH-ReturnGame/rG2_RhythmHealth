@@ -22,7 +22,7 @@ public class NoteVerdict : MonoBehaviour
     // 더블 노트 관련 변수
     private int doubleNoteInputCount = 0;
     private float lastDoubleNoteTime = -1f;
-    private float doubleNoteTimeWindow = 0.15f; // 더블 노트 입력 허용 시간
+    private float doubleNoteTimeWindow = 0.25f; // 더블 노트 입력 허용 시간
     
     // 롱노트 관련 변수
     public bool isInLong = false;
@@ -106,7 +106,7 @@ public class NoteVerdict : MonoBehaviour
         if (closestNote.CompareTag("note"))
         {
             // 일반 노트 판정
-            if (minDistance <= judgeCollider.bounds.size.x * 0.3f)
+            if (minDistance <= judgeCollider.bounds.size.x * 0.4f)
             {
                 Debug.Log("Excellent!");
                 Score += 20;
@@ -114,7 +114,7 @@ public class NoteVerdict : MonoBehaviour
                 Combo++;
                 isSuccess = true;
             }
-            else if (minDistance <= judgeCollider.bounds.size.x * 0.6f)
+            else if (minDistance <= judgeCollider.bounds.size.x * 0.8f)
             {
                 Debug.Log("Great!");
                 Score += 15;
