@@ -3693,7 +3693,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 8aad854843f4d3d4b92267c459f30436, type: 3}
   PreMusics:
   - {fileID: 8300000, guid: d20ea4ce90ad3cd4e84b7de82a29a6e9, type: 3}
-  - {fileID: 8300000, guid: 79150687c025b624384fb29c57ae328e, type: 3}
+  - {fileID: 8300000, guid: 919866c0023655b42956aa0d9deae4c1, type: 3}
   PreJsons:
   - {fileID: 4900000, guid: 73a1bbfe563475d41bc82173bf671bec, type: 3}
   - {fileID: 4900000, guid: 184967faa41b6ea4798957ec95bf8198, type: 3}

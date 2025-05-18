@@ -57,11 +57,13 @@ public class EnterGame : MonoBehaviour
     void Start()
     {
         PreSongCount = routines.Count - 1;
-        foreach (var file in Directory.GetFiles("C:/RHRoutines", "*.json", SearchOption.AllDirectories)) 
+        #if !UNITY_WEBGL
+        foreach (var file in Directory.GetFiles("C:/RHRoutines", "*.json", SearchOption.AllDirectories))
         {
             string json = File.ReadAllText(file);
             routines.Add(JsonUtility.FromJson<RoutineData>(json));
         }
+        #endif
         index = 0;
         LoadData();
     }
