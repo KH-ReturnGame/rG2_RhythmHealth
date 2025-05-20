@@ -91,6 +91,8 @@ public class ReadLoadGame : MonoBehaviour
 
     IEnumerator ThreeCountDown()
     {
+        StartCoroutine(LoadMusic());
+        
         // 거리가 6.25f임 // 거리 = 속력 * 시간 => 시간 = 거리 / 속력 => 시간 = 6.25f / speed
         ThreeCount[0].SetActive(true);
         yield return new WaitForSeconds(1f);
@@ -106,7 +108,7 @@ public class ReadLoadGame : MonoBehaviour
         StartCoroutine(PlayWait());
     }
 
-    IEnumerator PlayMusicWithOffset()
+    IEnumerator LoadMusic()
     {
         if(isNotPrologue)
         {
@@ -123,21 +125,24 @@ public class ReadLoadGame : MonoBehaviour
                     }
                     AudioClip clip = DownloadHandlerAudioClip.GetContent(uwr);
                     audioSource.clip = clip;
-                    audioSource.Play();
                 }
             }
             else
             {
                 audioSource.clip = DataManager.Instance.audioClip;
-                audioSource.Play();
             }
         }
         else
         {
             ProlManager prolManager = GameObject.Find("ProlManager").GetComponent<ProlManager>();
             audioSource.clip = prolManager.playSongFiles[prolManager.index_PF];
-            audioSource.Play();
         }
+    }
+
+    IEnumerator PlayMusicWithOffset()
+    {
+        audioSource.Play();
+        yield return null;
     }
 
     IEnumerator WorkRythm()
