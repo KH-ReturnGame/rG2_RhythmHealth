@@ -1843,6 +1843,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _Settings: {fileID: 8036242320002241114}
+  MusicPlayerObj: {fileID: 0}
 --- !u!1 &8464669613836557514
 GameObject:
   m_ObjectHideFlags: 0

@@ -838,6 +838,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1286880273}
     m_Modifications:
+    - target: {fileID: 1050845710058322633, guid: fe0d7b706afa3fd40a1a5d1b05613001, type: 3}
+      propertyPath: MusicPlayerObj
+      value: 
+      objectReference: {fileID: 187194129}
     - target: {fileID: 6508622986810228753, guid: fe0d7b706afa3fd40a1a5d1b05613001, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: LoadStartScene

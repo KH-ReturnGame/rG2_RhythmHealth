@@ -7,15 +7,26 @@ using UnityEngine.UI;
 public class EscMenu : MonoBehaviour
 {
     public GameObject _Settings;
+    public GameObject MusicPlayerObj;
+    AudioSource MusicPlayer;
 
     void OnEnable()
     {
         Time.timeScale = 0;
+        if(MusicPlayerObj != null)
+        {
+            MusicPlayer = MusicPlayerObj.GetComponent<AudioSource>();
+            MusicPlayer.Pause();
+        }
     }
 
     void OnDisable()
     {
         Time.timeScale = 1;
+        if(MusicPlayerObj != null)
+        {
+            MusicPlayer.UnPause();
+        }
     }
 
     public void DisableMenu()

@@ -2126,6 +2126,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 869410879}
     m_Modifications:
+    - target: {fileID: 1050845710058322633, guid: fe0d7b706afa3fd40a1a5d1b05613001, type: 3}
+      propertyPath: MusicPlayerObj
+      value: 
+      objectReference: {fileID: 297927926}
     - target: {fileID: 6508622986810228753, guid: fe0d7b706afa3fd40a1a5d1b05613001, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: LoadStartScene
@@ -2697,6 +2701,7 @@ MonoBehaviour:
   Double: {fileID: 3027471405472939796, guid: d7127006b3c8c994680c0dfb207fffab, type: 3}
   Multi: {fileID: 3177745941865738628, guid: ffd350d68bb621444974b2299d50c28b, type: 3}
   pivot: {fileID: 1847645224}
+  read: {fileID: 0}
 --- !u!4 &1992987066
 Transform:
   m_ObjectHideFlags: 0
