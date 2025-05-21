@@ -104,7 +104,7 @@ public class ReadLoadGame : MonoBehaviour
         yield return new WaitForSeconds(1f);
         ThreeCount[2].SetActive(false);
 
-        StartCoroutine(WorkRythm());
+        StartCoroutine(WorkRhythm());
         StartCoroutine(PlayWait());
     }
 
@@ -145,7 +145,7 @@ public class ReadLoadGame : MonoBehaviour
         yield return null;
     }
 
-    IEnumerator WorkRythm()
+    IEnumerator WorkRhythm()
     {
         while (WorkIndex < gameData.actions.Count)
         {
