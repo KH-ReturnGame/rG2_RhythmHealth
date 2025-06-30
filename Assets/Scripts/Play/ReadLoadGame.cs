@@ -4,8 +4,6 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.IO;
 using UnityEngine.Networking;
-using FMODUnity;
-using FMOD.Studio;
 
 [System.Serializable]
 public class GameData
@@ -89,6 +87,12 @@ public class ReadLoadGame : MonoBehaviour
         BPM = gameData.settings.bpm;
         songPath = Path.Combine(Application.streamingAssetsPath, gameData.settings.songFile);
         PlayWaitTime = 6.25f / ((BPM / 60f) * gameData.settings.speed / 0.6f);
+    }
+
+    void Update()
+    {
+        float playTimeSec = audioSource.timeSamples / (float)audioSource.clip.frequency;
+        Debug.Log("time : " + playTimeSec);
     }
 
     IEnumerator ThreeCountDown()
