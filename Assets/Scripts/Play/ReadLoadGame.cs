@@ -55,6 +55,7 @@ public class ReadLoadGame : MonoBehaviour
     public bool isNotPrologue;
     public GameObject[] ThreeCount;
     float PlayWaitTime;
+    bool isplaying = false;
 
     void OnEnable()
     {
@@ -92,8 +93,13 @@ public class ReadLoadGame : MonoBehaviour
 
     void Update()
     {
-        double timeMs2 = (audioSource.timeSamples / (double)sampleRate) * 1000.0;
-        Debug.Log("time : " + timeMs2);
+        if (isplaying)
+        {
+            double timeMs2 = (audioSource.timeSamples / (double)sampleRate) * 1000.0;
+            Debug.Log("time : " + timeMs2);
+            // SpawnNote(WorkIndex, gameData.actions[WorkIndex].NoteType);
+            // WorkIndex++;
+        }
     }
 
     IEnumerator ThreeCountDown()
@@ -175,13 +181,37 @@ public class ReadLoadGame : MonoBehaviour
         StartCoroutine(End());
     }
 
+    void SpawnNote(int i, string type)
+    {
+        if (i < gameData.actions.Count)
+        {
+            type = gameData.actions[i].NoteType;
+            if (type == "Short")
+            {
+                noteSpawn.ShortNote();
+            }
+            else if (type == "Long")
+            {
+                noteSpawn.LongNote(gameData.actions[i].LongTime, BPM);
+            }
+            else if (type == "Double")
+            {
+                noteSpawn.DoubleNote();
+            }
+            else if (type == "Multi")
+            {
+                noteSpawn.MultiNote();
+            }
+        }
+    }
+
     IEnumerator PlayWait()
     {
         Debug.Log("offset : " + offset);
         yield return new WaitForSeconds(PlayWaitTime + offset); // 오프셋 적용
-        // 샘플 단위 재생 시간 → 초 단위 변환
-        // float playTimeSec = audioSource.timeSamples / (float)audioSource.clip.frequency;
+
         audioSource.Play();
+        isplaying = true;
         yield return null;
     }
 
