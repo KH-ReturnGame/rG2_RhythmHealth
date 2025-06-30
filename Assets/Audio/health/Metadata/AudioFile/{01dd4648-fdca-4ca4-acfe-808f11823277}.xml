@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="AudioFile" id="{01dd4648-fdca-4ca4-acfe-808f11823277}">
+		<property name="assetPath">
+			<value>Prol1-1.mp3</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>26.736000000000001</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{a7595763-191e-46c6-8da9-284d55f171bd}</destination>
+		</relationship>
+	</object>
+</objects>

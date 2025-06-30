@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.IO;
 using UnityEngine.Networking;
+using FMODUnity;
+using FMOD.Studio;
 
 [System.Serializable]
 public class GameData
@@ -139,12 +141,6 @@ public class ReadLoadGame : MonoBehaviour
         }
     }
 
-    IEnumerator PlayMusicWithOffset()
-    {
-        audioSource.Play();
-        yield return null;
-    }
-
     IEnumerator WorkRhythm()
     {
         while (WorkIndex < gameData.actions.Count)
@@ -177,7 +173,10 @@ public class ReadLoadGame : MonoBehaviour
     {
         Debug.Log("offset : " + offset);
         yield return new WaitForSeconds(PlayWaitTime + offset); // 오프셋 적용
-        StartCoroutine(PlayMusicWithOffset());
+        // 샘플 단위 재생 시간 → 초 단위 변환
+        // float playTimeSec = audioSource.timeSamples / (float)audioSource.clip.frequency;
+        audioSource.Play();
+        yield return null;
     }
 
     IEnumerator End()
