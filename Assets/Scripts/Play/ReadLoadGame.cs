@@ -42,7 +42,8 @@ public class NoteAction
 
 public class ReadLoadGame : MonoBehaviour
 {
-    AudioSource audioSource;
+    private AudioSource audioSource;
+    private int sampleRate;
     public NoteSpawn noteSpawn;
     public TextAsset jsonFile;
     public GameData gameData;
@@ -91,8 +92,8 @@ public class ReadLoadGame : MonoBehaviour
 
     void Update()
     {
-        float playTimeSec = audioSource.timeSamples / (float)audioSource.clip.frequency;
-        Debug.Log("time : " + playTimeSec);
+        double timeMs2 = (audioSource.timeSamples / (double)sampleRate) * 1000.0;
+        Debug.Log("time : " + timeMs2);
     }
 
     IEnumerator ThreeCountDown()
@@ -116,7 +117,7 @@ public class ReadLoadGame : MonoBehaviour
 
     IEnumerator LoadMusic()
     {
-        if(isNotPrologue)
+        if (isNotPrologue)
         {
             if (DataManager.Instance.isPre == false)
             {
@@ -143,6 +144,7 @@ public class ReadLoadGame : MonoBehaviour
             ProlManager prolManager = GameObject.Find("ProlManager").GetComponent<ProlManager>();
             audioSource.clip = prolManager.playSongFiles[prolManager.index_PF];
         }
+        sampleRate = audioSource.clip.frequency;
     }
 
     IEnumerator WorkRhythm()
