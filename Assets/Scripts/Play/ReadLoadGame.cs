@@ -150,7 +150,6 @@ public class ReadLoadGame : MonoBehaviour
             ProlManager prolManager = GameObject.Find("ProlManager").GetComponent<ProlManager>();
             audioSource.clip = prolManager.playSongFiles[prolManager.index_PF];
         }
-        sampleRate = audioSource.clip.frequency;
     }
 
     IEnumerator WorkRhythm()
@@ -211,6 +210,7 @@ public class ReadLoadGame : MonoBehaviour
         yield return new WaitForSeconds(PlayWaitTime + offset); // 오프셋 적용
 
         audioSource.Play();
+        sampleRate = audioSource.clip.frequency;
         isplaying = true;
         yield return null;
     }
