@@ -56,6 +56,7 @@ public class ReadLoadGame : MonoBehaviour
     public GameObject[] ThreeCount;
     float PlayWaitTime;
     bool isplaying = false;
+    private List<float> spawnTimes;
 
     void OnEnable()
     {
@@ -67,7 +68,7 @@ public class ReadLoadGame : MonoBehaviour
 
     void SetUp()
     {
-        if(isNotPrologue)
+        if (isNotPrologue)
         {
             if (DataManager.Instance.isPre == false)
             {
@@ -89,16 +90,33 @@ public class ReadLoadGame : MonoBehaviour
         BPM = gameData.settings.bpm;
         songPath = Path.Combine(Application.streamingAssetsPath, gameData.settings.songFile);
         PlayWaitTime = 6.25f / ((BPM / 60f) * gameData.settings.speed / 0.6f);
+        
+        spawnTimes = new List<float>();
+        float cumulativeBeat = 0f;
+        float secPerBeat = 60f / (BPM * gameData.settings.speed);
+        foreach (var action in gameData.actions)
+        {
+            cumulativeBeat += action.WaitBeat;
+            spawnTimes.Add(cumulativeBeat * secPerBeat);
+        }
+
+        WorkIndex = 0;
+
     }
 
     void Update()
     {
-        if (isplaying)
+        double timeMs2 = (audioSource.timeSamples / (double)sampleRate) * 1000.0;
+
+        if (isplaying && WorkIndex < spawnTimes.Count && timeMs2 / 1000 >= spawnTimes[WorkIndex] )
         {
-            double timeMs2 = (audioSource.timeSamples / (double)sampleRate) * 1000.0;
-            Debug.Log("time : " + timeMs2);
-            // SpawnNote(WorkIndex, gameData.actions[WorkIndex].NoteType);
-            // WorkIndex++;
+            SpawnNote(WorkIndex, gameData.actions[WorkIndex].NoteType);
+            WorkIndex++;
+        }
+
+        if (WorkIndex >= spawnTimes.Count)
+        {
+            StartCoroutine(End());
         }
     }
 
@@ -117,7 +135,7 @@ public class ReadLoadGame : MonoBehaviour
         yield return new WaitForSeconds(1f);
         ThreeCount[2].SetActive(false);
 
-        StartCoroutine(WorkRhythm());
+        //StartCoroutine(WorkRhythm());
         StartCoroutine(PlayWait());
     }
 
